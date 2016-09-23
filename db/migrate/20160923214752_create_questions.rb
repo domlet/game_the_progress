@@ -1,6 +1,8 @@
 class CreateQuestions < ActiveRecord::Migration[5.0]
   def change
     create_table :questions do |t|
+      t.integer :game_id
+      t.string :text
 
       t.timestamps
     end
