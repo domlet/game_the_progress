@@ -1,5 +1,9 @@
 class ResultsController < ApplicationController
 
+  def new
+    @result = Result.new
+  end
+
   def create
     result = Result.new(result_params)
     result.user = current_user
@@ -9,6 +13,7 @@ class ResultsController < ApplicationController
       redirect_to games_path
     end
   end
+
 
   private
 
