@@ -1,0 +1,56 @@
+body {
+  background: #cccc99;
+  font-family: Phosphate, Helvetica, Arial, sans-serif;
+}
+
+.form {
+  text-align: center;
+}
+
+.formfield {
+  /* for padding for the text fields */
+  padding: .5em;
+}
+
+.spacer {
+  min-height: 40em;
+}
+
+input[type=text] {
+  /* for text fields for student devise views */
+    padding:1em; 
+    border:.2em solid #ccc; 
+    -webkit-border-radius: 1em;
+    border-radius: .2em;
+    font-size: 1.8em;
+}
+
+input[type=password] {
+  /* for password fields for student */
+    padding:1em; 
+    border:.2em solid #ccc; 
+    -webkit-border-radius: 1em;
+    border-radius: .2em;
+    font-size: 1.8em;
+}
+
+input[type=submit] {
+  border-radius: .2em;
+  padding: .3em;
+  font-size: 4em;
+  font-weight: 800;
+}
+
+h1 {
+  font-size: 5em;
+  text-align: center;
+}
+
+.gobutton {
+  background: #00cc66;
+}
+
+.infobutton {
+  background: #66fifff;
+}
+
