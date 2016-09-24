@@ -1,0 +1,21 @@
+<%= link_to "Home", games_path %>
+
+<h1>Games Show</h1>
+
+<div class="row col-md-8 col-md-offset-2">
+  <h1><%= @game.title %></h1>
+  <p><%= @question.text %></p>
+
+<div class="panel panel-default">
+  <% if @question.results.any? %>
+    <div class="panel-body" id="results">
+      <%= render partial: 'results/result', collection: @question.results%>
+    </div>
+  <%else%>
+    <div class="panel-body hidden" id="results">
+    </div>
+  <%end%>
+</div>
+
+  <%= render partial: 'results/result_form', locals: {result: @result, game: @game}%>
+</div>

@@ -1,0 +1,11 @@
+<%=form_for result, remote: true, authenticity_token: true do |f|%>
+<!-- < %= f.label :your_result%>:
+  < %= f.text_area :content, class: "form-control", data: {textarea: "result"}%> -->
+
+  <%=f.hidden_field :user_id, value: current_user.id %>
+  <%=f.hidden_field :question_id, value: @question.id %>
+
+
+  <%= f.submit "A", class: "btn btn-primary", style: "display: inline", data: {send: "result"} %>
+  <%= f.submit "B", class: "btn btn-primary", style: "display: inline", data: {send: "result"} %>
+<%end%>
