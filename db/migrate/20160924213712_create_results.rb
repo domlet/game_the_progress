@@ -5,6 +5,7 @@ class CreateResults < ActiveRecord::Migration[5.0]
       t.integer :user_id
       t.integer :question_id
       t.integer :student_answer_id
+
       t.timestamps
     end
   end
