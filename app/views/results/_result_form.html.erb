@@ -1,6 +1,6 @@
 <%=form_for result, remote: true, authenticity_token: true do |f|%>
-  < %= f.label :your_result%>:
-  < %= f.text_area :content, class: "form-control", data: {textarea: "result"}%>
+<!-- < %= f.label :your_result%>:
+  < %= f.text_area :content, class: "form-control", data: {textarea: "result"}%> -->
 
   <%= f.hidden_field :game_id, value: game.id %>
   <%= f.hidden_field :salamander, value: "bloop" %>
