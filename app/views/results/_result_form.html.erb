@@ -3,7 +3,8 @@
   < %= f.text_area :content, class: "form-control", data: {textarea: "result"}%> -->
 
   <%= f.hidden_field :game_id, value: game.id %>
-  <%= f.hidden_field :user_id, value: "1" %>
+  <%= f.hidden_field :question_id, value: 1 %>
+  <%= f.hidden_field :user_id, value: 1 %>
 <!--   <%= f.hidden_field :salamander, value: "bloop" %> -->
   <%= f.submit "send", class: "btn btn-primary", style: "display: inline", data: {send: "result"}%>
 <%end%>
