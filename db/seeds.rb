@@ -6,4 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Game.create(title: "test game")
+Game.create(title: "test game", subject: "test subject")
+
+Question.create(text: "test question 1", game_id: 1)
+Answer.create(text: "test answer 1", question_id: 1)
+Answer.create(text: "test answer 2", question_id: 1)
+
+Question.create(text: "test question 2", game_id: 1)
+Answer.create(text: "test answer 3", question_id: 2)
+Answer.create(text: "test answer 4", question_id: 2)
