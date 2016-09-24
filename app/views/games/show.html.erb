@@ -2,11 +2,12 @@
 
 <div class="row col-md-8 col-md-offset-2">
   <h1><%= @game.title %></h1>
+  <p><%= @question.text %></p>
 
 <div class="panel panel-default">
-  <% if @game.results.any? %>
+  <% if @question.results.any? %>
     <div class="panel-body" id="results">
-      <%= render partial: 'results/result', collection: @game.results%>
+      <%= render partial: 'results/result', collection: @question.results%>
     </div>
   <%else%>
     <div class="panel-body hidden" id="results">

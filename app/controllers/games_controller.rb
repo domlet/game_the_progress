@@ -6,6 +6,8 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find_by(id: params[:id])
+    @questions = @game.questions
+    @question = @questions[0]
     @result = Result.new
   end
 

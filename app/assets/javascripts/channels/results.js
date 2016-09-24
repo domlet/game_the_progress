@@ -7,6 +7,6 @@ App.results = App.cable.subscriptions.create('ResultsChannel', {
 
   renderResult: function(data) {
     console.log('result rendered');
-    return "<p> <b>" + data.user + ": </b>" + data.game + "</p>";
+    return "<p> <b>" + data.user + ": </b>" + data.answer + "</p>";
   }
 });

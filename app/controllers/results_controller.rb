@@ -9,15 +9,20 @@ class ResultsController < ApplicationController
 
   def create
     result = Result.new(result_params)
+    result.student_answer_id = case params[:commit]
+    when "A" then 1
+    when "B" then 2
+    end
     # result.user = current_user
+
     p result_params
     p params
     if result.save
       p "It works!!!"
       # This is just for testing the seed data
       ActionCable.server.broadcast 'results',
-        game: result.game_id,
-        user: result.user_id
+        answer: result.student_answer_id,
+        user: current_user.username
       head :ok
     else
       redirect_to games_path
@@ -28,6 +33,6 @@ class ResultsController < ApplicationController
   private
 
     def result_params
-      params.require(:result).permit(:user_id, :game_id, :question_id)
+      params.require(:result).permit(:user_id, :question_id)
     end
 end
