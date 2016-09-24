@@ -38,26 +38,26 @@ Game.create!(
   )
 end
 
-10.times do
+10.times do |x|
 Question.create!(
     text:Faker::StarWars.quote,
-    game_id:rand(1..10),
-    category_id:rand(1..10)
+    game_id:x + 1,
+    category_id:x + 1
   )
 end
 
-10.times do
+10.times do |x|
 Answer.create!(
     text:Faker::StarWars.quote,
-    question_id:rand(1..10)
+    question_id: x + 1
   )
 end
 
-10.times do
+10.times do |x|
 Result.create!(
     is_correct:Faker::Boolean.boolean(0.2),
-    user_id:rand(1..10),
-    question_id:rand(1..10),
-    student_answer_id:rand(1..10),
+    user_id:x + 1,
+    question_id:x + 1,
+    student_answer_id:x + 1,
   )
 end
