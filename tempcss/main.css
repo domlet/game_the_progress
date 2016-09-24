@@ -2,6 +2,14 @@ body {
   background: #cccc99;
 }
 
+.game-view-h1 {
+  font-size: 2em;
+}
+
+.game-view-h2 {
+  font-size: 3em;
+}
+
 .form {
   text-align: center;
 }
@@ -35,6 +43,18 @@ body {
   font-size: 2em;
   text-align: center;
 }
+
+.student-quiz-display {
+  text-align: center;
+  width: 350px;
+  height: 200px;
+  border: 1px solid black;
+  border-collapse: collapse;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 3em;
+  text-align: center;
+}
+
 
 #timer1 {
   border: 1px solid black;
@@ -128,8 +148,24 @@ h2 {
   background: #00cc66;
 }
 
+.student-button-1 {
+  background: #00cc00;
+}
+
+.student-button-2 {
+  background: #cccc00;
+}
+
+.student-button-3 {
+  background: #00cccc;
+}
+
+.student-button-4 {
+  background: #cc0000;
+}
+
 .infobutton {
-  background: #66fifff;
+  background: #66ffff;
 }
 
 
@@ -138,7 +174,7 @@ h2 {
 @media only screen and (max-width: 500px) {
 
   body {
-    background: red;
+    background: #999966;
   }
 
   .form {
@@ -180,7 +216,7 @@ h2 {
   }
 
   h1 {
-    font-size: 3em;
+    font-size: 3.3em;
     
   }
 
@@ -191,6 +227,8 @@ h2 {
   .infobutton {
     background: #66fifff;
   }
+
 }
+
 
 
