@@ -5,9 +5,8 @@
   <%=f.hidden_field :user_id, value: current_user.id %>
   <%=f.hidden_field :question_id, value: @question.id %>
 
-
-  <div><%= f.submit @question.answers[0].text, class: "btn btn-primary", style: "display: inline", data: {send: "result"} %></div>
-  <div><%= f.submit @question.answers[1].text, class: "btn btn-primary", style: "display: inline", data: {send: "result"} %></div>
-  <div><%= f.submit @question.answers[2].text, class: "btn btn-primary", style: "display: inline", data: {send: "result"} %></div>
-  <div><%= f.submit @question.answers[3].text, class: "btn btn-primary", style: "display: inline", data: {send: "result"} %></div>
+  <div><%= f.submit "A", class: "btn btn-primary", style: "display: inline", data: {send: "result"} %></div>
+  <div><%= f.submit "B", class: "btn btn-primary", style: "display: inline", data: {send: "result"} %></div>
+  <div><%= f.submit "C", class: "btn btn-primary", style: "display: inline", data: {send: "result"} %></div>
+  <div><%= f.submit "D", class: "btn btn-primary", style: "display: inline", data: {send: "result"} %></div>
 <%end%>

@@ -10,7 +10,8 @@ class QuestionsController < ApplicationController
     @question = @questions[current_index + 1]
     ActionCable.server.broadcast 'questions',
       answer_options: @question.answers,
-      question_text: @question.text
+      question_text: @question.text,
+      question_id: @question.id
     head :ok
   end
 

@@ -8,12 +8,21 @@ class ResultsController < ApplicationController
   end
 
   def create
+    p current_question = Question.find(params[:result][:question_id].to_i)
+    p @game = Game.find(current_question.game_id)
+    p @questions = @game.questions
+    current_index = @questions.find_index(current_question)
+    @question = @questions[current_index + 1]
+    # current_question_id = params[:result][:question_id]
+    # @question = Question.find(params[:result][:question_id] + 1)
     result = Result.new(result_params)
-    # result.student_answer_id = case params[:commit]
-    # when "A" then 1
-    # when "B" then 2
-    # end
-    result.student_answer_id = Answer.find_by(text: params[:commit]).id
+    p params
+    result = Result.new(result_params)
+    result.student_answer_id = case params[:commit]
+      when "A" then @question.answers[0].id
+      when "B" then @question.answers[1].id
+      when "C" then @question.answers[2].id
+    end
     p "******************************************"
     p result
     # result.user = current_user

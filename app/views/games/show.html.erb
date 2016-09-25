@@ -8,6 +8,7 @@
   <p><%= @question.text %></p>
 </div>
 
+
 <div class="panel panel-default">
   <% if @question.results.any? %>
     <div class="panel-body" id="results">
@@ -18,9 +19,15 @@
     </div>
   <%end%>
 </div>
-
-  <%= render partial: 'results/result_form', locals: {result: @result, game: @game}%>
+  <div id="answers">
+  <p><%= @question.answers[0].text%></p>
+  <p><%= @question.answers[1].text%></p>
+  <p><%= @question.answers[2].text%></p>
+  </div>
+    <%= render partial: 'results/result_form', locals: {result: @result, game: @game}%>
 </div>
+
+
 <div>
   <%= render partial: 'questions/question', collection: @question %>
   <%= render partial: 'questions/question_form', locals: {question: @question} %>

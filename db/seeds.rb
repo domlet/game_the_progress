@@ -68,6 +68,13 @@ Answer.create!(
   )
 end
 
+3.times do |x|
+Answer.create!(
+    text:Faker::StarWars.quote,
+    question_id: 11
+  )
+end
+
 10.times do |x|
 Result.create!(
     is_correct:Faker::Boolean.boolean(0.2),
