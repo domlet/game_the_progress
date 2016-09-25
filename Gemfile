@@ -29,6 +29,7 @@ gem 'redis', '~> 3.0'
 gem 'devise'
 gem 'faker'
 gem 'roo'
+gem "iconv", "~> 1.0.3"
 
 
 # Use Capistrano for deployment

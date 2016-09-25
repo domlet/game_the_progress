@@ -1,0 +1,9 @@
+<h1>ImportedGames#index</h1>
+<p>Find me in app/views/imported_games/index.html.erb</p>
+
+<h2>Import Game</h2>
+
+<%= form_tag import_imported_games_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>
