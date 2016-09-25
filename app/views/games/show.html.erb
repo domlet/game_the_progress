@@ -4,12 +4,14 @@
 
 <div class="row col-md-8 col-md-offset-2">
   <h1><%= @game.title %></h1>
+<div id='questions'>
   <p><%= @question.text %></p>
+</div>
 
 <div class="panel panel-default">
   <% if @question.results.any? %>
     <div class="panel-body" id="results">
-      <%= render partial: 'results/result', collection: @question.results%>
+      <%= render partial: 'results/result', collection: @question.results %>
     </div>
   <%else%>
     <div class="panel-body hidden" id="results">
@@ -18,4 +20,8 @@
 </div>
 
   <%= render partial: 'results/result_form', locals: {result: @result, game: @game}%>
+</div>
+<div>
+  <%= render partial: 'questions/question', collection: @question %>
+  <%= render partial: 'questions/question_form', locals: {question: @question} %>
 </div>

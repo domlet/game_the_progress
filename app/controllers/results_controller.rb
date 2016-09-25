@@ -9,10 +9,13 @@ class ResultsController < ApplicationController
 
   def create
     result = Result.new(result_params)
-    result.student_answer_id = case params[:commit]
-    when "A" then 1
-    when "B" then 2
-    end
+    # result.student_answer_id = case params[:commit]
+    # when "A" then 1
+    # when "B" then 2
+    # end
+    result.student_answer_id = Answer.find_by(text: params[:commit]).id
+    p "******************************************"
+    p result
     # result.user = current_user
 
     p result_params

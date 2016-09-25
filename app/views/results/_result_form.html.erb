@@ -6,6 +6,8 @@
   <%=f.hidden_field :question_id, value: @question.id %>
 
 
-  <%= f.submit "A", class: "btn btn-primary", style: "display: inline", data: {send: "result"} %>
-  <%= f.submit "B", class: "btn btn-primary", style: "display: inline", data: {send: "result"} %>
+  <div><%= f.submit @question.answers[0].text, class: "btn btn-primary", style: "display: inline", data: {send: "result"} %></div>
+  <div><%= f.submit @question.answers[1].text, class: "btn btn-primary", style: "display: inline", data: {send: "result"} %></div>
+  <div><%= f.submit @question.answers[2].text, class: "btn btn-primary", style: "display: inline", data: {send: "result"} %></div>
+  <div><%= f.submit @question.answers[3].text, class: "btn btn-primary", style: "display: inline", data: {send: "result"} %></div>
 <%end%>

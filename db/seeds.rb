@@ -44,12 +44,27 @@ Question.create!(
     game_id:x + 1,
     category_id:x + 1
   )
+
+end
+10.times do |x|
+Question.create!(
+    text:Faker::StarWars.quote,
+    game_id:x + 1,
+    category_id:x + 1
+  )
 end
 
 10.times do |x|
 Answer.create!(
     text:Faker::StarWars.quote,
     question_id: x + 1
+  )
+end
+
+3.times do |x|
+Answer.create!(
+    text:Faker::StarWars.quote,
+    question_id: 1
   )
 end
 

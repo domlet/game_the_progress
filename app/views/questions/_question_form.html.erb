@@ -1,0 +1,10 @@
+<%=form_for @question, url: question_path(@question), html: {method: "patch"}, remote: true, authenticity_token: true do |f|%>
+<!-- < %= f.label :your_question%>:
+  < %= f.text_area :content, class: "form-control", data: {textarea: "question"}%> -->
+
+  <%=f.hidden_field :question_id, value: @question.id %>
+  <%=f.hidden_field :game_id, value: @game.id %>
+
+
+  <%= f.submit "next", class: "btn btn-primary", style: "display: inline", data: {send: "question"} %>
+<%end%>
