@@ -1,15 +1,15 @@
 <%= link_to "Home", games_path %>
 
-<h1>Games Show</h1>
+<h1>GAME THE PROGRESS</h1>
 
 <div class="row col-md-8 col-md-offset-2">
-  <h1><%= @game.title %></h1>
-  <p><%= @question.text %></p>
+  <h2><%= @game.title %></h2>
+  <h3><%= @question.text %></h3>
 
 <div class="panel panel-default">
-  <% if @question.results.any? %>
+  <h5><% if @question.results.any? %></h5>
     <div class="panel-body" id="results">
-      <%= render partial: 'results/result', collection: @question.results%>
+      <h5><%= render partial: 'results/result', collection: @question.results%></h5>
     </div>
   <%else%>
     <div class="panel-body hidden" id="results">
@@ -17,5 +17,6 @@
   <%end%>
 </div>
 
-  <%= render partial: 'results/result_form', locals: {result: @result, game: @game}%>
+
+  <h3><%= render partial: 'results/result_form', locals: {result: @result, game: @game}%></h3>
 </div>

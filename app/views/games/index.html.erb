@@ -1,5 +1,11 @@
+
 <h1>Games Index</h1>
 
-<%= link_to "Game 1", game_path(@games[0]) %>
-
-<%= link_to "Register Page", new_user_registration_path %>
+<div class="form">
+  <h3><%= link_to "Game 1", game_path(@games[0]) %></h3>
+</div>
+<div class="spacer">&nbsp;
+</div>
+<div class="form">
+  <h3><%= link_to "Create New User", new_user_registration_path %></h3>
+</div>
