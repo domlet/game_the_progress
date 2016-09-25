@@ -3,20 +3,31 @@
 function myFunction() {
     var answerId = $("#answer-buttons").html();
     console.log(answerId)
-    $(".answer-button input").attr("id")=answerId;
+    $(".answer-button input").attr("value")=answerId;
 }
 </script>
 
+<!-- OLD FASHIONED FORM -->
+<form action="/results" method="POST">
+</form>
 
+<!-- RAILS FORM -->
 <%=form_for result, remote: true, authenticity_token: true do |f|%>
+  <div class="answer-button"><input type="submit" name="commit" value=""></div>
+  <div class="answer-button"><input type="submit" name="commit" value=""></div>
+  <div class="answer-button"><input type="submit" name="commit" value=""></div>
+  <div class="answer-button"><input type="submit" name="commit" value=""></div>
+  <input type="hidden" name="result[user_id]" value="<%= current_user.id %>"></div>
+  <input type="hidden" name="result[question_id]" value="<%= @question.id %>"></div>
 <!-- < %= f.label :your_result%>:
-  < %= f.text_area :content, class: "form-control", data: {textarea: "result"}%> -->
+     < %= f.text_area :content, class: "form-control", data: {textarea: "result"}%> -->
 
   <%=f.hidden_field :user_id, value: current_user.id %>
   <%=f.hidden_field :question_id, value: @question.id %>
 
-  <div class="answer-button"><%= f.submit "A", class: "btn btn-primary", data: {send: "result"} %></div>
-  <div class="answer-button"><%= f.submit "B", class: "btn btn-primary", data: {send: "result"} %></div>
-  <div class="answer-button"><%= f.submit "C", class: "btn btn-primary", data: {send: "result"} %></div>
-  <div class="answer-button"><%= f.submit "D", class: "btn btn-primary", data: {send: "result"} %></div>
+
+  <div class="answer-button">< %= f.submit "A", class: "btn btn-primary", data: {send: "result"} %></div>
+  <div class="answer-button">< %= f.submit "B", class: "btn btn-primary", data: {send: "result"} %></div>
+  <div class="answer-button">< %= f.submit "C", class: "btn btn-primary", data: {send: "result"} %></div>
+  <div class="answer-button">< %= f.submit "D", class: "btn btn-primary", data: {send: "result"} %></div>
 <%end%>
