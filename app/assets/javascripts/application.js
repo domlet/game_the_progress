@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require_tree ./channels
 //= require games
+//= require d3
 // require_tree .
