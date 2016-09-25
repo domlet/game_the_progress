@@ -10,7 +10,7 @@ class ResultsController < ApplicationController
   def create
     p result = Result.new(result_params)
     # Conveys the answer that the student selected
-    # p result.student_answer_id = params[:a]
+    p result.student_answer_id = params[:a]
     p params
     p "*" * 50
     if result.save

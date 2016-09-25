@@ -26,9 +26,9 @@ App.questions = App.cable.subscriptions.create('QuestionsChannel', {
     console.log('answer rendered');
     console.log(data.answer_options[0].text)
     // return ("<button id='0' type='button' formaction='/results' formmethod='post'>" + data.answer_options[0].text + "</button>")
-    return ("<p><button onclick='myFunction()'>Trigger js</button> " + data.answer_options[0].text + "</p>" +
-            "<p><button onclick='myFunction()'>Trigger js</button> " + data.answer_options[1].text + "</p>" +
-            "<p><button onclick='myFunction()'>Trigger js</button> " + data.answer_options[2].text + "</p>")
+    return ("<p>" + data.answer_options[0].text + "</p>" +
+            "<p>" + data.answer_options[1].text + "</p>" +
+            "<p>" + data.answer_options[2].text + "</p>")
 
     // data.answer_options.forEach(function(answer_option) {
     //   console.log(answer_option.text);
