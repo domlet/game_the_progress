@@ -8,6 +8,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
+   <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina|Bungee|Ubuntu" rel="stylesheet">
 
 
   </head>
@@ -16,9 +17,9 @@
   <div class="container">
 
   <% if current_user %>
-  Hello, <%= current_user.first_name %>!
+  <h5 class="current-user">Hello, <%= current_user.first_name %>!
   <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-  <%end%>
+  <%end%></h5>
     <%= yield %>
     
     </div>

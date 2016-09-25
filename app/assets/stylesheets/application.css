@@ -15,7 +15,6 @@
  */
 
 
-
 body {
   background: #cccc99;
 }
@@ -62,7 +61,7 @@ body {
   height: 150px;
   border: 1px solid black;
   border-collapse: collapse;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
   font-size: 2em;
   text-align: center;
 }
@@ -73,7 +72,7 @@ body {
   height: 200px;
   border: 1px solid black;
   border-collapse: collapse;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
   font-size: 3em;
   text-align: center;
 }
@@ -165,34 +164,49 @@ input[type=submit] {
 }
 
 h1 {
-  /*font-family: 'Bungee Inline', cursive;*/
-  font-family: Phosphate, Helvetica, Arial, sans-serif;
+  font-family: 'Bungee Inline', Helvetica, Arial, sans-serif;
   font-size: 3em;
   text-align: center;
 }
 
 h2 {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
   font-size: 2.5em;
   text-align: center;
 }
 
 h3 {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
   font-size: 2em;
   text-align: center;
 }
 
 h4 {
-  font-family: Phosphate, Helvetica, Arial, sans-serif;
+  font-family: 'Bungee Inline', Helvetica, Arial, sans-serif;
   font-size: 1.5em;
   text-align: center;
 }
 
 h5 {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
   font-size: 1em;
   text-align: center;
+}
+
+.home-button {
+  position: fixed;
+  text-align: left;
+  top: 0;
+  left: 0;
+  padding: 1em;
+}
+
+.current-user {
+  position: fixed;
+  text-align: right;
+  top: 0;
+  right: 0;
+  padding: 1em;
 }
 
 .gobutton {
