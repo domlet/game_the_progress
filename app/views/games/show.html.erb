@@ -5,6 +5,7 @@
 
 <!-- QUESTION TEXT -->
 <hr>QUESTION:
+<!-- renderQuestion -->
 <div id='questions'><p><%= @question.text %></p></div>
 <%= render partial: 'questions/question', collection: @question %>
 
@@ -17,6 +18,8 @@
 </div>
 
 <!-- ANSWER BUTTONS -->
+<!-- These hit a Results 'POST' route -->
+<div id='answer-buttons' style='display:none'></div>
 <%= render partial: 'results/result_form', locals: {result: @result, game: @game}%>
 
 <!-- NEXT BUTTON -->

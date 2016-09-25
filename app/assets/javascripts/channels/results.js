@@ -1,3 +1,4 @@
+// Creates a thing that is listening to this channel:
 App.results = App.cable.subscriptions.create('ResultsChannel', {
   received: function(data) {
     console.log('received');
