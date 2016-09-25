@@ -1,9 +1,15 @@
 <!-- when user clicks a button -->
 <script>
 function myFunction() {
-    var answerId = $("#answer-buttons").html();
-    console.log(answerId)
-    $(".answer-button input").attr("value")=answerId;
+    var a = $("#answer-buttons-a").html();
+    var b = $("#answer-buttons-b").html();
+    var c = $("#answer-buttons-c").html();
+    var d = $("#answer-buttons-d").html();
+    console.log(a)
+    $(".answer-button-a input").attr("name", 'a');
+    $(".answer-button-b input").attr("name", 'b');
+    $(".answer-button-c input").attr("name", 'c');
+    $(".answer-button-d input").attr("name", 'd');
 }
 </script>
 
@@ -11,12 +17,13 @@ function myFunction() {
 <form action="/results" method="POST">
 </form>
 
+
 <!-- RAILS FORM -->
 <%=form_for result, remote: true, authenticity_token: true do |f|%>
-  <div class="answer-button"><input type="submit" name="commit" value=""></div>
-  <div class="answer-button"><input type="submit" name="commit" value=""></div>
-  <div class="answer-button"><input type="submit" name="commit" value=""></div>
-  <div class="answer-button"><input type="submit" name="commit" value=""></div>
+  <div class="answer-button-a"><input type="submit" name="" value=""></div>
+  <div class="answer-button-b"><input type="submit" name="" value=""></div>
+  <div class="answer-button-c"><input type="submit" name="" value=""></div>
+  <div class="answer-button-d"><input type="submit" name="" value=""></div>
   <input type="hidden" name="result[user_id]" value="<%= current_user.id %>"></div>
   <input type="hidden" name="result[question_id]" value="<%= @question.id %>"></div>
 <!-- < %= f.label :your_result%>:
