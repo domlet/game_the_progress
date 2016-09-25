@@ -30,6 +30,7 @@ gem 'devise'
 gem 'faker'
 gem 'roo'
 
+# gem 'google-webfonts-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
