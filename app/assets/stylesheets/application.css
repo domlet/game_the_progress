@@ -255,6 +255,15 @@ h5 {
     min-height: 5em;
   }
 
+  input[type=email] {
+    /* for text fields for student devise views */
+      padding:.2em; 
+      border:.2em solid #ccc; 
+      -webkit-border-radius: 1em;
+      border-radius: .2em;
+      font-size: 1.8em;
+  }
+
   input[type=text] {
     /* for text fields for student devise views */
       padding:.2em; 
