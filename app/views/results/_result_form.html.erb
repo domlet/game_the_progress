@@ -5,25 +5,17 @@ function myFunction() {
     var b = $("#answer-buttons-b").html();
     var c = $("#answer-buttons-c").html();
     var d = $("#answer-buttons-d").html();
-    console.log(a)
-    console.log(b)
-    console.log(c)
-    console.log(d)
     $(".answer-button-a input").attr("name", 'a');
     $(".answer-button-b input").attr("name", 'b');
     $(".answer-button-c input").attr("name", 'c');
     $(".answer-button-d input").attr("name", 'd');
-
+    // assigns the correct answer IDs
     $(".answer-button-a input").attr("value", a);
     $(".answer-button-b input").attr("value", b);
     $(".answer-button-c input").attr("value", c);
     $(".answer-button-d input").attr("value", d);
 }
 </script>
-
-<!-- OLD FASHIONED FORM -->
-<form action="/results" method="POST">
-</form>
 
 <!-- RAILS FORM -->
 <%=form_for result, remote: true, authenticity_token: true do |f|%>
@@ -33,14 +25,8 @@ function myFunction() {
   <div onclick='myFunction()' class="answer-button-d"><input type="submit" name="" value=""></div>
   <input type="hidden" name="result[user_id]" value="<%= current_user.id %>"></div>
   <input type="hidden" name="result[question_id]" value="<%= @question.id %>"></div>
-<!-- < %= f.label :your_result%>:
-     < %= f.text_area :content, class: "form-control", data: {textarea: "result"}%> -->
 
   <%=f.hidden_field :user_id, value: current_user.id %>
   <%=f.hidden_field :question_id, value: @question.id %>
 
-  <div class="answer-button">< %= f.submit "A", class: "btn btn-primary", data: {send: "result"} %></div>
-  <div class="answer-button">< %= f.submit "B", class: "btn btn-primary", data: {send: "result"} %></div>
-  <div class="answer-button">< %= f.submit "C", class: "btn btn-primary", data: {send: "result"} %></div>
-  <div class="answer-button">< %= f.submit "D", class: "btn btn-primary", data: {send: "result"} %></div>
 <%end%>
