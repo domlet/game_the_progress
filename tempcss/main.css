@@ -133,7 +133,8 @@ input[type=submit] {
 }
 
 h1 {
-  font-family: Phosphate, Helvetica, Arial, sans-serif;
+  font-family: 'Bungee Inline', cursive;
+  /*font-family: Phosphate, Helvetica, Arial, sans-serif;*/
   font-size: 3em;
   text-align: center;
 }
@@ -225,7 +226,7 @@ h2 {
   }
 
   .infobutton {
-    background: #66fifff;
+    background: #66ffff;
   }
 
 }
