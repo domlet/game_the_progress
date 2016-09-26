@@ -1,0 +1,36 @@
+<div class="main">
+  <% if current_user %>
+
+  <h1><%= current_user.first_name %> <%= current_user.last_name %></h1>
+
+  <table>
+    <tr>
+      <th>Username:</th>
+      <td><%= current_user.username %></td>
+    </tr>
+    <tr>
+      <th>Email:</th>
+      <td><%= current_user.email %></td>
+    </tr>
+    <tr>
+      <th>Role:</th>
+      <td>    <% if current_user.is_admin == true%>Game Host
+        <% else %>Player
+        <% end %>
+      </td>
+    </tr>
+  </table>
+<p>
+<%= link_to "Logout", destroy_user_session_path, method: :delete %> 
+</p>
+  <% if current_user == true %>
+    <% @games.each do |game| %>
+    <!-- <link_to "Profile", game_path(@game)> -->
+    <li><a href=""><%= game.title %></a></li>
+    <% end %>
+  <% end %>
+
+
+
+  <% end %>
+</div>
