@@ -154,7 +154,7 @@ h2 {
 @media only screen and (max-width: 500px) {
 
   body {
-    background: red;
+    background: #fff;
   }
 
   .form {
@@ -191,7 +191,7 @@ h2 {
   input[type=submit] {
     border-radius: .2em;
     padding: .3em;
-    font-size: 4em;
+    font-size: 3em;
     font-weight: 800;
   }
 
@@ -210,3 +210,6 @@ h2 {
 }
 
 
+.answer-button-a, .answer-button-b, .answer-button-c, .answer-button-d {
+  display: inline;
+}

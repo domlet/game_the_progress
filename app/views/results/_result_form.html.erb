@@ -1,11 +1,28 @@
+<!-- when user clicks a button -->
+<script>
+function getId() {
+    var a = $("#answer-buttons-a").html();
+    var b = $("#answer-buttons-b").html();
+    var c = $("#answer-buttons-c").html();
+    var d = $("#answer-buttons-d").html();
+    // assigns the correct answer IDs
+    $(".answer-button-a input").attr("name", a);
+    $(".answer-button-b input").attr("name", b);
+    $(".answer-button-c input").attr("name", c);
+    $(".answer-button-d input").attr("name", d);
+}
+</script>
+
+<!-- RAILS FORM -->
 <%=form_for result, remote: true, authenticity_token: true do |f|%>
-<!-- < %= f.label :your_result%>:
-  < %= f.text_area :content, class: "form-control", data: {textarea: "result"}%> -->
+  <div onclick='getId()' class="answer-button-a"><input type="submit" name="" value="a"></div>
+  <div onclick='getId()' class="answer-button-b"><input type="submit" name="" value="b"></div>
+  <div onclick='getId()' class="answer-button-c"><input type="submit" name="" value="c"></div>
+  <div onclick='getId()' class="answer-button-d"><input type="submit" name="" value="d"></div>
+  <input type="hidden" name="result[user_id]" value="<%= current_user.id %>"></div>
+  <input type="hidden" name="result[question_id]" value="<%= @question.id %>"></div>
 
   <%=f.hidden_field :user_id, value: current_user.id %>
   <%=f.hidden_field :question_id, value: @question.id %>
 
-
-  <%= f.submit "A", class: "btn btn-primary", style: "display: inline", data: {send: "result"} %>
-  <%= f.submit "B", class: "btn btn-primary", style: "display: inline", data: {send: "result"} %>
 <%end%>
