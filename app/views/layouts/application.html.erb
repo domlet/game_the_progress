@@ -16,7 +16,9 @@
   Hello, <%= current_user.first_name %>!
   <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
   <%end%>
+
     <%= yield %>
+
     </div>
   </body>
 </html>

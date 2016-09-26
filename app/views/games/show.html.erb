@@ -3,6 +3,8 @@
 <!-- GAME TITLE -->
 <h1><%= @game.title %></h1>
 
+
+
 <!-- QUESTION TEXT -->
 <hr>QUESTION:
 <!-- renderQuestion -->
@@ -28,6 +30,7 @@
 <!-- NEXT BUTTON -->
 <%= render partial: 'questions/question_form', locals: {question: @question} %>
 
+<% if current_user.is_admin %>
 <!-- RESULTS (IF ANY) -->
 <hr>STUDENT RESPONSES:
 <div>
@@ -39,4 +42,5 @@
   <div class="panel-body hidden" id="results"></div>
   <%end%>
 </div>
+<%end%>
 
