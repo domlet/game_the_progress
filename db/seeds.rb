@@ -14,6 +14,16 @@ Result.delete_all
 # SEQUENCE/ORDER IS IMPORTANT #
 ###############################
 
+User.create!(
+    first_name:"Shenesha",
+    last_name:"Martinez",
+    username:'studentuser',
+    email:'student@devbootcamp.com',
+    password:'123456',
+    is_admin: false
+  )
+end
+
 10.times do
 User.create!(
     first_name:Faker::GameOfThrones.character,
