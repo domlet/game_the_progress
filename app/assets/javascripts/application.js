@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree ./channels
-//= require games
 //= require d3
-// require_tree .
+//= require games
+//= require_tree .
+//= require_tree ./channels
