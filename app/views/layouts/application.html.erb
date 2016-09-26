@@ -8,20 +8,23 @@
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina|Bungee|Ubuntu" rel="stylesheet">
 </head>
 
 <body>
   <div class="container">
 
+  <h5 class="current-user">
     <% if current_user %>
     <% if current_user.is_admin == true %>
     <b>Game Host:</b>
     <% elsif current_user.is_admin != true %>
     <b>Player:</b>
     <%end%>
-    <%= current_user.first_name %> |
-    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+    <%= current_user.first_name %>
+    
     <%end%>
+  </h5>
 
 
     <%= yield %>

@@ -1,45 +1,71 @@
-<%= link_to "Home", games_path %> | Games#Show
+<% if current_user.is_admin %>
+  <h5 class="home-button"><%= link_to "Home", games_path %> | Games#Show</h5>
+<% end %>
+<!--div class="game-the-progress">GAME THE PROGRESS &copy; 2016</div-->
 
 <!-- GAME TITLE -->
-<h1><%= @game.title %></h1>
-
+<br>
+<h4><%= @game.title %></h4>
 
 
 <!-- QUESTION TEXT -->
-<hr>QUESTION:
+
 <!-- renderQuestion -->
-<div id='questions'><p><%= @question.text %></p></div>
+<h3><div id='questions'><p><%= @question.text %></p></div></h3>
 <%= render partial: 'questions/question', collection: @question %>
 
 <!-- ANSWERS TEXT -->
-<hr>ANSWERS:
-<div id="answers">
-  <p><%= @question.answers[0].text%></p>
-  <p><%= @question.answers[1].text%></p>
-  <p><%= @question.answers[2].text%></p>
-</div>
+<% if current_user.is_admin %>
+  <div id="answers">
+    <p><%= @question.answers[0].text%></p>
+    <p><%= @question.answers[1].text%></p>
+    <p><%= @question.answers[2].text%></p>
+    <p><%= @question.answers[2].text%></p>
+  </div>      
 
-<!-- ANSWER BUTTONS -->
-<!-- These hit a Results 'POST' route -->
-<div id='answer-buttons-a' style="display:none"></div>
-<div id='answer-buttons-b' style="display:none"></div>
-<div id='answer-buttons-c' style="display:none"></div>
-<div id='answer-buttons-d' style="display:none"></div>
-<%= render partial: 'results/result_form', locals: {result: @result, game: @game}%>
+<!-- 
+    <table class="table-quiz-display">
+  <tr>
+    <td class="quiz-display one"><p>< %= @question.answers[0].text%></p></td>
+    <td class="quiz-display two"><p>< %= @question.answers[1].text%></p></td>
+  </tr>
+  <tr>
+    <td class="quiz-display three"><p>< %= @question.answers[2].text%></p></td>
+    <td class="quiz-display four"><p></p></td>
+    
+  </tr>
+  </table> -->
+
+<% end %>
+
+  
+
+
+  <!-- ANSWER BUTTONS -->
+  <!-- These hit a Results 'POST' route -->
+  <div id='answer-buttons-a' style="display:none"></div>
+  <div id='answer-buttons-b' style="display:none"></div>
+  <div id='answer-buttons-c' style="display:none"></div>
+  <div id='answer-buttons-d' style="display:none"></div>
+
 
 <% if current_user.is_admin %>
 <!-- NEXT BUTTON -->
 <%= render partial: 'questions/question_form', locals: {question: @question} %>
-<!-- RESULTS (IF ANY) -->
-<hr>STUDENT RESPONSES:
-<div>
-  <% if @question.results.any? %>
-  <div class="panel-body" id="results">
-    <%= render partial: 'results/result', collection: @question.results %>
-  </div>
-  <%else%>
-  <div class="panel-body hidden" id="results"></div>
-  <%end%>
-</div>
-<%end%>
 
+
+<% else %>
+  <%= render partial: 'results/result_form', locals: {result: @result, game: @game}%>
+<% end %>
+
+<!-- RESULTS (IF ANY) -->
+<!-- <hr>STUDENT RESPONSES:
+<div>
+  < % if @question.results.any? %>
+  <div class="panel-body" id="results">
+    < %= render partial: 'results/result', collection: @question.results %>
+  </div>
+  < %else%>
+  <div class="panel-body hidden" id="results"></div>
+  < %end%>
+</div> -->

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :results
   resources :questions
   resources :answers
+  resources :users, only: [:show, :edit]
 
   get 'graph/index'
   get 'graph/data', defaults: { format: 'json' }

@@ -15,10 +15,26 @@ function getId() {
 
 <!-- RAILS FORM -->
 <%=form_for result, remote: true, authenticity_token: true do |f|%>
-  <div onclick='getId()' class="answer-button-a"><input type="submit" name="" value="a"></div>
-  <div onclick='getId()' class="answer-button-b"><input type="submit" name="" value="b"></div>
-  <div onclick='getId()' class="answer-button-c"><input type="submit" name="" value="c"></div>
-  <div onclick='getId()' class="answer-button-d"><input type="submit" name="" value="d"></div>
+
+  <table class="student-table-quiz-display">
+  <tr>
+    <td class="quiz-display">
+      <div onclick='getId()' class="answer-button-a"><input type="submit" class="game-a" name="" value="a"></div>
+    </td>
+    <td class="quiz-display">
+      <div onclick='getId()' class="answer-button-b"><input type="submit" class="game-b" name="" value="b"></div>
+    </td>
+  </tr>
+  <tr>
+    <td class="quiz-display">
+      <div onclick='getId()' class="answer-button-c"><input type="submit" class="game-c" name="" value="c"></div>
+    </td>
+    <td class="quiz-display">
+      <div onclick='getId()' class="answer-button-d"><input type="submit" class="game-d" name="" value="d"></div>
+    </td>
+  </tr>
+  </table>  
+
   <input type="hidden" name="result[user_id]" value="<%= current_user.id %>"></div>
   <input type="hidden" name="result[question_id]" value="<%= @question.id %>"></div>
 
