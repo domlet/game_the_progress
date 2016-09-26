@@ -401,5 +401,19 @@ h5 {
 
 }
 
+// GAME INDEX PAGE
 
+#games-index p {
+  background-color: white;
+  font-size: 3em;
+}
+
+#games-index span {
+  background-color: red;
+  color: white;
+}
+
+#games-index a {
+  text-decoration: none;
+}
 
