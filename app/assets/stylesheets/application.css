@@ -53,6 +53,12 @@ body {
   margin-right:auto;
 }
 
+.student-table-quiz-display{
+  margin-left:auto; 
+  margin-right:auto;
+  padding: 2em;
+}
+
 .table-timer{
   margin-left:auto; 
   margin-right:auto;
@@ -62,7 +68,7 @@ body {
   text-align: center;
   width: 300px;
   height: 150px;
-  border: 1px solid black;
+  border: 0px solid black;
   border-collapse: collapse;
   font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
   font-size: 1.3em;
@@ -165,6 +171,45 @@ input[type=submit].game-a {
   font-weight: 800;
   width: 300px;
   height: 160px;
+  box-shadow: inset 0px 0px 6px #fff;
+  -webkit-box-shadow: inset 0px 0px 6px #fff;
+  border: 1px solid #5ea617;
+}
+
+input[type=submit].game-b {
+  background: #cccc00;
+  border-radius: .5em;
+  font-size: 1em;
+  font-weight: 800;
+  width: 300px;
+  height: 160px;
+  box-shadow: inset 0px 0px 6px #fff;
+  -webkit-box-shadow: inset 0px 0px 6px #fff;
+  border: 1px solid #5ea617;
+}
+
+input[type=submit].game-c {
+  background: #00cccc;
+  border-radius: .5em;
+  font-size: 1em;
+  font-weight: 800;
+  width: 300px;
+  height: 160px;
+  box-shadow: inset 0px 0px 6px #fff;
+  -webkit-box-shadow: inset 0px 0px 6px #fff;
+  border: 1px solid #5ea617;
+}
+
+input[type=submit].game-d {
+  background: #cc0000;
+  border-radius: .5em;
+  font-size: 1em;
+  font-weight: 800;
+  width: 300px;
+  height: 160px;
+  box-shadow: inset 0px 0px 6px #fff;
+  -webkit-box-shadow: inset 0px 0px 6px #fff;
+  border: 1px solid #5ea617;
 }
 
 input[type=submit] {
