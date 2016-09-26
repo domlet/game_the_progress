@@ -13,15 +13,15 @@
   <div class="container">
 
     <% if current_user %>
-    <% if current_user.is_admin == true %>
-    <b>Game Host:</b>
-    <% elsif current_user.is_admin != true %>
-    <b>Player:</b>
-    <%end%>
+      <% if current_user.is_admin == true %>
+      <b>Game Host:</b>
+      <% elsif current_user.is_admin != true %>
+      <b>Player:</b>
+      <%end%>
     <%= current_user.first_name %> |
-    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+    <%= link_to "Logout", destroy_user_session_path, method: :delete %> |
+    <%= link_to "Games", games_path %>
     <%end%>
-
 
     <%= yield %>
 
