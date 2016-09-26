@@ -8,11 +8,22 @@ class ResultsController < ApplicationController
   end
 
   def create
+    p params
+    p "*" * 50
     p result = Result.new(result_params)
     # Conveys the answer that the student selected
     p result.student_answer_id = params[:a]
-    p params
-    p "*" * 50
+
+    if params.values.include?('a')
+      result.student_answer_id = params.key('a')
+    elsif params.values.include?('b')
+      result.student_answer_id = params.key('b')
+    elsif params.values.include?('c')
+      result.student_answer_id = params.key('c')
+    elsif params.values.include?('d')
+      result.student_answer_id = params.key('d')
+    end
+
     if result.save
       p "Result was saved"
       # test seed data

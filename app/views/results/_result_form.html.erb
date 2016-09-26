@@ -1,6 +1,6 @@
 <!-- when user clicks a button -->
 <script>
-function myFunction() {
+function getId() {
     var a = $("#answer-buttons-a").html();
     var b = $("#answer-buttons-b").html();
     var c = $("#answer-buttons-c").html();
@@ -9,24 +9,25 @@ function myFunction() {
     console.log(b)
     console.log(c)
     console.log(d)
-    $(".answer-button-a input").attr("name", 'a');
-    $(".answer-button-b input").attr("name", 'b');
-    $(".answer-button-c input").attr("name", 'c');
-    $(".answer-button-d input").attr("name", 'd');
     // assigns the correct answer IDs
-    $(".answer-button-a input").attr("value", a);
-    $(".answer-button-b input").attr("value", b);
-    $(".answer-button-c input").attr("value", c);
-    $(".answer-button-d input").attr("value", d);
+    $(".answer-button-a input").attr("value", 'a');
+    $(".answer-button-b input").attr("value", 'b');
+    $(".answer-button-c input").attr("value", 'c');
+    $(".answer-button-d input").attr("value", 'd');
+    //
+    $(".answer-button-a input").attr("name", a);
+    $(".answer-button-b input").attr("name", b);
+    $(".answer-button-c input").attr("name", c);
+    $(".answer-button-d input").attr("name", d);
 }
 </script>
 
 <!-- RAILS FORM -->
 <%=form_for result, remote: true, authenticity_token: true do |f|%>
-  <div onclick='myFunction()' class="answer-button-a"><input type="submit" name="" value=""></div>
-  <div onclick='myFunction()' class="answer-button-b"><input type="submit" name="" value=""></div>
-  <div onclick='myFunction()' class="answer-button-c"><input type="submit" name="" value=""></div>
-  <div onclick='myFunction()' class="answer-button-d"><input type="submit" name="" value=""></div>
+  <div onclick='getId()' class="answer-button-a"><input type="submit" name="" value="a"></div>
+  <div onclick='getId()' class="answer-button-b"><input type="submit" name="" value="b"></div>
+  <div onclick='getId()' class="answer-button-c"><input type="submit" name="" value="c"></div>
+  <div onclick='getId()' class="answer-button-d"><input type="submit" name="" value="d"></div>
   <input type="hidden" name="result[user_id]" value="<%= current_user.id %>"></div>
   <input type="hidden" name="result[question_id]" value="<%= @question.id %>"></div>
 
