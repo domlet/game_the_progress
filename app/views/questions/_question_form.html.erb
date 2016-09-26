@@ -6,5 +6,5 @@
   <%=f.hidden_field :game_id, value: @game.id %>
 
 
-  <%= f.submit "next", class: "btn btn-primary", style: "display: inline", data: {send: "question"} %>
+  <p class="center"><%= f.submit "next", class: "next", data: {send: "question"} %></p>
 <%end%>
