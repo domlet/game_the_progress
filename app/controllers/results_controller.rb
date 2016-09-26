@@ -24,8 +24,17 @@ class ResultsController < ApplicationController
       result.student_answer_id = params.key('d')
     end
 
+    # Check if answer is correct
+    if result.student_answer_id == Question.find(result.question_id).correct_answer_id
+      result.is_correct = true
+    else
+      result.is_correct = false
+    end
+
     if result.save
       p "Result was saved"
+      p result
+      p "*" * 50
       # test seed data
       ActionCable.server.broadcast 'results',
         answer: result.student_answer_id,
