@@ -14,7 +14,7 @@ class GraphController < ApplicationController
     p true_count
     p false_count
     p boolean_array
-    render json: [true_count.to_i, false_count.to_i]
+    render json: [true_count, false_count]
     # respond_to do |format|
     #   format.json {
     #     render :json => [1,2,3,4,5]
