@@ -13,17 +13,15 @@ $.ajax({
 
 function draw(data) {
     console.log(data);
-    var color = d3.schemeCategory20b;
     var width = 420,
         barHeight = 20;
 
-    var x = d3.scaleLinear()
+    var xGenerate = d3.scaleLinear()
         .range([0, width])
-        .domain([0, d3.max(data)]);
+        .domain([0, 10]);
 
     var chart = d3.select("#graph")
         .attr("width", width)
-        .attr("height", barHeight * data.length);
 
     var bar = chart.selectAll("g")
         .data(data)
@@ -33,13 +31,13 @@ function draw(data) {
               });
 
     bar.append("rect")
-        .attr("width", x)
+        .attr("width", xGenerate)
         .attr("height", barHeight - 1)
         .style("fill", "green")
 
     bar.append("text")
         .attr("x", function (d) {
-                  return x(d) - 10;
+                  return xGenerate(d) - 10;
               })
         .attr("y", barHeight / 2)
         .attr("dy", ".35em")
