@@ -3,7 +3,7 @@ class GraphController < ApplicationController
   end
 
   def data
-    # Need to make results specific to a game, not all database results
+    # These results show 2 bars for true and false in a game
     @results = Result.all
     boolean_array = @results.map do |result|
       result.is_correct
@@ -23,7 +23,15 @@ class GraphController < ApplicationController
     # end
   end
 
-  # def question_results
-
-  # end
+  def user_results
+    @users = User.all
+    @users.each do |user|
+      indiv_results = []
+      if user.is_admin == false
+        indiv_results.push(user)
+      end
+      p indiv_results
+      p user.results
+    end
+  end
 end
