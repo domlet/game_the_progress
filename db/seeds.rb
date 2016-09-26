@@ -22,7 +22,6 @@ User.create!(
     password:'123456',
     is_admin: false
   )
-end
 
 10.times do
 User.create!(
