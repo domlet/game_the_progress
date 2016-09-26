@@ -1,7 +1,15 @@
+<div id="games-index">
+
 <h1>Games Index</h1>
 
+<!-- Link for developers only: < %= link_to "Game 1 (only click if logged in)", game_path(@games[0]) %> -->
+
 <ul>
-  <li><%= link_to "Game 1 (only click if logged in)", game_path(@games[0]) %></li>
-  <li><%= link_to "Login", new_user_session_path %></li>
-  <li><%= link_to "Register", new_user_registration_path %></li>
+  <% @games.each do |game| %>
+  <a href="games/<%= game.id %>">
+  <div><span id="game_id">#<%= game.id %></span> <%= game.title %> - <%= game.subject %></div>
+  </a>
+  <% end %>
 </ul>
+
+</div>

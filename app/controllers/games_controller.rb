@@ -1,7 +1,11 @@
 class GamesController < ApplicationController
 
   def index
-    @games = Game.all
+    if current_user == nil
+      redirect_to new_user_session_path
+    else
+      @games = Game.all
+    end
   end
 
   def show
