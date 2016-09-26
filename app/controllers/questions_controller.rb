@@ -16,7 +16,8 @@ class QuestionsController < ApplicationController
       @question = @questions[current_index + 1]
     end
 
-    # This is the publisher (sends stuff out):
+    # This is publisher (sends stuff out)
+    # Triggered when 'next' button is clicked
     ActionCable.server.broadcast 'questions',
     answer_options: @question.answers,
     question_text: @question.text,

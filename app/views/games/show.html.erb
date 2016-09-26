@@ -10,6 +10,13 @@
 <hr>QUESTION:
 <!-- renderQuestion -->
 <div id='questions'><p><%= @question.text %></p></div>
+
+<ol>
+<% @questions.each do |question| %>
+<li><%= question.text %></li>
+<% end %>
+</ol>
+
 <%= render partial: 'questions/question', collection: @question %>
 
 <!-- ANSWERS TEXT -->
@@ -44,5 +51,4 @@
 <% else %>
 
 <%= render partial: 'results/result_form', locals: {result: @result, game: @game}%>
-<%end%>
-
+<% end %>
