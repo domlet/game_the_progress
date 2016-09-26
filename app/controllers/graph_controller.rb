@@ -3,6 +3,7 @@ class GraphController < ApplicationController
   end
 
   def data
+    # Need to make results specific to a game, not all database results
     @results = Result.all
     boolean_array = @results.map do |result|
       result.is_correct
@@ -20,5 +21,9 @@ class GraphController < ApplicationController
     #     render :json => [1,2,3,4,5]
     #   }
     # end
+  end
+
+  def question_results
+    @
   end
 end

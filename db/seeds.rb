@@ -40,12 +40,11 @@ Category.create!(
   )
 end
 
-20.times do
+
 Game.create!(
     title:Faker::StarWars.quote,
     subject:Faker::Book.genre
   )
-end
 
 # TEST GAME - QUESTIONS
 10.times do |x|
@@ -60,7 +59,7 @@ end
 10.times do |x|
 Answer.create!(
     text:Faker::StarWars.quote,
-    question_id: (x % 4) + 1
+    question_id: x + 1
   )
 end
 
