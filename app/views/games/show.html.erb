@@ -27,12 +27,14 @@
   <p><%= @question.answers[2].text%></p>
 </div>
 
-<!-- ANSWER BUTTONS -->
-<!-- These hit a Results 'POST' route -->
-<div id='answer-buttons-a' style="display:none"></div>
-<div id='answer-buttons-b' style="display:none"></div>
-<div id='answer-buttons-c' style="display:none"></div>
-<div id='answer-buttons-d' style="display:none"></div>
+<!-- Invisible divs to store answer ids -->
+<div id='answer-buttons-a' style="display:inline"></div>
+<div id='answer-buttons-b' style="display:inline"></div>
+<div id='answer-buttons-c' style="display:inline"></div>
+<div id='answer-buttons-d' style="display:inline"></div>
+
+<!-- This is an invisible div that stores the current question id: -->
+<div id='current-question' style="display:inline"></div>
 
 <% if current_user.is_admin %>
 <!-- NEXT BUTTON -->
@@ -45,10 +47,12 @@
     <%= render partial: 'results/result', collection: @question.results %>
   </div>
   <%else%>
+  <!-- This is the div that will hold the abcd answer buttons -->
   <div class="panel-body hidden" id="results"></div>
   <%end%>
 </div>
 <% else %>
 
+<!-- ANSWER BUTTONS -->
 <%= render partial: 'results/result_form', locals: {result: @result, game: @game}%>
 <% end %>

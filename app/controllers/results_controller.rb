@@ -9,14 +9,14 @@ class ResultsController < ApplicationController
 
   def create
     p params
+    # if Result.where("question_id = ? AND user_id = ?", params[:result][:question_id], params[:result][:user_id])
+    #   flash[:notice] = "You have already submitted one answer." # TODO: ajax this
+    #   p "been there, done that"
+    #   return
+    # end
     p "*" * 50
     p result = Result.new(result_params)
-
-    if Result.where("question_id = ? AND user_id = ?", result.question_id, result.user_id)
-      flash[:notice] = "You have already submitted one answer." # TODO: ajax this
-      p "been there, done that"
-      return
-    end
+    p Result.all
 
     # Submit the player's answer to the database
     if params.values.include?('a')

@@ -5,6 +5,7 @@
     var b = $("#answer-buttons-b").html();
     var c = $("#answer-buttons-c").html();
     var d = $("#answer-buttons-d").html();
+    console.log(b);
     // assigns the correct answer IDs
     $(".answer-button-a input").attr("name", a);
     $(".answer-button-b input").attr("name", b);
@@ -16,18 +17,10 @@
 <!-- RAILS FORM -->
 <%=form_for result, remote: true, authenticity_token: true do |f|%>
 
-<div onclick='getId()' class="answer-button-a">
-  <input type="submit" name="" value="a">
-</div>
-<div onclick='getId()' class="answer-button-b">
-  <input type="submit" name="" value="b">
-</div>
-<div onclick='getId()' class="answer-button-c">
-  <input type="submit" name="" value="c">
-</div>
-<div onclick='getId()' class="answer-button-d">
-  <input type="submit" name="" value="d">
-</div>
+<div onclick='getId()' class="answer-button-a"><input type="submit" name="" value="A"></div>
+<div onclick='getId()' class="answer-button-b"><input type="submit" name="" value="B"></div>
+<div onclick='getId()' class="answer-button-c"><input type="submit" name="" value="C"></div>
+<div onclick='getId()' class="answer-button-d"><input type="submit" name="" value="D"></div>
 
 <input type="hidden" name="result[user_id]" value="<%= current_user.id %>">
 <input type="hidden" name="result[question_id]" value="<%= @question.id %>">

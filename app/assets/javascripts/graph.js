@@ -1,52 +1,52 @@
-$.ajax({
-           type: "GET",
-           contentType: "application/json; charset=utf-8",
-           url: 'data',
-           dataType: 'json',
-           success: function (data) {
-               draw(data);
-           },
-           error: function (result) {
-               error();
-           }
-       });
+// $.ajax({
+//            type: "GET",
+//            contentType: "application/json; charset=utf-8",
+//            url: 'data',
+//            dataType: 'json',
+//            success: function (data) {
+//                draw(data);
+//            },
+//            error: function (result) {
+//                error();
+//            }
+//        });
 
-function draw(data) {
-    console.log(data);
-    var width = 420,
-        barHeight = 20;
+// function draw(data) {
+//     console.log(data);
+//     var width = 420,
+//         barHeight = 20;
 
-    var xGenerate = d3.scaleLinear()
-        .range([0, width])
-        .domain([0, 10]);
+//     var xGenerate = d3.scaleLinear()
+//         .range([0, width])
+//         .domain([0, 10]);
 
-    var chart = d3.select("#graph")
-        .attr("width", width)
+//     var chart = d3.select("#graph")
+//         .attr("width", width)
 
-    var bar = chart.selectAll("g")
-        .data(data)
-        .enter().append("g")
-        .attr("transform", function (d, i) {
-                  return "translate(0," + i * barHeight + ")";
-              });
+//     var bar = chart.selectAll("g")
+//         .data(data)
+//         .enter().append("g")
+//         .attr("transform", function (d, i) {
+//                   return "translate(0," + i * barHeight + ")";
+//               });
 
-    bar.append("rect")
-        .attr("width", xGenerate)
-        .attr("height", barHeight - 1)
-        .style("fill", "green")
+//     bar.append("rect")
+//         .attr("width", xGenerate)
+//         .attr("height", barHeight - 1)
+//         .style("fill", "green")
 
-    bar.append("text")
-        .attr("x", function (d) {
-                  return xGenerate(d) - 10;
-              })
-        .attr("y", barHeight / 2)
-        .attr("dy", ".35em")
-        .style("fill", "white")
-        .text(function (d) {
-                  return d;
-              });
-}
+//     bar.append("text")
+//         .attr("x", function (d) {
+//                   return xGenerate(d) - 10;
+//               })
+//         .attr("y", barHeight / 2)
+//         .attr("dy", ".35em")
+//         .style("fill", "white")
+//         .text(function (d) {
+//                   return d;
+//               });
+// }
 
-function error() {
-    console.log("error")
-}
+// function error() {
+//     console.log("error")
+// }

@@ -6,6 +6,8 @@ class GamesController < ApplicationController
 
   def show
     if current_user
+      p "in games controller"
+      p params
       @game = Game.find_by(id: params[:id])
       @questions = Question.where(game_id: @game.id)
       @question = @questions[0] # starts at 0 but is updated dynamically

@@ -3,11 +3,12 @@ class QuestionsController < ApplicationController
   def update
     p "We hit the route!!!"
     p params
-    p @game = Game.find(params[:question][:game_id])
-    p @questions = @game.questions
-    p current_question = Question.find(params[:question][:question_id].to_i)
+    p "*" * 50
+    @game = Game.find(params[:id])
+    @questions = @game.questions
+    current_question_id = (params.key('current_question_id')).to_i
+    current_question = Question.find(current_question_id)
     current_index = @questions.find_index(current_question)
-    p current_index
 
     # Enables first question to be answered
     if current_index == 0
@@ -19,9 +20,9 @@ class QuestionsController < ApplicationController
     # This is publisher (sends stuff out)
     # Triggered when 'next' button is clicked
     ActionCable.server.broadcast 'questions',
-    answer_options: @question.answers,
-    question_text: @question.text,
-    question_id: @question.id
+        answer_options: @question.answers,
+        question_text: @question.text,
+        question_id: @question.id
     head :ok
   end
 

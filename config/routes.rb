@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   resources :questions
   resources :answers
 
-  get 'graph/index'
-  get 'graph/data', defaults: { format: 'json' }
+  # get 'graph/index'
+  # get 'graph/data', defaults: { format: 'json' }
 
   root to: 'games#index'
 

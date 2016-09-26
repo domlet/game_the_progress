@@ -1,11 +1,35 @@
+<script>
+  function getCurrentQuestion() {
+    var currentQuestionId = $("#current-question").html();
+    // assigns the correct answer IDs
+    $(".next-button-form form").attr("action", "/questions/1");
+    $(".question_id_hidden_field input").attr("name", "1");
+  }
+</script>
+
 <!-- THE NEXT BUTTON -->
 
 <!-- @question comes from games#show which gets from games#controller -->
 
-<%=form_for @question, url: question_path(@question), html: {method: "patch"}, remote: true, authenticity_token: true do |f|%>
 
-  <%=f.hidden_field :question_id, value: @question.id %>
-  <%=f.hidden_field :game_id, value: @game.id %>
 
-  <%= f.submit "next", class: "btn btn-primary", data: {send: "question"} %>
-<%end%>
+<div class="next-button-form"><form action="" method="POST">
+  <input type="hidden" name="_method" value="put">
+  <div class="question_id_hidden_field"><input type="hidden" name="whyyyyyy" value="current_question_id"></div>
+
+  <div onclick='getCurrentQuestion()'><input type="submit" value="next"></div>
+</form></div>
+
+
+<!-- < %=form_for @question, url: question_path(@question), html: {method: "patch"}, remote: true, authenticity_token: true do |f|%>
+ -->
+
+
+<!--   <div id="hidden-question-field">
+    <input type="hidden" name="question[question_id]" value="">
+  </div>
+
+  <div onclick='getCurrentQuestion()' class="next-button">
+    <input type="submit" value="next"> -->
+<!--   </div> -->
+<!-- < %end%> -->

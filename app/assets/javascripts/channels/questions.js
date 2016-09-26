@@ -11,10 +11,16 @@ App.questions = App.cable.subscriptions.create('QuestionsChannel', {
     $('#answer-buttons-b').html(data.answer_options[1].id); // Gives the new answerId to the result form partial
     $('#answer-buttons-c').html(data.answer_options[2].id); // Gives the new answerId to the result form partial
     // $('#answer-buttons-d').html(data.answer_options[3].id); // Gives the new answerId to the result form partial
+    $('#current-question').html(data.question_id); // Gives the new answerId to the result form partial
+
     // Now, to render the new buttons correctly populated with the route and new ids
+    console.log("bloop")
     console.log(data.answer_options[0].id)
     console.log(data.answer_options[1].id)
     console.log(data.answer_options[2].id)
+
+    console.log("question id");
+    console.log(data.question_id);
   },
 
   renderQuestion: function(data) {
