@@ -23,7 +23,7 @@ class GraphController < ApplicationController
     # end
   end
 
-  def question_results
-    @
-  end
+  # def question_results
+
+  # end
 end

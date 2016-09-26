@@ -104,129 +104,193 @@ end
   # COMMENT OUT LINES 21-97 TO SEED DB WITH THIS DATA
 #*****************************************************
 
-# creates 1 student users
-User.create!(
-    first_name:"Shenesha",
-    last_name:"Martinez",
-    username:'studentuser',
-    email:'student@devbootcamp.com',
-    password:'123456',
-    is_admin: false
-  )
+# creates 2 student users
+# 2.times do |x|
+# User.create!(
+#     first_name:"Shenesha",
+#     last_name:"Martinez",
+#     username:'studentuser',
+#     email:Faker::Internet.email,
+#     password:'123456',
+#     is_admin: false
+#   )
+# end
 
-# creates one teacher admin user
-User.create!(
-    first_name:Faker::GameOfThrones.character,
-    last_name:Faker::GameOfThrones.house,
-    username:Faker::Internet.user_name,
-    email:Faker::Internet.email,
-    password:Faker::Internet.password,
-    is_admin: true
-  )
+# # creates one teacher admin user
+# User.create!(
+#     first_name:Faker::GameOfThrones.character,
+#     last_name:Faker::GameOfThrones.house,
+#     username:Faker::Internet.user_name,
+#     email:Faker::Internet.email,
+#     password:"123456",
+#     is_admin: true
+#   )
 
-# creates 1 category for all questions in game 1
-Category.create!(
-    name:Faker::Book.genre
-  )
+# # creates 1 category for all questions in game 1
+# Category.create!(
+#     name:Faker::Book.genre
+#   )
 
-# creates a single game
-Game.create!(
-    title:Faker::StarWars.quote,
-    subject:Faker::Book.genre,
-    grade_level: 7
-  )
+# # creates a single game
+# Game.create!(
+#     title:Faker::StarWars.quote,
+#     subject:Faker::Book.genre
+#   )
 
-# creates 5 questions for a single game 1
-5.times do |x|
-Question.create!(
-    text:Faker::StarWars.quote,
-    game_id: 1,
-    category_id: 1,
-    correct_answer_id: 1
-  )
-end
+# # creates 5 questions for a single game 1
+# 5.times do |x|
+# Question.create!(
+#     text:Faker::StarWars.quote,
+#     game_id: 1,
+#     category_id: 1
+#   )
+# end
 
-# creates 4 answers for question 1
-4.times do |x|
-Answer.create!(
-    text:Faker::StarWars.quote,
-    question_id: 1,
-  )
-end
+# # creates 4 answers for question 1
+# 4.times do |x|
+# Answer.create!(
+#     text:Faker::StarWars.quote,
+#     question_id: 1,
+#   )
+# end
 
-# creates 4 answers for question 2
-4.times do |x|
-Answer.create!(
-    text:Faker::StarWars.quote,
-    question_id: 2,
-  )
-end
+# # creates 4 answers for question 2
+# 4.times do |x|
+# Answer.create!(
+#     text:Faker::StarWars.quote,
+#     question_id: 2,
+#   )
+# end
 
-# creates 4 answers for question 3
-4.times do |x|
-Answer.create!(
-    text:Faker::StarWars.quote,
-    question_id: 3,
-  )
-end
+# # creates 4 answers for question 3
+# 4.times do |x|
+# Answer.create!(
+#     text:Faker::StarWars.quote,
+#     question_id: 3,
+#   )
+# end
 
-# creates 4 answers for question 4
-4.times do |x|
-Answer.create!(
-    text:Faker::StarWars.quote,
-    question_id: 4,
-  )
-end
+# # creates 4 answers for question 4
+# 4.times do |x|
+# Answer.create!(
+#     text:Faker::StarWars.quote,
+#     question_id: 4,
+#   )
+# end
 
-# creates 4 answers for question 5
-4.times do |x|
-Answer.create!(
-    text:Faker::StarWars.quote,
-    question_id: 5,
-  )
-end
+# # creates 4 answers for question 5
+# 4.times do |x|
+# Answer.create!(
+#     text:Faker::StarWars.quote,
+#     question_id: 5,
+#   )
+# end
 
-# creates results for game 1, question 1, user 1
-Result.create!(
-    is_correct: true,
-    user_id: 1,
-    question_id: 1,
-    student_answer_id: 1
-  )
+# # updates correct answer for question 1
+# a = Question.find(1)
+#     a.correct_answer_id = 1
+#     a.save
 
-# creates results for game 1, question 2, user 1
-Result.create!(
-    is_correct: false,
-    user_id: 1,
-    question_id: 2,
-    student_answer_id: 1
-  )
+# # updates correct answer for question 2
+# a = Question.find(2)
+#     a.correct_answer_id = 5
+#     a.save
 
-# creates results for game 1, question 3, user 1
-Result.create!(
-    is_correct: false,
-    user_id: 1,
-    question_id: 3,
-    student_answer_id: 1
-  )
+# # updates correct answer for question 3
+# a = Question.find(3)
+#     a.correct_answer_id = 9
+#     a.save
 
-# creates results for game 1, question 4, user 1
-Result.create!(
-    is_correct: true,
-    user_id: 1,
-    question_id: 4,
-    student_answer_id: 4
-  )
+# # updates correct answer for question 4
+# a = Question.find(4)
+#     a.correct_answer_id = 13
+#     a.save
 
-# creates results for game 1, question 5, user 1
-Result.create!(
-    is_correct: false,
-    user_id: 1,
-    question_id: 5,
-    student_answer_id: 4
-  )
+# # updates correct answer for question 5
+# a = Question.find(5)
+#     a.correct_answer_id = 17
+#     a.save
 
+# # creates results for game 1, question 1, user 1
+# Result.create!(
+#     is_correct: true,
+#     user_id: 1,
+#     question_id: 1,
+#     student_answer_id: 1
+#   )
 
+# # creates results for game 1, question 2, user 1
+# Result.create!(
+#     is_correct: false,
+#     user_id: 1,
+#     question_id: 2,
+#     student_answer_id: 6
+#   )
+
+# # creates results for game 1, question 3, user 1
+# Result.create!(
+#     is_correct: false,
+#     user_id: 1,
+#     question_id: 3,
+#     student_answer_id: 10
+#   )
+
+# # creates results for game 1, question 4, user 1
+# Result.create!(
+#     is_correct: true,
+#     user_id: 1,
+#     question_id: 4,
+#     student_answer_id: 13
+#   )
+
+# # creates results for game 1, question 5, user 1
+# Result.create!(
+#     is_correct: false,
+#     user_id: 1,
+#     question_id: 5,
+#     student_answer_id: 18
+#   )
+
+# #****************Results User 2***********************
+# # creates results for game 1, question 1, user 2
+# Result.create!(
+#     is_correct: false,
+#     user_id: 2,
+#     question_id: 1,
+#     student_answer_id: 2
+#   )
+
+# # creates results for game 1, question 2, user 1
+# Result.create!(
+#     is_correct: false,
+#     user_id: 2,
+#     question_id: 2,
+#     student_answer_id: 6
+#   )
+
+# # creates results for game 1, question 3, user 1
+# Result.create!(
+#     is_correct: true,
+#     user_id: 2,
+#     question_id: 3,
+#     student_answer_id: 9
+#   )
+
+# # creates results for game 1, question 4, user 1
+# Result.create!(
+#     is_correct: false,
+#     user_id: 2,
+#     question_id: 4,
+#     student_answer_id: 14
+#   )
+
+# # creates results for game 1, question 5, user 1
+# Result.create!(
+#     is_correct: true,
+#     user_id: 2,
+#     question_id: 5,
+#     student_answer_id: 17
+#   )
 
 
 
