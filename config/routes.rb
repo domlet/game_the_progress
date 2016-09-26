@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get 'graph/index'
   get 'graph/data', defaults: { format: 'json' }
 
-  root to: 'games#index'
+  devise_scope :user do
+    root to: "devise/sessions#new"
+  end
 
 end
