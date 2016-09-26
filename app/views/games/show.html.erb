@@ -4,6 +4,12 @@
 <h1><%= @game.title %></h1>
 
 
+<% if current_user.is_admin %>
+  <div class="host-container"></div>
+<% else %>
+  <div class="player-container"></div>
+<% end %>
+
 
 <!-- QUESTION TEXT -->
 <hr>QUESTION:
