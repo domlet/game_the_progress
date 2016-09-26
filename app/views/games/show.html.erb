@@ -16,19 +16,26 @@
 
 <!-- ANSWERS TEXT -->
 <% if current_user.is_admin %>
-<div id="answers">
-  <table class="table-quiz-display">
+  <div id="answers">
+    <p><%= @question.answers[0].text%></p>
+    <p><%= @question.answers[1].text%></p>
+    <p><%= @question.answers[2].text%></p>
+    <p><%= @question.answers[2].text%></p>
+  </div>      
+
+<!-- 
+    <table class="table-quiz-display">
   <tr>
-    <td class="quiz-display one"><p><%= @question.answers[0].text%></p></td>
-    <td class="quiz-display two"><p><%= @question.answers[1].text%></p></td>
+    <td class="quiz-display one"><p>< %= @question.answers[0].text%></p></td>
+    <td class="quiz-display two"><p>< %= @question.answers[1].text%></p></td>
   </tr>
   <tr>
-    <td class="quiz-display three"><p><%= @question.answers[2].text%></p></td>
+    <td class="quiz-display three"><p>< %= @question.answers[2].text%></p></td>
     <td class="quiz-display four"><p></p></td>
     
   </tr>
-  </table>
-</div>  
+  </table> -->
+
 <% end %>
 
   

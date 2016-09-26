@@ -70,15 +70,42 @@ body {
   display: table;
 }
 
-.quiz-display {
+#answers {
   text-align: center;
-  width: 300px;
+}
+
+#answers p{
+  text-align: center;
+  width: 33%;
   height: 150px;
   border: 0px solid black;
   border-collapse: collapse;
   font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
   font-size: 1.3em;
   text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: .4em;
+  margin: .3em;
+  padding: .7em;
+}
+
+#answers p:nth-child(1) {
+  background-color: #00cc00;
+
+}
+
+#answers p:nth-child(2) {
+  background-color: #cccc00;
+  clear: right;
+}
+
+#answers p:nth-child(3) {
+  background-color: #00cccc;
+}
+
+#answers p:nth-child(4) {
+  background-color: #cc0000;
 }
 
 .student-quiz-display {
@@ -127,21 +154,7 @@ body {
   height: 1em;
 }
 
-.one {
-  background-color: #00cc00;
-}
 
-.two {
-  background-color: #cccc00;
-}
-
-.three {
-  background-color: #00cccc;
-}
-
-.four {
-  background-color: #cc0000;
-}
 
 input[type=email] {
   /* for text fields for student devise views */
