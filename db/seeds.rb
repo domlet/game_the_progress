@@ -1,6 +1,13 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 
+###############################
+# SEQUENCE/ORDER IS IMPORTANT #
+###############################
+
+#**********************************************
+# SEED GROUP 1 (FOR ACTION-CABLE-TESTING)
+#**********************************************
 require 'faker'
 
 Category.delete_all
@@ -10,10 +17,94 @@ Question.delete_all
 Answer.delete_all
 Result.delete_all
 
-###############################
-# SEQUENCE/ORDER IS IMPORTANT #
-###############################
+# One student user id = 1
+User.create!(
+    first_name:"Shenesha",
+    last_name:"Martinez",
+    username:'studentuser',
+    email:'student@devbootcamp.com',
+    password:'123456',
+    is_admin: false
+  )
 
+# 10 admin users, for no particular reason- enjoy
+10.times do
+User.create!(
+    first_name:Faker::GameOfThrones.character,
+    last_name:Faker::GameOfThrones.house,
+    username:Faker::Internet.user_name,
+    email:Faker::Internet.email,
+    password:Faker::Internet.password,
+    is_admin: true
+  )
+end
+
+# Cannot create questions without category
+10.times do
+Category.create!(
+    name:Faker::Book.genre
+  )
+end
+
+# You must create games before questions because
+  # each question is associated with a game
+20.times do
+Game.create!(
+    title:Faker::StarWars.quote,
+    subject:Faker::Book.genre
+  )
+end
+
+# TEST GAME - QUESTIONS FOR GAME 1
+10.times do |x|
+Question.create!(
+    text:Faker::StarWars.quote,
+    game_id: 1,
+    category_id: x + 1
+  )
+end
+
+# TEST GAME - ANSWERS
+10.times do |x|
+Answer.create!(
+    text:Faker::StarWars.quote,
+    question_id: (x % 4) + 1
+  )
+end
+
+#
+10.times do |x|
+Question.create!(
+    text:Faker::StarWars.quote,
+    game_id: x + 2, # skip game 1 (to avoid weirdness)
+    category_id: x + 1
+  )
+end
+
+#
+10.times do |x|
+Answer.create!(
+    text:Faker::StarWars.quote,
+    question_id: x + 11 # avoid 5 answers for first 10 questions
+  )
+end
+
+# Associates first 10 questions with game 1
+10.times do |x|
+Result.create!(
+    is_correct: [true, false].sample,
+    user_id:x + 1,
+    question_id:x + 1,
+    student_answer_id:x + 1,
+  )
+end
+
+#*****************************************************
+# SEED GROUP 2 (FOR D3 TESTING)
+  # COMMENT OUT LINES 21-97 TO SEED DB WITH THIS DATA
+#*****************************************************
+
+#
 User.create!(
     first_name:"Shenesha",
     last_name:"Martinez",
@@ -40,13 +131,11 @@ Category.create!(
   )
 end
 
-
 Game.create!(
     title:Faker::StarWars.quote,
     subject:Faker::Book.genre
   )
 
-# TEST GAME - QUESTIONS
 10.times do |x|
 Question.create!(
     text:Faker::StarWars.quote,
@@ -55,34 +144,17 @@ Question.create!(
   )
 end
 
-# TEST GAME - ANSWERS
-10.times do |x|
-Answer.create!(
-    text:Faker::StarWars.quote,
-    question_id: x + 1
-  )
-end
 
-10.times do |x|
-Question.create!(
-    text:Faker::StarWars.quote,
-    game_id: x + 2, # skip game 1 (to avoid weirdness)
-    category_id: x + 1
-  )
-end
 
-10.times do |x|
-Answer.create!(
-    text:Faker::StarWars.quote,
-    question_id: x + 11 # avoid 5 answers for first 10 questions
-  )
-end
 
-10.times do |x|
-Result.create!(
-    is_correct: [true, false].sample,
-    user_id:x + 1,
-    question_id:x + 1,
-    student_answer_id:x + 1,
-  )
-end
+
+
+
+
+
+
+
+
+
+
+
