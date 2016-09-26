@@ -5,10 +5,17 @@ App.results = App.cable.subscriptions.create('ResultsChannel', {
     $("#results").removeClass('hidden')
     console.log(data)
     return $('#results').append(this.renderResult(data));
+    // return $('.notice').append(this.renderNotice(data)); // muted
   },
 
   renderResult: function(data) {
     console.log('result rendered');
     return "<span> <b>" + data.user + ": </b>" + data.answer + "</span>";
+  },
+
+  // TODO: ajax this
+  renderNotice: function(data) {
+    console.log('notice rendered');
+    return "<span>" + data.notice + "</span>";
   }
 });

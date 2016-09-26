@@ -1,9 +1,12 @@
 <%= link_to "Home", games_path %> | Games#Show
 
+<!-- FLASH MESSAGES -->
+
 <!-- GAME TITLE -->
 <h1><%= @game.title %></h1>
 
-
+<!-- only shows on old page -->
+<div class="notice"></div>
 
 <!-- QUESTION TEXT -->
 <hr>QUESTION:
@@ -25,7 +28,6 @@
 <div id='answer-buttons-b' style="display:none"></div>
 <div id='answer-buttons-c' style="display:none"></div>
 <div id='answer-buttons-d' style="display:none"></div>
-<%= render partial: 'results/result_form', locals: {result: @result, game: @game}%>
 
 <% if current_user.is_admin %>
 <!-- NEXT BUTTON -->
@@ -41,5 +43,8 @@
   <div class="panel-body hidden" id="results"></div>
   <%end%>
 </div>
+<% else %>
+
+<%= render partial: 'results/result_form', locals: {result: @result, game: @game}%>
 <%end%>
 

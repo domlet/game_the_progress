@@ -11,9 +11,14 @@ class ResultsController < ApplicationController
     p params
     p "*" * 50
     p result = Result.new(result_params)
-    # Conveys the answer that the student selected
-    p result.student_answer_id = params[:a]
 
+    if Result.where("question_id = ? AND user_id = ?", result.question_id, result.user_id)
+      flash[:notice] = "You have already submitted one answer." # TODO: ajax this
+      p "been there, done that"
+      return
+    end
+
+    # Submit the player's answer to the database
     if params.values.include?('a')
       result.student_answer_id = params.key('a')
     elsif params.values.include?('b')
