@@ -7,6 +7,7 @@ class QuestionsController < ApplicationController
     p @questions = @game.questions
     p current_question = Question.find(params[:question][:question_id].to_i)
     current_index = @questions.find_index(current_question)
+    p current_index
     @question = @questions[current_index + 1]
     # This is the publisher (sends stuff out):
     ActionCable.server.broadcast 'questions',

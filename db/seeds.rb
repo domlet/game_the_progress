@@ -40,47 +40,42 @@ Category.create!(
   )
 end
 
-10.times do
+20.times do
 Game.create!(
     title:Faker::StarWars.quote,
     subject:Faker::Book.genre
   )
 end
 
+# TEST GAME - QUESTIONS
 10.times do |x|
 Question.create!(
     text:Faker::StarWars.quote,
-    game_id:x + 1,
-    category_id:x + 1
+    game_id: 1,
+    category_id: x + 1
   )
-
 end
+
+# TEST GAME - ANSWERS
+10.times do |x|
+Answer.create!(
+    text:Faker::StarWars.quote,
+    question_id: (x % 4) + 1
+  )
+end
+
 10.times do |x|
 Question.create!(
     text:Faker::StarWars.quote,
-    game_id:x + 1,
-    category_id:x + 1
+    game_id: x + 2, # skip game 1 (to avoid weirdness)
+    category_id: x + 1
   )
 end
 
 10.times do |x|
 Answer.create!(
     text:Faker::StarWars.quote,
-    question_id: x + 1
-  )
-end
-
-3.times do |x|
-Answer.create!(
-    text:Faker::StarWars.quote,
-    question_id: 1
-  )
-end
-
-3.times do |x|
-Answer.create!(
-    text:Faker::StarWars.quote,
-    question_id: 11
+    question_id: x + 11 # avoid 5 answers for first 10 questions
   )
 end
 
