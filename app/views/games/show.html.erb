@@ -34,11 +34,12 @@
 <div id='answer-buttons-d' style="display:inline"></div>
 
 <!-- This is an invisible div that stores the current question id: -->
-<div id='current-question' style="display:inline"></div>
+<div id='current-question' style="display:inline">1</div>
+
+<%= render partial: 'questions/question_form', locals: {question: @question} %>
 
 <% if current_user.is_admin %>
 <!-- NEXT BUTTON -->
-<%= render partial: 'questions/question_form', locals: {question: @question} %>
 <!-- RESULTS (IF ANY) -->
 <hr>STUDENT RESPONSES:
 <div>

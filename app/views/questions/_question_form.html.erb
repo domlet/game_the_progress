@@ -1,8 +1,9 @@
 <script>
   function getCurrentQuestion() {
-    var currentQuestionId = $("#current-question").html();
+    var currentQuestionId = $("#answer-buttons-b").html();
     // assigns the correct answer IDs
     $(".next-button-form form").attr("action", "/questions/1");
+    $(".testing-class").html(currentQuestionId);
     $(".question_id_hidden_field input").attr("name", "1");
   }
 </script>
@@ -12,6 +13,7 @@
 <!-- @question comes from games#show which gets from games#controller -->
 
 
+<div class="testing-class"></div>
 
 <div class="next-button-form"><form action="" method="POST">
   <input type="hidden" name="_method" value="put">
