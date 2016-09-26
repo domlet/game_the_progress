@@ -11,11 +11,11 @@
 <!-- renderQuestion -->
 <div id='questions'><p><%= @question.text %></p></div>
 
-<ol>
-<% @questions.each do |question| %>
-<li><%= question.text %></li>
-<% end %>
-</ol>
+<!-- <ol>
+< % @questions.each do |question| %>
+<li>< %= question.text %></li>
+< % end %>
+</ol> -->
 
 <%= render partial: 'questions/question', collection: @question %>
 
