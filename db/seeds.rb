@@ -72,16 +72,16 @@ Answer.create!(
   )
 end
 
-#
+# Start at index 0 on x
 10.times do |x|
 Question.create!(
     text:Faker::StarWars.quote,
-    game_id: x + 2, # skip game 1 (to avoid weirdness)
+    game_id: x + 2, # skip game 1 so that game 1 has 10 questions only
     category_id: x + 1
   )
 end
 
-#
+
 10.times do |x|
 Answer.create!(
     text:Faker::StarWars.quote,
@@ -104,7 +104,7 @@ end
   # COMMENT OUT LINES 21-97 TO SEED DB WITH THIS DATA
 #*****************************************************
 
-#
+# creates 1 student users
 User.create!(
     first_name:"Shenesha",
     last_name:"Martinez",
@@ -114,7 +114,7 @@ User.create!(
     is_admin: false
   )
 
-10.times do
+# creates one teacher admin user
 User.create!(
     first_name:Faker::GameOfThrones.character,
     last_name:Faker::GameOfThrones.house,
@@ -123,32 +123,108 @@ User.create!(
     password:Faker::Internet.password,
     is_admin: true
   )
-end
 
-10.times do
+# creates 1 category for all questions in game 1
 Category.create!(
     name:Faker::Book.genre
   )
-end
 
+# creates a single game
 Game.create!(
     title:Faker::StarWars.quote,
-    subject:Faker::Book.genre
+    subject:Faker::Book.genre,
+    grade_level: 7
   )
 
-10.times do |x|
+# creates 5 questions for a single game 1
+5.times do |x|
 Question.create!(
     text:Faker::StarWars.quote,
     game_id: 1,
-    category_id: x + 1
+    category_id: 1,
+    correct_answer_id: 1
   )
 end
 
+# creates 4 answers for question 1
+4.times do |x|
+Answer.create!(
+    text:Faker::StarWars.quote,
+    question_id: 1,
+  )
+end
 
+# creates 4 answers for question 2
+4.times do |x|
+Answer.create!(
+    text:Faker::StarWars.quote,
+    question_id: 2,
+  )
+end
 
+# creates 4 answers for question 3
+4.times do |x|
+Answer.create!(
+    text:Faker::StarWars.quote,
+    question_id: 3,
+  )
+end
 
+# creates 4 answers for question 4
+4.times do |x|
+Answer.create!(
+    text:Faker::StarWars.quote,
+    question_id: 4,
+  )
+end
 
+# creates 4 answers for question 5
+4.times do |x|
+Answer.create!(
+    text:Faker::StarWars.quote,
+    question_id: 5,
+  )
+end
 
+# creates results for game 1, question 1, user 1
+Result.create!(
+    is_correct: true,
+    user_id: 1,
+    question_id: 1,
+    student_answer_id: 1
+  )
+
+# creates results for game 1, question 2, user 1
+Result.create!(
+    is_correct: false,
+    user_id: 1,
+    question_id: 2,
+    student_answer_id: 1
+  )
+
+# creates results for game 1, question 3, user 1
+Result.create!(
+    is_correct: false,
+    user_id: 1,
+    question_id: 3,
+    student_answer_id: 1
+  )
+
+# creates results for game 1, question 4, user 1
+Result.create!(
+    is_correct: true,
+    user_id: 1,
+    question_id: 4,
+    student_answer_id: 4
+  )
+
+# creates results for game 1, question 5, user 1
+Result.create!(
+    is_correct: false,
+    user_id: 1,
+    question_id: 5,
+    student_answer_id: 4
+  )
 
 
 
