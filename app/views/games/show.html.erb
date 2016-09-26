@@ -1,21 +1,45 @@
-<%= link_to "Home", games_path %>
+<%= link_to "Home", games_path %> | Games#Show
 
-<h1>Games Show</h1>
+<!-- GAME TITLE -->
+<h1><%= @game.title %></h1>
 
-<div class="row col-md-8 col-md-offset-2">
-  <h1><%= @game.title %></h1>
-  <p><%= @question.text %></p>
 
-<div class="panel panel-default">
+
+<!-- QUESTION TEXT -->
+<hr>QUESTION:
+<!-- renderQuestion -->
+<div id='questions'><p><%= @question.text %></p></div>
+<%= render partial: 'questions/question', collection: @question %>
+
+<!-- ANSWERS TEXT -->
+<hr>ANSWERS:
+<div id="answers">
+  <p><%= @question.answers[0].text%></p>
+  <p><%= @question.answers[1].text%></p>
+  <p><%= @question.answers[2].text%></p>
+</div>
+
+<!-- ANSWER BUTTONS -->
+<!-- These hit a Results 'POST' route -->
+<div id='answer-buttons-a' style="display:none"></div>
+<div id='answer-buttons-b' style="display:none"></div>
+<div id='answer-buttons-c' style="display:none"></div>
+<div id='answer-buttons-d' style="display:none"></div>
+<%= render partial: 'results/result_form', locals: {result: @result, game: @game}%>
+
+<% if current_user.is_admin %>
+<!-- NEXT BUTTON -->
+<%= render partial: 'questions/question_form', locals: {question: @question} %>
+<!-- RESULTS (IF ANY) -->
+<hr>STUDENT RESPONSES:
+<div>
   <% if @question.results.any? %>
-    <div class="panel-body" id="results">
-      <%= render partial: 'results/result', collection: @question.results%>
-    </div>
+  <div class="panel-body" id="results">
+    <%= render partial: 'results/result', collection: @question.results %>
+  </div>
   <%else%>
-    <div class="panel-body hidden" id="results">
-    </div>
+  <div class="panel-body hidden" id="results"></div>
   <%end%>
 </div>
+<%end%>
 
-  <%= render partial: 'results/result_form', locals: {result: @result, game: @game}%>
-</div>

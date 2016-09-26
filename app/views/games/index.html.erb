@@ -1,5 +1,7 @@
 <h1>Games Index</h1>
 
-<%= link_to "Game 1", game_path(@games[0]) %>
-
-<%= link_to "Register Page", new_user_registration_path %>
+<ul>
+  <li><%= link_to "Game 1 (only click if logged in)", game_path(@games[0]) %></li>
+  <li><%= link_to "Login", new_user_session_path %></li>
+  <li><%= link_to "Register", new_user_registration_path %></li>
+</ul>

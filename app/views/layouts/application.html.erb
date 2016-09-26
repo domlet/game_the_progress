@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>GameTheProgress</title>
-    <%= action_cable_meta_tag %>
-    <%= csrf_meta_tags %>
+<head>
+  <title>GameTheProgress</title>
+  <%= action_cable_meta_tag %>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
+<body>
   <div class="container">
 
-  <% if current_user %>
-  Hello, <%= current_user.first_name %>!
-  <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-  <%end%>
+    <% if current_user %>
+    <% if current_user.is_admin == true %>
+    <b>Game Host:</b>
+    <% elsif current_user.is_admin != true %>
+    <b>Player:</b>
+    <%end%>
+    <%= current_user.first_name %> |
+    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+    <%end%>
+
+
     <%= yield %>
-    </div>
-  </body>
+
+  </div>
+</body>
 </html>
