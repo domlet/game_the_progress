@@ -27,10 +27,9 @@
 <div id='answer-buttons-d' style="display:none"></div>
 <%= render partial: 'results/result_form', locals: {result: @result, game: @game}%>
 
+<% if current_user.is_admin %>
 <!-- NEXT BUTTON -->
 <%= render partial: 'questions/question_form', locals: {question: @question} %>
-
-<% if current_user.is_admin %>
 <!-- RESULTS (IF ANY) -->
 <hr>STUDENT RESPONSES:
 <div>
