@@ -7,20 +7,8 @@ App.questions = App.cable.subscriptions.create('QuestionsChannel', {
     $("#questions").removeClass('hidden'); // Unknown
     $('#questions').html(this.renderQuestion(data)); // Renders the new question
     $('#answers').html(this.renderAnswers(data)); // Renders the new answers
-    $('#answer-buttons-a').html(data.answer_options[0].id); // Gives the new answerId to the result form partial
-    $('#answer-buttons-b').html(data.answer_options[1].id); // Gives the new answerId to the result form partial
-    $('#answer-buttons-c').html(data.answer_options[2].id); // Gives the new answerId to the result form partial
-    // $('#answer-buttons-d').html(data.answer_options[3].id); // Gives the new answerId to the result form partial
-    $('#current-question').html(data.question_id); // Gives the new answerId to the result form partial
-
-    // Now, to render the new buttons correctly populated with the route and new ids
-    console.log("bloop")
-    console.log(data.answer_options[0].id)
-    console.log(data.answer_options[1].id)
-    console.log(data.answer_options[2].id)
-
-    console.log("question id");
-    console.log(data.question_id);
+    $('.next-button').hide();
+    $("#button-" + (data.question_id + 1)).show();
   },
 
   renderQuestion: function(data) {
@@ -30,16 +18,11 @@ App.questions = App.cable.subscriptions.create('QuestionsChannel', {
 
   renderAnswers: function(data) {
     console.log('answer rendered');
-    console.log(data.answer_options[0].text)
-    // return ("<button id='0' type='button' formaction='/results' formmethod='post'>" + data.answer_options[0].text + "</button>")
     return ("<p>" + data.answer_options[0].text + "</p>" +
             "<p>" + data.answer_options[1].text + "</p>" +
-            "<p>" + data.answer_options[2].text + "</p>")
-
-    // data.answer_options.forEach(function(answer_option) {
-    //   console.log(answer_option.text);
-    //   $('#answers').html(answer_option.text);
-      // return "<p>" + answer_option.text + "</p>"
+            "<p>" + data.answer_options[2].text + "</p>" +
+            "<p>" + data.answer_options[3].text + "</p>")
   }
 
 });
+
