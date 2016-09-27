@@ -256,7 +256,7 @@ input[type=submit].next {
   border: 1px solid #5ea617;
 }
 
-input[type=submit] {
+input[type=submit].go {
   border-radius: .2em;
   background: #009933;
   padding: .3em;
