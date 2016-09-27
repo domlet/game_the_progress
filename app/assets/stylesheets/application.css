@@ -14,7 +14,7 @@
  *= require_self
  */
 
-body {
+ body {
   background: #cccc99;
 }
 
@@ -105,20 +105,20 @@ body {
 
 input[type=text] {
   /* for text fields for student devise views */
-    padding:.2em;
-    border:.2em solid #ccc;
-    -webkit-border-radius: 1em;
-    border-radius: .2em;
-    font-size: 1.2em;
+  padding:.2em;
+  border:.2em solid #ccc;
+  -webkit-border-radius: 1em;
+  border-radius: .2em;
+  font-size: 1.2em;
 }
 
 input[type=password] {
   /* for password fields for student */
-    padding:.2em;
-    border:.2em solid #ccc;
-    -webkit-border-radius: 1em;
-    border-radius: .2em;
-    font-size: 1.2em;
+  padding:.2em;
+  border:.2em solid #ccc;
+  -webkit-border-radius: 1em;
+  border-radius: .2em;
+  font-size: 1.2em;
 }
 
 input[type=submit] {
@@ -172,20 +172,20 @@ h2 {
 
   input[type=text] {
     /* for text fields for student devise views */
-      padding:.2em;
-      border:.2em solid #ccc;
-      -webkit-border-radius: 1em;
-      border-radius: .2em;
-      font-size: 1.8em;
+    padding:.2em;
+    border:.2em solid #ccc;
+    -webkit-border-radius: 1em;
+    border-radius: .2em;
+    font-size: 1.8em;
   }
 
   input[type=password] {
     /* for password fields for student */
-      padding:.2em;
-      border:.2em solid #ccc;
-      -webkit-border-radius: 1em;
-      border-radius: .2em;
-      font-size: 1.8em;
+    padding:.2em;
+    border:.2em solid #ccc;
+    -webkit-border-radius: 1em;
+    border-radius: .2em;
+    font-size: 1.8em;
   }
 
   input[type=submit] {
@@ -212,4 +212,8 @@ h2 {
 
 .answer-button-a, .answer-button-b, .answer-button-c, .answer-button-d {
   display: inline;
+}
+
+.next-button {
+
 }

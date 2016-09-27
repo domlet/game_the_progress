@@ -1,37 +1,16 @@
-<script>
-  function getCurrentQuestion() {
-    var currentQuestionId = $("#answer-buttons-b").html();
-    // assigns the correct answer IDs
-    $(".next-button-form form").attr("action", "/questions/1");
-    $(".testing-class").html(currentQuestionId);
-    $(".question_id_hidden_field input").attr("name", "1");
-  }
-</script>
-
 <!-- THE NEXT BUTTON -->
+<% @questions.each do |question| %>
+  <!-- Form for NEXT button hits the controller route -->
+  <%=form_for question, url: question_path(question), html: {method: "patch"}, remote: true, authenticity_token: true do |f|%>
+
+    <!-- Hidden field conveying question id -->
+    <div id="hidden-question-field">
+      <input type="hidden" name="<%= question.id %>" value="">
+    </div>
+
+    <!-- The actual clickable button triggers the Action Cable 'Broadcast' -->
+    <div class="next-button"><input type="submit" value="next"></div>
+  <% end %>
+<% end %>
 
 <!-- @question comes from games#show which gets from games#controller -->
-
-
-<div class="testing-class"></div>
-
-<div class="next-button-form"><form action="" method="POST">
-  <input type="hidden" name="_method" value="put">
-  <div class="question_id_hidden_field"><input type="hidden" name="whyyyyyy" value="current_question_id"></div>
-
-  <div onclick='getCurrentQuestion()'><input type="submit" value="next"></div>
-</form></div>
-
-
-<!-- < %=form_for @question, url: question_path(@question), html: {method: "patch"}, remote: true, authenticity_token: true do |f|%>
- -->
-
-
-<!--   <div id="hidden-question-field">
-    <input type="hidden" name="question[question_id]" value="">
-  </div>
-
-  <div onclick='getCurrentQuestion()' class="next-button">
-    <input type="submit" value="next"> -->
-<!--   </div> -->
-<!-- < %end%> -->
