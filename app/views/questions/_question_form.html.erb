@@ -1,8 +1,5 @@
 <!-- 'NEXT' BUTTON AND 'SUBMIT' BUTTONS -->
-<p><%=@questions%></p>
-
 <% @questions.each do |question| %>
-  <p><%= question %> <%= question_path(question) %></p>
   <% if current_user.is_admin %>
   <!-- 'NEXT' BUTTON -->
   <!-- Form for NEXT button hits the controller route -->

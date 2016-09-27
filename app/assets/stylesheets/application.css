@@ -417,7 +417,10 @@ th {
   display: none;
 }
 /* SHOW 'NEXT' BUTTON ON Q1 PAGE */
-#button-2, #button-12, #button-22, #button-32, #button-42 {
+#button-2 {
+  display: inline;
+}
+#button-12 {
   display: inline;
 }
 /* RESULTS BUTTONS HIDDEN BY DEFAULT */
@@ -425,14 +428,10 @@ th {
   display: none;
 }
 /* SHOW 'ANSWERS' BUTTONS FOR Q1 */
-#results-1, #results-11, #results-21, #results-31, #results-41, {
+#results-1 {
   display: inline;
 }
-
-
-
-
-
-
-
+#results-11 {
+  display: inline;
+}
 
