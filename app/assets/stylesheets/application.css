@@ -20,10 +20,17 @@
   font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
 }
 
+/* log in/sign up/sign out forms */
 .form-screen {
     display: block;
     margin: auto;
     width: 220px;
+}
+
+.game-list {
+    display: block;
+    margin: auto;
+    width: 90%;
 }
 
 .game-view-h1 {
@@ -329,6 +336,39 @@ h5 {
   background: #66ffff;
 }
 
+th {
+  text-align: left;
+}
+
+// GAME INDEX PAGE
+
+
+
+#games-index p {
+  background-color: white;
+  font-size: 3em;
+}
+
+#games-index span {
+  background-color: red;
+  color: white;
+}
+
+.next-button {
+  display: none;
+}
+#button-2 {
+  display: inline;
+}
+.results-buttons {
+  display: none;
+}
+#results-1 {
+  display: inline;
+}
+#games-index a {
+  text-decoration: none;
+}
 
 
 
@@ -400,34 +440,3 @@ h5 {
 
 }
 
-th {
-  text-align: left;
-}
-
-// GAME INDEX PAGE
-
-#games-index p {
-  background-color: white;
-  font-size: 3em;
-}
-
-#games-index span {
-  background-color: red;
-  color: white;
-}
-
-.next-button {
-  display: none;
-}
-#button-2 {
-  display: inline;
-}
-.results-buttons {
-  display: none;
-}
-#results-1 {
-  display: inline;
-}
-#games-index a {
-  text-decoration: none;
-}
