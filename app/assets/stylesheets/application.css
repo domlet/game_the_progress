@@ -15,7 +15,6 @@
  */
 
  body {
-  =======
   display: inline;
   background: #cccc99;
   font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
@@ -73,7 +72,7 @@
   text-align: center;
 }
 
-#answers p{
+#answers p, .results-buttons input {
   text-align: center;
   width: 33%;
   height: 150px;
@@ -88,21 +87,21 @@
   padding: .7em;
 }
 
-#answers p:nth-child(1) {
+#answers p:nth-child(1), .answer-button-a input {
   background-color: #00cc00;
 
 }
 
-#answers p:nth-child(2) {
+#answers p:nth-child(2), .answer-button-b input {
   background-color: #cccc00;
   clear: right;
 }
 
-#answers p:nth-child(3) {
+#answers p:nth-child(3), .answer-button-c input {
   background-color: #00cccc;
 }
 
-#answers p:nth-child(4) {
+#answers p:nth-child(4), .answer-button-d input {
   background-color: #cc0000;
 }
 

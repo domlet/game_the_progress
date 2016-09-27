@@ -22,10 +22,10 @@
     <div class="results-buttons" id="results-<%= question.id %>">
     <%=form_for result, remote: true, authenticity_token: true do |f|%>
     <!-- THESE MAY NOT HAVE LINE BREAKS -->
-    <div class="answer-button-a"><input type="submit" name="<%= question.answers[0].id %>" value="a"></div>
-    <div class="answer-button-b"><input type="submit" name="<%= question.answers[1].id %>" value="b"></div>
-    <div class="answer-button-c"><input type="submit" name="<%= question.answers[2].id %>" value="c"></div>
-    <div class="answer-button-d"><input type="submit" name="<%= question.answers[3].id %>" value="d"></div>
+    <div class="answer-button-a"><input type="submit" name="<%= question.answers[0].id %>" value="a" style="float:left;"></div>
+    <div class="answer-button-b"><input type="submit" name="<%= question.answers[1].id %>" value="b" style="float:left;"></div>
+    <div class="answer-button-c"><input type="submit" name="<%= question.answers[2].id %>" value="c" style="float:left;"></div>
+    <div class="answer-button-d"><input type="submit" name="<%= question.answers[3].id %>" value="d" style="float:left;"></div>
     <!-- HIDDEN FIELDS WITH IMPORTANT DATA -->
     <%=f.hidden_field :user_id, value: current_user.id %>
     <%=f.hidden_field :question_id, value: question.id %>
