@@ -398,7 +398,6 @@ th {
   text-align: left;
 }
 
-// GAME INDEX PAGE
 #games-index p {
   background-color: white;
   font-size: 3em;
@@ -409,12 +408,14 @@ th {
   color: white;
 }
 
-// GAME SHOW PAGE
 .next-button {
   display: none;
 }
 
 #button-2 {
+  display: inline;
+}
+#button-12 {
   display: inline;
 }
 .results-buttons {
