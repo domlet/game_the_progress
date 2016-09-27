@@ -4,6 +4,6 @@
 
 class QuestionsChannel < ApplicationCable::Channel
   def subscribed
-    stream_from 'questions'
+    stream_from "game-#{params['game']}:questions"
   end
 end

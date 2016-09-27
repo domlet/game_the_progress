@@ -44,7 +44,7 @@ end
   # 5 Games
   # 10 Questions in each Game
   # 4 Answers for each Question
-5.times do |x|
+20.times do |x|
   Game.create!(
       title:Faker::StarWars.quote,
       subject:Faker::Book.genre
