@@ -14,7 +14,8 @@ class QuestionsController < ApplicationController
     ActionCable.server.broadcast 'questions',
         answer_options: @question.answers,
         question_text: @question.text,
-        question_id: @question.id
+        question_id: @question.id,
+        game_id: @game.id
     head :ok
   end
 
