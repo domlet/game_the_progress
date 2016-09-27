@@ -386,7 +386,6 @@ input[type=submit].next {
   border: 1px solid #5ea617;
 }
 
-<<<<<<< HEAD
 input[type=submit].go {
   border-radius: .2em;
   background: #009933;
@@ -394,8 +393,6 @@ input[type=submit].go {
   font-size: 1.2em;
   font-weight: 800;
 }
-=======
->>>>>>> e8d28c3... add style to student game view JL
 
 h1 {
   font-family: 'Bungee', Helvetica, Arial, sans-serif;
