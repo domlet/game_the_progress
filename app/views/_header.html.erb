@@ -1,13 +1,13 @@
   <h5 class="current-user">
 
-  <%= link_to 'Games', games_url(@games) %> | 
+  <%= link_to 'Games', games_url(@games) %>
     <% if current_user %>
       <% if current_user.is_admin == true %>
       <b>Game Host:</b>
       <% elsif current_user.is_admin != true %>
-      <b>Player:</b>
+       | <b>Player:</b>
       <%end%>
-      <%= link_to "#{current_user.first_name}", edit_user_registration_path %>
+      <%= link_to "#{current_user.first_name}", user_url(current_user) %>
     <%end%>
 
   </h5>
