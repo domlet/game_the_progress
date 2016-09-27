@@ -8,7 +8,7 @@ console.log(App)
       this.setGameId(gameId);
       console.log('received' + this.gameId);
       console.log('question' + data.question_id);
-      $("div[data-game='" + this.gameId + "']").css('background-color', 'red')
+      // $("div[data-game='" + this.gameId + "']").css('background-color', 'red') // for debugging "next" targeting
       // The controller has sent these objects (the NEXT stuff), so now we can work with them:
       $("#questions").removeClass('hidden'); // Unknown
       $("#questions").html(this.renderQuestion(data)); // Renders the new question
