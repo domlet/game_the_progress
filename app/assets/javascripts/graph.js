@@ -1,6 +1,7 @@
 function draw(data) {
     // Pulls data array out of object
     var data = data.data;
+    console.log('*********', data);
     // data = [
     //          {label: "name1", value: 8},
     //          {label: "name2", value: 3},
@@ -28,7 +29,6 @@ function draw(data) {
             .append("svg")
             .attr("width", width)
             .attr("height", height);
-
 
     bar = svg.selectAll("g")
             .data(data)
