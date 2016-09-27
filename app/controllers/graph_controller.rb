@@ -17,12 +17,12 @@ class GraphController < ApplicationController
     data = {
           clickable: false,
           data: [
-                  {name: "name1", value: 8},
-                  {name: "name2", value: 3},
-                  {name: "name3", value: 2},
-                  {name: "name4", value: 6},
-                  {name: "name5", value: 1},
-                  {name: "name6", value: 7}
+                  {label: "name1", value: 8, id: 1},
+                  {label: "name2", value: 3, id: 1},
+                  {label: "name3", value: 2, id: 1},
+                  {label: "name4", value: 6, id: 1},
+                  {label: "name5", value: 1, id: 1},
+                  {label: "name6", value: 7, id: 1}
                 ]
           }
           p data
@@ -34,22 +34,33 @@ class GraphController < ApplicationController
 
   def show
     @users = User.all
-    p "*" * 88
-    p params
-    p params[:id]
-    if params[:id] != "index"
-      @user = User.find(params[:id])
-      true_count = 0
-      false_count = 0
-      @user.results.each do |result|
-        if result.is_correct == true
-          true_count += 1
-        else
-          false_count += 1
-        end
-      end
-       @data = [true_count, false_count]
-     end
+    # p "*" * 88
+    # p params
+    # p params[:id]
+    # if params[:id] != "index"
+    #   @user = User.find(params[:id])
+    #   true_count = 0
+    #   false_count = 0
+    #   @user.results.each do |result|
+    #     if result.is_correct == true
+    #       true_count += 1
+    #     else
+    #       false_count += 1
+    #     end
+    #   end
+    #    @data = [true_count, false_count]
+    #  end
+
+        data = {
+          clickable: false,
+          data: [
+                  {label: "Good", value: 8, id: 1},
+                  {label: "Bad", value: 3, id: 1}
+                ]
+          }
+          p data
+    @data = data.to_json
+          p @data
   end
 end
 
