@@ -1,10 +1,36 @@
-<%=form_for @question, url: question_path(@question), html: {method: "patch"}, remote: true, authenticity_token: true do |f|%>
-<!-- < %= f.label :your_question%>:
-  < %= f.text_area :content, class: "form-control", data: {textarea: "question"}%> -->
+<!-- 'NEXT' BUTTON AND 'SUBMIT' BUTTONS -->
+<% @questions.each do |question| %>
 
-  <%=f.hidden_field :question_id, value: @question.id %>
-  <%=f.hidden_field :game_id, value: @game.id %>
+  <% if current_user.is_admin %>
+  <!-- 'NEXT' BUTTON -->
+  <!-- Form for NEXT button hits the controller route -->
+    <%=form_for question, url: question_path(question), html: {method: "patch"}, remote: true, authenticity_token: true do |f|%>
 
+    <!-- Hidden field conveying question id -->
+    <div id="hidden-question-field">
+      <input type="hidden" name="<%= question.id %>" value="hidden-thing">
+    </div>
 
-  <p class="center"><%= f.submit "next", class: "next", data: {send: "question"} %></p>
-<%end%>
+    <!-- The clickable button triggers the Action Cable 'Broadcast' -->
+    <div class="next-button" id="button-<%= question.id %>"><input type="submit" value="next"></div>
+    <% end %>
+
+  <% else %>
+
+    <!-- @question comes from games#show which gets from games#controller -->
+    <!-- ANSWER BUTTONS - 'result' is a post route -->
+    <div class="results-buttons" id="results-<%= question.id %>">
+    <%=form_for result, remote: true, authenticity_token: true do |f|%>
+    <!-- THESE MAY NOT HAVE LINE BREAKS -->
+    <div class="answer-button-a"><input type="submit" name="<%= question.answers[0].id %>" value="a" style="float:left;"></div>
+    <div class="answer-button-b"><input type="submit" name="<%= question.answers[1].id %>" value="b" style="float:left;"></div>
+    <div class="answer-button-c"><input type="submit" name="<%= question.answers[2].id %>" value="c" style="float:left;"></div>
+    <div class="answer-button-d"><input type="submit" name="<%= question.answers[3].id %>" value="d" style="float:left;"></div>
+    <!-- HIDDEN FIELDS WITH IMPORTANT DATA -->
+    <%=f.hidden_field :user_id, value: current_user.id %>
+    <%=f.hidden_field :question_id, value: question.id %>
+    <% end %>
+    </div>
+
+  <% end %>
+<% end %>

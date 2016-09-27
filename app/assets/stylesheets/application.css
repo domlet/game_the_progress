@@ -14,11 +14,8 @@
  *= require_self
  */
 
-.answer-button-a, .answer-button-b, .answer-button-c, .answer-button-d {
+ body {
   display: inline;
-}
-
-body {
   background: #cccc99;
   font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
 }
@@ -50,23 +47,23 @@ body {
 }
 
 .table-quiz-display{
-  margin-left:auto; 
+  margin-left:auto;
   margin-right:auto;
 }
 
 .student-table-quiz-display{
-  margin-left:auto; 
+  margin-left:auto;
   margin-right:auto;
   padding: 2em;
 }
 
 .table-timer{
-  margin-left:auto; 
+  margin-left:auto;
   margin-right:auto;
 }
 
 .center{
-  margin-left:auto; 
+  margin-left:auto;
   margin-right:auto;
   display: table;
 }
@@ -75,13 +72,13 @@ body {
   text-align: center;
 }
 
-#answers p{
+#answers p, .results-buttons input {
   text-align: center;
   width: 33%;
   height: 150px;
   border: 0px solid black;
   border-collapse: collapse;
-    font-size: 1.3em;
+  font-size: 1.3em;
   text-align: center;
   display: inline-block;
   vertical-align: middle;
@@ -90,21 +87,21 @@ body {
   padding: .7em;
 }
 
-#answers p:nth-child(1) {
+#answers p:nth-child(1), .answer-button-a input {
   background-color: #00cc00;
 
 }
 
-#answers p:nth-child(2) {
+#answers p:nth-child(2), .answer-button-b input {
   background-color: #cccc00;
   clear: right;
 }
 
-#answers p:nth-child(3) {
+#answers p:nth-child(3), .answer-button-c input {
   background-color: #00cccc;
 }
 
-#answers p:nth-child(4) {
+#answers p:nth-child(4), .answer-button-d input {
   background-color: #cc0000;
 }
 
@@ -114,7 +111,7 @@ body {
   height: 200px;
   border: 1px solid black;
   border-collapse: collapse;
-    font-size: 3em;
+  font-size: 3em;
   text-align: center;
 }
 
@@ -157,29 +154,29 @@ body {
 
 input[type=email] {
   /* for text fields for student devise views */
-    padding:.2em; 
-    border:.2em solid #ccc; 
-    -webkit-border-radius: 1em;
-    border-radius: .2em;
-    font-size: 1.2em;
+  padding:.2em;
+  border:.2em solid #ccc;
+  -webkit-border-radius: 1em;
+  border-radius: .2em;
+  font-size: 1.2em;
 }
 
 input[type=text] {
   /* for text fields for student devise views */
-    padding:.2em; 
-    border:.2em solid #ccc; 
-    -webkit-border-radius: 1em;
-    border-radius: .2em;
-    font-size: 1.2em;
+  padding:.2em;
+  border:.2em solid #ccc;
+  -webkit-border-radius: 1em;
+  border-radius: .2em;
+  font-size: 1.2em;
 }
 
 input[type=password] {
   /* for password fields for student */
-    padding:.2em; 
-    border:.2em solid #ccc; 
-    -webkit-border-radius: 1em;
-    border-radius: .2em;
-    font-size: 1.2em;
+  padding:.2em;
+  border:.2em solid #ccc;
+  -webkit-border-radius: 1em;
+  border-radius: .2em;
+  font-size: 1.2em;
 }
 
 input[type=submit].game-a {
@@ -256,12 +253,12 @@ h1 {
 }
 
 h2 {
-    font-size: 2.5em;
+  font-size: 2.5em;
   text-align: center;
 }
 
 h3 {
-    font-size: 2em;
+  font-size: 2em;
   text-align: center;
 }
 
@@ -272,7 +269,7 @@ h4 {
 }
 
 h5 {
-    font-size: 1em;
+  font-size: 1em;
   text-align: center;
 }
 
@@ -350,29 +347,29 @@ h5 {
 
   input[type=email] {
     /* for text fields for student devise views */
-      padding:.2em; 
-      border:.2em solid #ccc; 
-      -webkit-border-radius: 1em;
-      border-radius: .2em;
-      font-size: 1.8em;
+    padding:.2em;
+    border:.2em solid #ccc;
+    -webkit-border-radius: 1em;
+    border-radius: .2em;
+    font-size: 1.8em;
   }
 
   input[type=text] {
     /* for text fields for student devise views */
-      padding:.2em; 
-      border:.2em solid #ccc; 
-      -webkit-border-radius: 1em;
-      border-radius: .2em;
-      font-size: 1.8em;
+    padding:.2em;
+    border:.2em solid #ccc;
+    -webkit-border-radius: 1em;
+    border-radius: .2em;
+    font-size: 1.8em;
   }
 
   input[type=password] {
     /* for password fields for student */
-      padding:.2em; 
-      border:.2em solid #ccc; 
-      -webkit-border-radius: 1em;
-      border-radius: .2em;
-      font-size: 1.8em;
+    padding:.2em;
+    border:.2em solid #ccc;
+    -webkit-border-radius: 1em;
+    border-radius: .2em;
+    font-size: 1.8em;
   }
 
   input[type=submit] {
@@ -384,7 +381,7 @@ h5 {
 
   h1 {
     font-size: 3.3em;
-    
+
   }
 
   .gobutton {
@@ -395,6 +392,10 @@ h5 {
     background: #66ffff;
   }
 
+}
+
+th {
+  text-align: left;
 }
 
 // GAME INDEX PAGE
@@ -409,10 +410,18 @@ h5 {
   color: white;
 }
 
+.next-button {
+  display: none;
+}
+#button-2 {
+  display: inline;
+}
+.results-buttons {
+  display: none;
+}
+#results-1 {
+  display: inline;
+}
 #games-index a {
   text-decoration: none;
-}
-
-th {
-  text-align: left;
 }

@@ -1,71 +1,45 @@
-<% if current_user.is_admin %>
-  <h5 class="home-button"><%= link_to "Home", games_path %> | Games#Show</h5>
-<% end %>
-<!--div class="game-the-progress">GAME THE PROGRESS &copy; 2016</div-->
 
 <!-- GAME TITLE -->
-<br>
-<h4><%= @game.title %></h4>
+<h1><%= @game.title %></h1>
 
+<!-- FLASH MESSAGES -->
+<!-- TODO: make it show on S.P.A. -->
+<div class="notice"></div>
 
 <!-- QUESTION TEXT -->
+<hr>QUESTION:
+<!-- renderQuestion holder / dynamically changing -->
+<div id='questions'><p><%= @question.id %>. <%= @question.text %></p></div>
 
-<!-- renderQuestion -->
-<h3><div id='questions'><p><%= @question.text %></p></div></h3>
 <%= render partial: 'questions/question', collection: @question %>
 
-<!-- ANSWERS TEXT -->
-<% if current_user.is_admin %>
-  <div id="answers">
-    <p><%= @question.answers[0].text%></p>
-    <p><%= @question.answers[1].text%></p>
-    <p><%= @question.answers[2].text%></p>
-    <p><%= @question.answers[2].text%></p>
-  </div>      
-
-<!-- 
-    <table class="table-quiz-display">
-  <tr>
-    <td class="quiz-display one"><p>< %= @question.answers[0].text%></p></td>
-    <td class="quiz-display two"><p>< %= @question.answers[1].text%></p></td>
-  </tr>
-  <tr>
-    <td class="quiz-display three"><p>< %= @question.answers[2].text%></p></td>
-    <td class="quiz-display four"><p></p></td>
-    
-  </tr>
-  </table> -->
-
-<% end %>
-
-  
-
-
-  <!-- ANSWER BUTTONS -->
-  <!-- These hit a Results 'POST' route -->
-  <div id='answer-buttons-a' style="display:none"></div>
-  <div id='answer-buttons-b' style="display:none"></div>
-  <div id='answer-buttons-c' style="display:none"></div>
-  <div id='answer-buttons-d' style="display:none"></div>
 
 
 <% if current_user.is_admin %>
-<!-- NEXT BUTTON -->
-<%= render partial: 'questions/question_form', locals: {question: @question} %>
-
-
-<% else %>
-  <%= render partial: 'results/result_form', locals: {result: @result, game: @game}%>
+<!-- ANSWERS TEXT holder / dynamically changing -->
+<hr>ANSWERS:
+<div id="answers">
+  <p>A. <%= @question.answers[0].text%></p>
+  <p>B. <%= @question.answers[1].text%></p>
+  <p>C. <%= @question.answers[2].text%></p>
+  <p>D. <%= @question.answers[3].text%></p>
+</div>
 <% end %>
 
+<!-- NEXT BUTTON & ANSWER BUTTONS -->
+<%= render partial: 'questions/question_form', locals: {question: @question, result: @result} %>
+
+<% if current_user.is_admin %>
 <!-- RESULTS (IF ANY) -->
-<!-- <hr>STUDENT RESPONSES:
+<hr>STUDENT RESPONSES:
 <div>
-  < % if @question.results.any? %>
+  <% if @question.results.any? %>
   <div class="panel-body" id="results">
-    < %= render partial: 'results/result', collection: @question.results %>
+    <%= render partial: 'results/result', collection: @question.results %>
   </div>
-  < %else%>
+  <% else %>
+  <!-- This is the div that will hold the abcd answer buttons -->
   <div class="panel-body hidden" id="results"></div>
-  < %end%>
-</div> -->
+  <% end %>
+</div>
+<% end %>

@@ -56,11 +56,23 @@ Question.create!(
   )
 end
 
-# TEST GAME - ANSWERS
+# TEST GAME - ANSWERS (creates 4 answers for each of 10 Qs in test game)
 10.times do |x|
 Answer.create!(
     text:Faker::StarWars.quote,
-    question_id: (x % 4) + 1
+    question_id: x + 1
+  )
+Answer.create!(
+    text:Faker::StarWars.quote,
+    question_id: x + 1
+  )
+Answer.create!(
+    text:Faker::StarWars.quote,
+    question_id: x + 1
+  )
+Answer.create!(
+    text:Faker::StarWars.quote,
+    question_id: x + 1
   )
 end
 
@@ -72,18 +84,18 @@ Question.create!(
   )
 end
 
-10.times do |x|
-Answer.create!(
-    text:Faker::StarWars.quote,
-    question_id: x + 11 # avoid 5 answers for first 10 questions
-  )
-end
+# 10.times do |x|
+# Answer.create!(
+#     text:Faker::StarWars.quote,
+#     question_id: x + 11 # avoid 5 answers for first 10 questions
+#   )
+# end
 
-10.times do |x|
-Result.create!(
-    is_correct: [true, false].sample,
-    user_id:x + 1,
-    question_id:x + 1,
-    student_answer_id:x + 1,
-  )
-end
+# 10.times do |x|
+# Result.create!(
+#     is_correct: [true, false].sample,
+#     user_id:x + 1,
+#     question_id:x + 1,
+#     student_answer_id:x + 1,
+#   )
+# end
