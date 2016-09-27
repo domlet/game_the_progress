@@ -1,6 +1,13 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 
+###############################
+# SEQUENCE/ORDER IS IMPORTANT #
+###############################
+
+#**********************************************
+# SEED GROUP 1 (FOR ACTION-CABLE-TESTING)
+#**********************************************
 require 'faker'
 
 Category.delete_all
@@ -10,10 +17,7 @@ Question.delete_all
 Answer.delete_all
 Result.delete_all
 
-###############################
-# SEQUENCE/ORDER IS IMPORTANT #
-###############################
-
+# One student user id = 1
 User.create!(
     first_name:"Shenesha",
     last_name:"Martinez",
@@ -23,6 +27,7 @@ User.create!(
     is_admin: false
   )
 
+# 10 admin users, for no particular reason- enjoy
 10.times do
 User.create!(
     first_name:Faker::GameOfThrones.character,
@@ -34,12 +39,15 @@ User.create!(
   )
 end
 
+# Cannot create questions without category
 10.times do
 Category.create!(
     name:Faker::Book.genre
   )
 end
 
+# You must create games before questions because
+  # each question is associated with a game
 20.times do
 Game.create!(
     title:Faker::StarWars.quote,
@@ -47,7 +55,7 @@ Game.create!(
   )
 end
 
-# TEST GAME - QUESTIONS
+# TEST GAME - QUESTIONS FOR GAME 1
 10.times do |x|
 Question.create!(
     text:Faker::StarWars.quote,
@@ -64,13 +72,15 @@ Answer.create!(
   )
 end
 
+# Start at index 0 on x
 10.times do |x|
 Question.create!(
     text:Faker::StarWars.quote,
-    game_id: x + 2, # skip game 1 (to avoid weirdness)
+    game_id: x + 2, # skip game 1 so that game 1 has 10 questions only
     category_id: x + 1
   )
 end
+
 
 10.times do |x|
 Answer.create!(
@@ -79,6 +89,7 @@ Answer.create!(
   )
 end
 
+# Associates first 10 questions with game 1
 10.times do |x|
 Result.create!(
     is_correct: [true, false].sample,
@@ -87,3 +98,203 @@ Result.create!(
     student_answer_id:x + 1,
   )
 end
+
+#*****************************************************
+# SEED GROUP 2 (FOR D3 TESTING)
+  # COMMENT OUT LINES 21-97 TO SEED DB WITH THIS DATA
+#*****************************************************
+
+# creates 2 student users
+# 2.times do |x|
+# User.create!(
+#     first_name:"Shenesha",
+#     last_name:"Martinez",
+#     username:'studentuser',
+#     email:Faker::Internet.email,
+#     password:'123456',
+#     is_admin: false
+#   )
+# end
+
+# # creates one teacher admin user
+# User.create!(
+#     first_name:Faker::GameOfThrones.character,
+#     last_name:Faker::GameOfThrones.house,
+#     username:Faker::Internet.user_name,
+#     email:Faker::Internet.email,
+#     password:"123456",
+#     is_admin: true
+#   )
+
+# # creates 1 category for all questions in game 1
+# Category.create!(
+#     name:Faker::Book.genre
+#   )
+
+# # creates a single game
+# Game.create!(
+#     title:Faker::StarWars.quote,
+#     subject:Faker::Book.genre
+#   )
+
+# # creates 5 questions for a single game 1
+# 5.times do |x|
+# Question.create!(
+#     text:Faker::StarWars.quote,
+#     game_id: 1,
+#     category_id: 1
+#   )
+# end
+
+# # creates 4 answers for question 1
+# 4.times do |x|
+# Answer.create!(
+#     text:Faker::StarWars.quote,
+#     question_id: 1,
+#   )
+# end
+
+# # creates 4 answers for question 2
+# 4.times do |x|
+# Answer.create!(
+#     text:Faker::StarWars.quote,
+#     question_id: 2,
+#   )
+# end
+
+# # creates 4 answers for question 3
+# 4.times do |x|
+# Answer.create!(
+#     text:Faker::StarWars.quote,
+#     question_id: 3,
+#   )
+# end
+
+# # creates 4 answers for question 4
+# 4.times do |x|
+# Answer.create!(
+#     text:Faker::StarWars.quote,
+#     question_id: 4,
+#   )
+# end
+
+# # creates 4 answers for question 5
+# 4.times do |x|
+# Answer.create!(
+#     text:Faker::StarWars.quote,
+#     question_id: 5,
+#   )
+# end
+
+# # updates correct answer for question 1
+# a = Question.find(1)
+#     a.correct_answer_id = 1
+#     a.save
+
+# # updates correct answer for question 2
+# a = Question.find(2)
+#     a.correct_answer_id = 5
+#     a.save
+
+# # updates correct answer for question 3
+# a = Question.find(3)
+#     a.correct_answer_id = 9
+#     a.save
+
+# # updates correct answer for question 4
+# a = Question.find(4)
+#     a.correct_answer_id = 13
+#     a.save
+
+# # updates correct answer for question 5
+# a = Question.find(5)
+#     a.correct_answer_id = 17
+#     a.save
+
+# # creates results for game 1, question 1, user 1
+# Result.create!(
+#     is_correct: true,
+#     user_id: 1,
+#     question_id: 1,
+#     student_answer_id: 1
+#   )
+
+# # creates results for game 1, question 2, user 1
+# Result.create!(
+#     is_correct: false,
+#     user_id: 1,
+#     question_id: 2,
+#     student_answer_id: 6
+#   )
+
+# # creates results for game 1, question 3, user 1
+# Result.create!(
+#     is_correct: false,
+#     user_id: 1,
+#     question_id: 3,
+#     student_answer_id: 10
+#   )
+
+# # creates results for game 1, question 4, user 1
+# Result.create!(
+#     is_correct: true,
+#     user_id: 1,
+#     question_id: 4,
+#     student_answer_id: 13
+#   )
+
+# # creates results for game 1, question 5, user 1
+# Result.create!(
+#     is_correct: false,
+#     user_id: 1,
+#     question_id: 5,
+#     student_answer_id: 18
+#   )
+
+# #****************Results User 2***********************
+# # creates results for game 1, question 1, user 2
+# Result.create!(
+#     is_correct: false,
+#     user_id: 2,
+#     question_id: 1,
+#     student_answer_id: 2
+#   )
+
+# # creates results for game 1, question 2, user 1
+# Result.create!(
+#     is_correct: false,
+#     user_id: 2,
+#     question_id: 2,
+#     student_answer_id: 6
+#   )
+
+# # creates results for game 1, question 3, user 1
+# Result.create!(
+#     is_correct: true,
+#     user_id: 2,
+#     question_id: 3,
+#     student_answer_id: 9
+#   )
+
+# # creates results for game 1, question 4, user 1
+# Result.create!(
+#     is_correct: false,
+#     user_id: 2,
+#     question_id: 4,
+#     student_answer_id: 14
+#   )
+
+# # creates results for game 1, question 5, user 1
+# Result.create!(
+#     is_correct: true,
+#     user_id: 2,
+#     question_id: 5,
+#     student_answer_id: 17
+#   )
+
+
+
+
+
+
+

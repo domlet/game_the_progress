@@ -1,15 +1,12 @@
-$.ajax({
-           type: "GET",
-           contentType: "application/json; charset=utf-8",
-           url: 'data',
-           dataType: 'json',
-           success: function (data) {
-               draw(data);
-           },
-           error: function (result) {
-               error();
-           }
-       });
+
+$(document).ready(function() {
+  console.log("hi");
+  $('.container').on('click', '#graph', function(event) {
+    console.log("clicked graph");
+    event.preventDefault();
+    classResults()
+  })
+})
 
 function draw(data) {
     console.log(data);
@@ -20,7 +17,7 @@ function draw(data) {
         .range([0, width])
         .domain([0, 10]);
 
-    var chart = d3.select("#graph")
+    var chart = d3.select("svg")
         .attr("width", width)
 
     var bar = chart.selectAll("g")
@@ -50,3 +47,37 @@ function draw(data) {
 function error() {
     console.log("error")
 }
+function classResults() {
+$.ajax({
+           type: "GET",
+           contentType: "application/json; charset=utf-8",
+           url: 'samba',
+           dataType: 'json',
+           success: function (data) {
+
+               draw(data);
+           },
+           error: function (result) {
+               error();
+           }
+       });
+}
+
+// function
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
