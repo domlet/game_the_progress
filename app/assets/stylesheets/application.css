@@ -170,8 +170,6 @@
   height: 1em;
 }
 
-
-
 input[type=email] {
   /* for text fields for student devise views */
   padding:.2em;
@@ -261,6 +259,7 @@ input[type=submit].next {
 
 input[type=submit] {
   border-radius: .2em;
+  background: #009933;
   padding: .3em;
   font-size: 1.2em;
   font-weight: 800;
@@ -364,6 +363,7 @@ th {
 .next-button {
   display: none;
 }
+
 
 #button-2 {
   display: inline;

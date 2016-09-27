@@ -1,12 +1,23 @@
 # Game the Progress
 
+
+## Overview
+
+Game the Progress is a web app designed to give teachers a platform to custom build and play game quizzes with multiple players/students. The teacher creates a game, the students log on to the game and play along as a class. The teacher has immediate access to results on specific students and for the whole class. Students have access to their own results at the end of the game. Results are displayed using D3 graphics. Game the Progress creates an engaging environment where learning becomes fun.
+
+
 ## The Team
 
-Jim Lengel
-Dom Brassey
-Frank Aiello
-Ryker Reed
-Maria Uyeda
+Jim Lengel [https://github.com/jimlengel]
+Dom Brassey [https://github.com/domlet]
+Frank Aiello [https://github.com/eyeyellow]
+Ryker Reed [https://github.com/reedr3]
+Maria Uyeda [https://github.com/mariauyeda]
+
+
+## External Link to Game
+
+[gametheprogress.herokuapp.com](http://gametheprogress.herokuapp.com/)
 
 
 ## User Stories
@@ -52,22 +63,37 @@ View their own results (per game with) a goal line
 View results by what was answered right or wrong by swapping 
 
 
-## Configuration
-
 ## Installation
 
-## Operating
+To play Game the Progress, follow the above Heroku link, create a new user for a teacher, and select a game.
 
-## File Manifest
+To play Game the Progress as a student, follow the above Heroku link, create a new user for a student, and select a game.
+
+
+## The Stack
+
+Ruby on Rails 5
+using Action Cable
+
+Travis CI
+
+Devise Ruby Gem 
+
+GitHub
+
+D3-Rails
+
+JavaScript
+
+JQuery
+
+CSS
+
+HTML
+
 
 ## Copyright and Licensing Information
 
-## Contact information for the distributor or programmer
+Game the Progress is available under the MIT license. See license.md for more information.
 
-## Known Bugs
 
-## Troubleshooting
-
-## Credits and Acknowledgements
-
-## Changelog
