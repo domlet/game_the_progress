@@ -124,31 +124,31 @@ input[type=submit].next-button {
   height: 150px;
   border: 0px solid black;
   border-collapse: collapse;
-  font-size: 1.9em;
+  font-size: 3em;
   text-align: center;
   display: inline-block;
   vertical-align: middle;
   border-radius: .4em;
-  margin: .3em;
-  padding: .7em;
+  margin: .1em;
+  padding: .1em;
 
 }
 
 .answer-button-b input {
   background-color: #cccc00;
-  /*clear: right;*/
+  clear: right;
   text-align: center;
   width: 33%;
   height: 150px;
   border: 0px solid black;
   border-collapse: collapse;
-  font-size: 1.9em;
+  font-size: 3em;
   text-align: center;
   display: inline-block;
   vertical-align: middle;
   border-radius: .4em;
-  margin: .3em;
-  padding: .7em;
+  margin: .1em;
+  padding: .1em;
 
 }
 
@@ -159,13 +159,13 @@ input[type=submit].next-button {
   height: 150px;
   border: 0px solid black;
   border-collapse: collapse;
-  font-size: 1.9em;
+  font-size: 3em;
   text-align: center;
   display: inline-block;
   vertical-align: middle;
   border-radius: .4em;
-  margin: .3em;
-  padding: .7em;
+  margin: .1em;
+  padding: .1em;
 
 }
 
@@ -176,13 +176,13 @@ input[type=submit].next-button {
   height: 150px;
   border: 0px solid black;
   border-collapse: collapse;
-  font-size: 1.9em;
+  font-size: 3em;
   text-align: center;
   display: inline-block;
   vertical-align: middle;
   border-radius: .4em;
-  margin: .3em;
-  padding: .7em;
+  margin: .1em;
+  padding: .1em;
 
 }
 /* END OF STUDENT GAME VIEW */
