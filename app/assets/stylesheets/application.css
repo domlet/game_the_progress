@@ -20,6 +20,7 @@
 
 body {
   background: #cccc99;
+  font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
 }
 
 .game-view-h1 {
@@ -80,8 +81,7 @@ body {
   height: 150px;
   border: 0px solid black;
   border-collapse: collapse;
-  font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
-  font-size: 1.3em;
+    font-size: 1.3em;
   text-align: center;
   display: inline-block;
   vertical-align: middle;
@@ -114,8 +114,7 @@ body {
   height: 200px;
   border: 1px solid black;
   border-collapse: collapse;
-  font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
-  font-size: 3em;
+    font-size: 3em;
   text-align: center;
 }
 
@@ -257,14 +256,12 @@ h1 {
 }
 
 h2 {
-  font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
-  font-size: 2.5em;
+    font-size: 2.5em;
   text-align: center;
 }
 
 h3 {
-  font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
-  font-size: 2em;
+    font-size: 2em;
   text-align: center;
 }
 
@@ -275,8 +272,7 @@ h4 {
 }
 
 h5 {
-  font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
-  font-size: 1em;
+    font-size: 1em;
   text-align: center;
 }
 
@@ -401,5 +397,22 @@ h5 {
 
 }
 
+// GAME INDEX PAGE
 
+#games-index p {
+  background-color: white;
+  font-size: 3em;
+}
 
+#games-index span {
+  background-color: red;
+  color: white;
+}
+
+#games-index a {
+  text-decoration: none;
+}
+
+th {
+  text-align: left;
+}
