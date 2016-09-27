@@ -19,8 +19,8 @@
 
     <!-- @question comes from games#show which gets from games#controller -->
     <!-- ANSWER BUTTONS - 'result' is a post route -->
+    <div class="results-buttons" id="results-<%= question.id %>">
     <%=form_for result, remote: true, authenticity_token: true do |f|%>
-
     <!-- THESE MAY NOT HAVE LINE BREAKS -->
     <div class="answer-button-a"><input type="submit" name="<%= question.answers[0].id %>" value="a"></div>
     <div class="answer-button-b"><input type="submit" name="<%= question.answers[1].id %>" value="b"></div>
@@ -29,7 +29,8 @@
     <!-- HIDDEN FIELDS WITH IMPORTANT DATA -->
     <%=f.hidden_field :user_id, value: current_user.id %>
     <%=f.hidden_field :question_id, value: question.id %>
-
     <% end %>
+    </div>
+
   <% end %>
 <% end %>
