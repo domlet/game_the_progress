@@ -6,7 +6,7 @@
 
   <% @games.each do |game| %>
   <a href="games/<%= game.id %>">
-  <p><span>#<%= game.id %></span> <%= game.title %> - <%= game.subject %></p>
+  <p><span class="game-id">#<%= game.id %></span> <%= game.title[0..30] %>... <span class="subject"><%= game.subject %></span></p>
   </a>
   <% end %>
 

@@ -43,6 +43,7 @@ class ResultsController < ApplicationController
       p "*" * 50
       # test seed data
       ActionCable.server.broadcast 'results',
+        question: result.question_id,
         answer: result.student_answer_id,
         user: current_user.username
       head :ok
