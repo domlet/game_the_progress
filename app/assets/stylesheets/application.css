@@ -215,5 +215,14 @@ h2 {
 }
 
 .next-button {
-
+  display: none;
+}
+#button-2 {
+  display: inline;
+}
+.results-buttons {
+  display: none;
+}
+#results-1 {
+  display: inline;
 }

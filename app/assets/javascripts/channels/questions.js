@@ -8,11 +8,11 @@ App.questions = App.cable.subscriptions.create('QuestionsChannel', {
     $('#questions').html(this.renderQuestion(data)); // Renders the new question
     $('#answers').html(this.renderAnswers(data)); // Renders the new answers
     // Hide and show 'Next' button
-    $('.next-button').hide();
-    $("#button-" + (data.question_id + 1)).show();
+    $('.next-button').css("display", "none");
+    $("#button-" + (data.question_id + 1)).css("display", "inline");
     // Hide and show 'Results' buttons
-    $('.results-buttons').hide();
-    $("#results-" + (data.question_id)).show();
+    $('.results-buttons').css("display", "none");
+    $("#results-" + (data.question_id)).css("display", "inline");
   },
 
   renderQuestion: function(data) {
