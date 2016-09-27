@@ -51,7 +51,7 @@ end
     )
   10.times do |y|
     Question.create!(
-        text:Faker::StarWars.quote,
+        text:Faker::StarWars.quote[0..-2].concat("?"),
         game_id: x + 1,
         category_id: rand(1..5)
       )
