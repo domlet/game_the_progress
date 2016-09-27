@@ -20,6 +20,12 @@
   font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
 }
 
+.form-screen {
+    display: block;
+    margin: auto;
+    width: 220px;
+}
+
 .game-view-h1 {
   font-size: 2em;
 }
@@ -253,7 +259,7 @@ h1 {
 }
 
 h2 {
-  font-size: 2.5em;
+  font-size: 2.2em;
   text-align: center;
 }
 
