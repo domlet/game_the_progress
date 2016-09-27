@@ -19,6 +19,14 @@
   font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
 }
 
+input[type=submit].next-button {
+  border-radius: .2em;
+  background: #009933;
+  padding: .3em;
+  font-size: 1.2em;
+  font-weight: 800;
+}
+
 .progress-bar {
   position: absolute;
   bottom: 0;
@@ -104,7 +112,117 @@
   text-align: center;
 }
 
-#answers p, .results-buttons input {
+/* STUDENT GAME VIEW */
+#student-device-landscape {
+    margin-left: 200px;
+}
+
+.answer-button-a input {
+  background-color: #00cc00;
+  text-align: center;
+  width: 33%;
+  height: 150px;
+  border: 0px solid black;
+  border-collapse: collapse;
+  font-size: 1.9em;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: .4em;
+  margin: .3em;
+  padding: .7em;
+
+}
+
+.answer-button-b input {
+  background-color: #cccc00;
+  /*clear: right;*/
+  text-align: center;
+  width: 33%;
+  height: 150px;
+  border: 0px solid black;
+  border-collapse: collapse;
+  font-size: 1.9em;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: .4em;
+  margin: .3em;
+  padding: .7em;
+
+}
+
+.answer-button-c input {
+  background-color: #00cccc;
+  text-align: center;
+  width: 33%;
+  height: 150px;
+  border: 0px solid black;
+  border-collapse: collapse;
+  font-size: 1.9em;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: .4em;
+  margin: .3em;
+  padding: .7em;
+
+}
+
+.answer-button-d input {
+  background-color: #cc0000;
+  text-align: center;
+  width: 33%;
+  height: 150px;
+  border: 0px solid black;
+  border-collapse: collapse;
+  font-size: 1.9em;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: .4em;
+  margin: .3em;
+  padding: .7em;
+
+}
+/* END OF STUDENT GAME VIEW */
+
+/* PROJECTOR VIEW */
+#answers p {
+  text-align: center;
+  width: 33%;
+  height: 150px;
+  border: 0px solid black;
+  border-collapse: collapse;
+  font-size: 1.3em;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: .4em;
+  margin: .3em;
+  padding: .7em;
+}
+
+#answers p:nth-child(1) {
+  background-color: #00cc00;
+
+}
+
+#answers p:nth-child(2) {
+  background-color: #cccc00;
+  clear: right;
+}
+
+#answers p:nth-child(3) {
+  background-color: #00cccc;
+}
+
+#answers p:nth-child(4) {
+  background-color: #cc0000;
+}
+/* END OF PROJECTOR VIEW */
+
+/*#answers p, .results-buttons input {
   text-align: center;
   width: 33%;
   height: 150px;
@@ -135,7 +253,7 @@
 
 #answers p:nth-child(4), .answer-button-d input {
   background-color: #cc0000;
-}
+}*/
 
 .student-quiz-display {
   text-align: center;
@@ -268,6 +386,7 @@ input[type=submit].next {
   border: 1px solid #5ea617;
 }
 
+<<<<<<< HEAD
 input[type=submit].go {
   border-radius: .2em;
   background: #009933;
@@ -275,6 +394,8 @@ input[type=submit].go {
   font-size: 1.2em;
   font-weight: 800;
 }
+=======
+>>>>>>> e8d28c3... add style to student game view JL
 
 h1 {
   font-family: 'Bungee', Helvetica, Arial, sans-serif;

@@ -21,6 +21,7 @@
 
 
 
+
     </div>
 
     <% end %>
@@ -28,6 +29,7 @@
   <% else %>
 
     <!-- @question comes from games#show which gets from games#controller -->
+  <div id="student-device-landscape">
     <!-- ANSWER BUTTONS - 'result' is a post route -->
     <div class="results-buttons" id="results-<%= question.id %>">
     <%=form_for result, remote: true, authenticity_token: true do |f|%>
@@ -41,6 +43,7 @@
     <%=f.hidden_field :question_id, value: question.id %>
     <% end %>
     </div>
+  </div>
 
   <% end %>
 <% end %>
