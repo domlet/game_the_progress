@@ -12,19 +12,10 @@
 </head>
 
 <body>
+<%= render partial: './header', locals: {current_user: current_user} %>
+
   <div class="container">
 
-  <h5 class="current-user">
-    <% if current_user %>
-    <% if current_user.is_admin == true %>
-    <b>Game Host:</b>
-    <% elsif current_user.is_admin != true %>
-    <b>Player:</b>
-    <%end%>
-    <%= current_user.first_name %>
-    
-    <%end%>
-  </h5>
 
 
     <%= yield %>
