@@ -1,13 +1,13 @@
 
 <!-- GAME TITLE -->
-<h1><%= @game.title %></h1>
+<h4><%= @game.title %></h4>
 
 <!-- FLASH MESSAGES -->
 <!-- TODO: make it show on S.P.A. -->
 <div class="notice"></div>
 
 <!-- QUESTION TEXT -->
-<hr>QUESTION:
+<!-- <hr>QUESTION: -->
 <!-- renderQuestion holder / dynamically changing -->
 <div id='questions'><p><%= @question.id %>. <%= @question.text %></p></div>
 
@@ -17,7 +17,7 @@
 
 <% if current_user.is_admin %>
 <!-- ANSWERS TEXT holder / dynamically changing -->
-<hr>ANSWERS:
+<!-- <hr>ANSWERS: -->
 <div id="answers">
   <p>A. <%= @question.answers[0].text%></p>
   <p>B. <%= @question.answers[1].text%></p>
