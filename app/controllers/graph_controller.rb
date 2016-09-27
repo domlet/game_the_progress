@@ -1,21 +1,29 @@
 class GraphController < ApplicationController
 
   def students
-    @results = Result.all
-     p @results
-    boolean_array = @results.map do |result|
-      result.is_correct
-    end
-    true_array = boolean_array.select {|boolean| boolean == true}
-    true_count = true_array.length
-    false_array = boolean_array.select {|boolean| boolean == false}
-    false_count = false_array.length
-    p true_count
-    p false_count
-    p boolean_array
+    # @results = Result.all
+    #  p @results
+    # boolean_array = @results.map do |result|
+    #   result.is_correct
+    # end
+    # true_array = boolean_array.select {|boolean| boolean == true}
+    # true_count = true_array.length
+    # false_array = boolean_array.select {|boolean| boolean == false}
+    # false_count = false_array.length
+    # p true_count
+    # p false_count
+    # p boolean_array
 
-    data = { clickable: false,
-          data: [true_count, false_count]
+    data = {
+          clickable: false,
+          data: [
+                  {name: "name1", value: 8},
+                  {name: "name2", value: 3},
+                  {name: "name3", value: 2},
+                  {name: "name4", value: 6},
+                  {name: "name5", value: 1},
+                  {name: "name6", value: 7}
+                ]
           }
           p data
     @data = data.to_json
