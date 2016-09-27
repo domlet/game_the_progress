@@ -4,10 +4,12 @@
 
 <!-- Link for developers only: < %= link_to "Game 1 (only click if logged in)", game_path(@games[0]) %> -->
 
-  <% @games.each do |game| %>
-  <a href="games/<%= game.id %>">
-  <p><span class="game-id">#<%= game.id %></span> <%= game.title[0..30] %>... <span class="subject"><%= game.subject %></span></p>
-  </a>
+  <% @games[0..1].each do |game| %>
+    <p>
+    <span class="game-id">#<%= game.id %></span>
+    <%= link_to game.title[0..30], game_url(game) %>
+    <span class="subject"><%= game.subject %></span>
+    </p>
   <% end %>
 
 </div>

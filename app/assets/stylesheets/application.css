@@ -398,35 +398,35 @@ th {
   text-align: left;
 }
 
+#games-index a {
+  text-decoration: none;
+}
 #games-index p {
   background-color: white;
-  font-size: 3em;
 }
-
-#games-index span {
+#games-index span.subject {
   background-color: red;
   color: white;
 }
-
+#games-index span.game-id {
+  background-color: lime;
+  color: white;
+}
+/* NEXT BUTTONS HIDDEN BY DEFAULT */
 .next-button {
   display: none;
 }
-
-#button-2 {
+/* SHOW 'NEXT' BUTTON ON Q1 PAGE */
+#button-2, #button-12, #button-22, #button-32, #button-42 {
   display: inline;
 }
-#button-12 {
-  display: inline;
-}
+/* RESULTS BUTTONS HIDDEN BY DEFAULT */
 .results-buttons {
   display: none;
 }
-
-#results-1 {
+/* SHOW 'ANSWERS' BUTTONS FOR Q1 */
+#results-1, #results-11, #results-21, #results-31, #results-41, {
   display: inline;
-}
-#games-index a {
-  text-decoration: none;
 }
 
 
