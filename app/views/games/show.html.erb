@@ -27,11 +27,12 @@
 <% end %>
 
 <!-- NEXT BUTTON & ANSWER BUTTONS -->
+
 <%= render partial: 'questions/question_form', locals: {question: @question, result: @result} %>
 
 <% if current_user.is_admin %>
 <!-- RESULTS (IF ANY) -->
-<hr>STUDENT RESPONSES:
+<!-- <hr>STUDENT RESPONSES: -->
 <div>
   <% if @question.results.any? %>
   <div class="panel-body" id="results">
@@ -39,7 +40,7 @@
   </div>
   <% else %>
   <!-- This is the div that will hold the abcd answer buttons -->
-  <div class="panel-body hidden" id="results"></div>
+  <!-- <div class="panel-body hidden" id="results"></div> -->
   <% end %>
 </div>
 <% end %>
