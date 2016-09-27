@@ -1,25 +1,6 @@
 class GraphController < ApplicationController
-  def index
-    # @results = Result.all
-    #  p @results
-    # boolean_array = @results.map do |result|
-    #   result.is_correct
-    # end
-    # true_array = boolean_array.select {|boolean| boolean == true}
-    # true_count = true_array.length
-    # false_array = boolean_array.select {|boolean| boolean == false}
-    # false_count = false_array.length
-    # p true_count
-    # p false_count
-    # p boolean_array
-    # respond_to do |format|
-      # format.json {
-        # @data = [true_count, false_count]
-      # }
-    # end
-  end
 
-  def samba
+  def students
     @results = Result.all
      p @results
     boolean_array = @results.map do |result|
@@ -32,13 +13,15 @@ class GraphController < ApplicationController
     p true_count
     p false_count
     p boolean_array
-    # respond_to do |format|
-      # format.json {
-        render json: [true_count, false_count]
-      # }
-    # end
-    # [true_count, false_count].to_json
-    # @json_data = json: [true_count, false_count]
+
+    data = { clickable: false,
+          data: [true_count, false_count]
+          }
+          p data
+    @data = data.to_json
+          p @data
+  # Return JSON object of whole class student
+
   end
 
   def show
@@ -60,6 +43,7 @@ class GraphController < ApplicationController
        @data = [true_count, false_count]
      end
   end
+end
 
   # def
   # def data
@@ -94,4 +78,3 @@ class GraphController < ApplicationController
   #     p user.results
   #   end
   # end
-end

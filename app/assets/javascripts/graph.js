@@ -1,15 +1,9 @@
 
-$(document).ready(function() {
-  console.log("hi");
-  $('.container').on('click', '#graph', function(event) {
-    console.log("clicked graph");
-    event.preventDefault();
-    classResults()
-  })
-})
 
 function draw(data) {
-    console.log(data);
+    // data = JSON.parse(data);
+    data = data.data
+        console.log(data);
     var width = 420,
         barHeight = 20;
 
@@ -44,26 +38,7 @@ function draw(data) {
               });
 }
 
-function error() {
-    console.log("error")
-}
-function classResults() {
-$.ajax({
-           type: "GET",
-           contentType: "application/json; charset=utf-8",
-           url: 'samba',
-           dataType: 'json',
-           success: function (data) {
 
-               draw(data);
-           },
-           error: function (result) {
-               error();
-           }
-       });
-}
-
-// function
 
 
 
