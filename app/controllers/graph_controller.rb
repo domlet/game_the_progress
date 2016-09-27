@@ -43,18 +43,22 @@ class GraphController < ApplicationController
 
   def show
     @users = User.all
-
-    @user = User.find(params[:id])
-    true_count = 0
-    false_count = 0
-    @user.results.each do |result|
-      if result.is_correct == true
-        true_count += 1
-      else
-        false_count += 1
+    p "*" * 88
+    p params
+    p params[:id]
+    if params[:id] != "index"
+      @user = User.find(params[:id])
+      true_count = 0
+      false_count = 0
+      @user.results.each do |result|
+        if result.is_correct == true
+          true_count += 1
+        else
+          false_count += 1
+        end
       end
-    end
-     @data = [true_count, false_count]
+       @data = [true_count, false_count]
+     end
   end
 
   # def
