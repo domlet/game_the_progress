@@ -34,55 +34,45 @@ User.create!(
   )
 end
 
-10.times do
+5.times do
 Category.create!(
     name:Faker::Book.genre
   )
 end
 
-20.times do
-Game.create!(
-    title:Faker::StarWars.quote,
-    subject:Faker::Book.genre
-  )
+# This triple-nested loop creates:
+  # 5 Games
+  # 10 Questions in each Game
+  # 4 Answers for each Question
+5.times do |x|
+  Game.create!(
+      title:Faker::StarWars.quote,
+      subject:Faker::Book.genre
+    )
+  10.times do |y|
+    Question.create!(
+        text:Faker::StarWars.quote,
+        game_id: x + 1,
+        category_id: rand(1..5)
+      )
+    4.times do
+      Answer.create!(
+          text:Faker::StarWars.quote,
+          question_id: (10 * x) + (y + 1)
+        )
+    end
+  end
 end
 
-# TEST GAME - QUESTIONS
-10.times do |x|
-Question.create!(
-    text:Faker::StarWars.quote,
-    game_id: 1,
-    category_id: x + 1
-  )
-end
 
-# TEST GAME - ANSWERS (creates 4 answers for each of 10 Qs in test game)
-10.times do |x|
-Answer.create!(
-    text:Faker::StarWars.quote,
-    question_id: x + 1
-  )
-Answer.create!(
-    text:Faker::StarWars.quote,
-    question_id: x + 1
-  )
-Answer.create!(
-    text:Faker::StarWars.quote,
-    question_id: x + 1
-  )
-Answer.create!(
-    text:Faker::StarWars.quote,
-    question_id: x + 1
-  )
-end
 
-10.times do |x|
-Question.create!(
-    text:Faker::StarWars.quote,
-    game_id: x + 2, # skip game 1 (to avoid weirdness)
-    category_id: x + 1
-  )
-end
+# 10.times do |x|
+# Question.create!(
+#     text:Faker::StarWars.quote,
+#     game_id: x + 2, # skip game 1 (to avoid weirdness)
+#     category_id: x + 1
+#   )
+# end
 
 # 10.times do |x|
 # Answer.create!(
