@@ -1,5 +1,3 @@
-
-
 function draw(data) {
     // Pulls data array out of object
     var data = data.data;
@@ -109,3 +107,4 @@ function draw(data) {
             .attr("transform", "translate(" + (margin + labelWidth) + ","+ (height - axisMargin - margin)+")")
             .call(xAxis);
 }
+

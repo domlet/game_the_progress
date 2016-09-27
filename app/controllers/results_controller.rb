@@ -9,11 +9,17 @@ class ResultsController < ApplicationController
 
   def create
     p params
+    # TODO: Add Flash notice
+    # if Result.where("question_id = ? AND user_id = ?", params[:result][:question_id], params[:result][:user_id])
+    #   flash[:notice] = "You have already submitted one answer." # TODO: ajax this
+    #   p "been there, done that"
+    #   return
+    # end
     p "*" * 50
-    p result = Result.new(result_params)
-    # Conveys the answer that the student selected
-    p result.student_answer_id = params[:a]
+    # This will look incomplete until add'l params added
+    p result = Result.new(result_params) # Doing this early to prevent errors
 
+    # Submit the player's answer to the database
     if params.values.include?('a')
       result.student_answer_id = params.key('a')
     elsif params.values.include?('b')

@@ -26,7 +26,6 @@ Rails.application.routes.draw do
 
   # get 'graph/index'
   # get 'graph/data', defaults: { format: 'json' }
-  # get 'graph/user_results' , defaults: { format: 'json' }
 
   root to: 'games#index'
 
