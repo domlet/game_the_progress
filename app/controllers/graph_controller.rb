@@ -1,20 +1,20 @@
 class GraphController < ApplicationController
   def index
-    @results = Result.all
-     p @results
-    boolean_array = @results.map do |result|
-      result.is_correct
-    end
-    true_array = boolean_array.select {|boolean| boolean == true}
-    true_count = true_array.length
-    false_array = boolean_array.select {|boolean| boolean == false}
-    false_count = false_array.length
-    p true_count
-    p false_count
-    p boolean_array
+    # @results = Result.all
+    #  p @results
+    # boolean_array = @results.map do |result|
+    #   result.is_correct
+    # end
+    # true_array = boolean_array.select {|boolean| boolean == true}
+    # true_count = true_array.length
+    # false_array = boolean_array.select {|boolean| boolean == false}
+    # false_count = false_array.length
+    # p true_count
+    # p false_count
+    # p boolean_array
     # respond_to do |format|
       # format.json {
-        @data = [true_count, false_count]
+        # @data = [true_count, false_count]
       # }
     # end
   end
@@ -42,13 +42,19 @@ class GraphController < ApplicationController
   end
 
   def show
+    @users = User.all
 
-    @user = User.find(1)
-    # params[:id]
-    p "*" * 20
-    p @user.results.each do |result|
-      result.is_correct
+    @user = User.find(params[:id])
+    true_count = 0
+    false_count = 0
+    @user.results.each do |result|
+      if result.is_correct == true
+        true_count += 1
+      else
+        false_count += 1
+      end
     end
+     @data = [true_count, false_count]
   end
 
   # def

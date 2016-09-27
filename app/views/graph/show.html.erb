@@ -1,1 +1,17 @@
-<p>Show Page</p>
+<h3>See Student Results</h3>
+<ul>
+<% @users.each do |user| %>
+  <% if user.is_admin %>
+  <% else %>
+    <li><a href="<%= user.id %>"><%= user.first_name %> <%= user.last_name %></a></li>
+  <% end %>
+<% end %>
+</ul>
+
+<a href="" id="graph">Open Graph</a>
+<svg id="graph"></svg>
+
+<script type="text/javascript">
+  var data = <%= @data %>
+  draw(data);
+</script>
