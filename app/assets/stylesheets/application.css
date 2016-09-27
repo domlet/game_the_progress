@@ -15,11 +15,27 @@
  */
 
  body {
+  =======
+  display: inline;
   background: #cccc99;
+  font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+}
+
+.game-view-h1 {
+  font-size: 2em;
+}
+
+.game-view-h2 {
+  font-size: 3em;
 }
 
 .form {
   text-align: center;
+}
+
+.field {
+  /* for padding for the text fields */
+  padding: .2em;
 }
 
 .formfield {
@@ -36,19 +52,67 @@
   margin-right:auto;
 }
 
+.student-table-quiz-display{
+  margin-left:auto;
+  margin-right:auto;
+  padding: 2em;
+}
+
 .table-timer{
   margin-left:auto;
   margin-right:auto;
 }
 
-.quiz-display {
+.center{
+  margin-left:auto;
+  margin-right:auto;
+  display: table;
+}
+
+#answers {
   text-align: center;
-  width: 300px;
+}
+
+#answers p{
+  text-align: center;
+  width: 33%;
   height: 150px;
+  border: 0px solid black;
+  border-collapse: collapse;
+  font-size: 1.3em;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: .4em;
+  margin: .3em;
+  padding: .7em;
+}
+
+#answers p:nth-child(1) {
+  background-color: #00cc00;
+
+}
+
+#answers p:nth-child(2) {
+  background-color: #cccc00;
+  clear: right;
+}
+
+#answers p:nth-child(3) {
+  background-color: #00cccc;
+}
+
+#answers p:nth-child(4) {
+  background-color: #cc0000;
+}
+
+.student-quiz-display {
+  text-align: center;
+  width: 350px;
+  height: 200px;
   border: 1px solid black;
   border-collapse: collapse;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 2em;
+  font-size: 3em;
   text-align: center;
 }
 
@@ -87,20 +151,15 @@
   height: 1em;
 }
 
-.one {
-  background-color: #00cc00;
-}
 
-.two {
-  background-color: #cccc00;
-}
 
-.three {
-  background-color: #00cccc;
-}
-
-.four {
-  background-color: #cc0000;
+input[type=email] {
+  /* for text fields for student devise views */
+  padding:.2em;
+  border:.2em solid #ccc;
+  -webkit-border-radius: 1em;
+  border-radius: .2em;
+  font-size: 1.2em;
 }
 
 input[type=text] {
@@ -121,6 +180,66 @@ input[type=password] {
   font-size: 1.2em;
 }
 
+input[type=submit].game-a {
+  background: #00cc00;
+  border-radius: .5em;
+  font-size: 1em;
+  font-weight: 800;
+  width: 300px;
+  height: 160px;
+  box-shadow: inset 0px 0px 6px #fff;
+  -webkit-box-shadow: inset 0px 0px 6px #fff;
+  border: 1px solid #5ea617;
+}
+
+input[type=submit].game-b {
+  background: #cccc00;
+  border-radius: .5em;
+  font-size: 1em;
+  font-weight: 800;
+  width: 300px;
+  height: 160px;
+  box-shadow: inset 0px 0px 6px #fff;
+  -webkit-box-shadow: inset 0px 0px 6px #fff;
+  border: 1px solid #5ea617;
+}
+
+input[type=submit].game-c {
+  background: #00cccc;
+  border-radius: .5em;
+  font-size: 1em;
+  font-weight: 800;
+  width: 300px;
+  height: 160px;
+  box-shadow: inset 0px 0px 6px #fff;
+  -webkit-box-shadow: inset 0px 0px 6px #fff;
+  border: 1px solid #5ea617;
+}
+
+input[type=submit].game-d {
+  background: #cc0000;
+  border-radius: .5em;
+  font-size: 1em;
+  font-weight: 800;
+  width: 300px;
+  height: 160px;
+  box-shadow: inset 0px 0px 6px #fff;
+  -webkit-box-shadow: inset 0px 0px 6px #fff;
+  border: 1px solid #5ea617;
+}
+
+input[type=submit].next {
+  background: #cccccc;
+  border-radius: .5em;
+  font-size: 1em;
+  font-weight: 800;
+  width: 100px;
+  height: 50px;
+  box-shadow: inset 0px 0px 6px #fff;
+  -webkit-box-shadow: inset 0px 0px 6px #fff;
+  border: 1px solid #5ea617;
+}
+
 input[type=submit] {
   border-radius: .2em;
   padding: .3em;
@@ -129,23 +248,80 @@ input[type=submit] {
 }
 
 h1 {
-  font-family: Phosphate, Helvetica, Arial, sans-serif;
+  font-family: 'Bungee', Helvetica, Arial, sans-serif;
   font-size: 3em;
   text-align: center;
 }
 
 h2 {
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 2.4em;
+  font-size: 2.5em;
   text-align: center;
+}
+
+h3 {
+  font-size: 2em;
+  text-align: center;
+}
+
+h4 {
+  font-family: 'Bungee', Helvetica, Arial, sans-serif;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+h5 {
+  font-size: 1em;
+  text-align: center;
+}
+
+.game-the-progress {
+  font-family: 'Bungee', Helvetica, Arial, sans-serif;
+  font-size: 1.5em;
+  position: fixed;
+  text-align: left;
+  left: 0;
+  bottom: 0;
+  padding: 1em;
+}
+
+.home-button {
+  position: fixed;
+  text-align: left;
+  top: 0;
+  left: 0;
+  padding-left: .4em;
+}
+
+.current-user {
+  position: fixed;
+  text-align: right;
+  top: 0;
+  right: 0;
+  padding-right: .4em;
 }
 
 .gobutton {
   background: #00cc66;
 }
 
+.student-button-1 {
+  background: #00cc00;
+}
+
+.student-button-2 {
+  background: #cccc00;
+}
+
+.student-button-3 {
+  background: #00cccc;
+}
+
+.student-button-4 {
+  background: #cc0000;
+}
+
 .infobutton {
-  background: #66fifff;
+  background: #66ffff;
 }
 
 
@@ -154,7 +330,7 @@ h2 {
 @media only screen and (max-width: 500px) {
 
   body {
-    background: #fff;
+    background: #999966;
   }
 
   .form {
@@ -168,6 +344,15 @@ h2 {
 
   .spacer {
     min-height: 5em;
+  }
+
+  input[type=email] {
+    /* for text fields for student devise views */
+    padding:.2em;
+    border:.2em solid #ccc;
+    -webkit-border-radius: 1em;
+    border-radius: .2em;
+    font-size: 1.8em;
   }
 
   input[type=text] {
@@ -191,12 +376,12 @@ h2 {
   input[type=submit] {
     border-radius: .2em;
     padding: .3em;
-    font-size: 3em;
+    font-size: 4em;
     font-weight: 800;
   }
 
   h1 {
-    font-size: 3em;
+    font-size: 3.3em;
 
   }
 
@@ -205,13 +390,25 @@ h2 {
   }
 
   .infobutton {
-    background: #66fifff;
+    background: #66ffff;
   }
+
 }
 
+th {
+  text-align: left;
+}
 
-.answer-button-a, .answer-button-b, .answer-button-c, .answer-button-d {
-  display: inline;
+// GAME INDEX PAGE
+
+#games-index p {
+  background-color: white;
+  font-size: 3em;
+}
+
+#games-index span {
+  background-color: red;
+  color: white;
 }
 
 .next-button {
@@ -226,3 +423,7 @@ h2 {
 #results-1 {
   display: inline;
 }
+#games-index a {
+  text-decoration: none;
+}
+
