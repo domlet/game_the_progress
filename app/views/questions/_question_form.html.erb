@@ -1,16 +1,35 @@
-<!-- THE NEXT BUTTON -->
+<!-- 'NEXT' BUTTON AND 'SUBMIT' BUTTONS -->
 <% @questions.each do |question| %>
+
+  <% if current_user.is_admin %>
+  <!-- 'NEXT' BUTTON -->
   <!-- Form for NEXT button hits the controller route -->
-  <%=form_for question, url: question_path(question), html: {method: "patch"}, remote: true, authenticity_token: true do |f|%>
+    <%=form_for question, url: question_path(question), html: {method: "patch"}, remote: true, authenticity_token: true do |f|%>
 
     <!-- Hidden field conveying question id -->
     <div id="hidden-question-field">
       <input type="hidden" name="<%= question.id %>" value="hidden-thing">
     </div>
 
-    <!-- The actual clickable button triggers the Action Cable 'Broadcast' -->
+    <!-- The clickable button triggers the Action Cable 'Broadcast' -->
     <div class="next-button"><input type="submit" value="next"></div>
+    <% end %>
+
+  <% else %>
+
+    <!-- @question comes from games#show which gets from games#controller -->
+    <!-- ANSWER BUTTONS - 'result' is a post route -->
+    <%=form_for result, remote: true, authenticity_token: true do |f|%>
+
+    <!-- THESE MAY NOT HAVE LINE BREAKS -->
+    <div class="answer-button-a"><input type="submit" name="<%= question.answers[0].id %>" value="a"></div>
+    <div class="answer-button-b"><input type="submit" name="<%= question.answers[1].id %>" value="b"></div>
+    <div class="answer-button-c"><input type="submit" name="<%= question.answers[2].id %>" value="c"></div>
+    <div class="answer-button-d"><input type="submit" name="<%= question.answers[3].id %>" value="d"></div>
+    <!-- HIDDEN FIELDS WITH IMPORTANT DATA -->
+    <%=f.hidden_field :user_id, value: current_user.id %>
+    <%=f.hidden_field :question_id, value: question.id %>
+
+    <% end %>
   <% end %>
 <% end %>
-
-<!-- @question comes from games#show which gets from games#controller -->

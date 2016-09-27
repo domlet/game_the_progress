@@ -1,21 +1,15 @@
-<!-- FLASH MESSAGES -->
 
 <!-- GAME TITLE -->
 <h1><%= @game.title %></h1>
 
-<!-- only shows on old page -->
+<!-- FLASH MESSAGES -->
+<!-- TODO: make it show on S.P.A. -->
 <div class="notice"></div>
 
 <!-- QUESTION TEXT -->
 <hr>QUESTION:
 <!-- renderQuestion holder / dynamically changing -->
 <div id='questions'><p><%= @question.text %></p></div>
-
-<!-- <ol>
-< % @questions.each do |question| %>
-<li>< %= question.text %></li>
-< % end %>
-</ol> -->
 
 <%= render partial: 'questions/question', collection: @question %>
 
@@ -28,19 +22,10 @@
   <p><%= @question.answers[3].text%></p>
 </div>
 
-<!-- Invisible divs to store answer ids -->
-<div id='answer-buttons-a' style="display:inline"></div>
-<div id='answer-buttons-b' style="display:inline"></div>
-<div id='answer-buttons-c' style="display:inline"></div>
-<div id='answer-buttons-d' style="display:inline"></div>
-
-<!-- This is an invisible div that stores the current question id: -->
-<div id='current-question' style="display:inline">1</div>
-
-<%= render partial: 'questions/question_form', locals: {question: @question} %>
+<!-- NEXT BUTTON & ANSWER BUTTONS -->
+<%= render partial: 'questions/question_form', locals: {question: @question, result: @result} %>
 
 <% if current_user.is_admin %>
-<!-- NEXT BUTTON -->
 <!-- RESULTS (IF ANY) -->
 <hr>STUDENT RESPONSES:
 <div>
@@ -48,13 +33,9 @@
   <div class="panel-body" id="results">
     <%= render partial: 'results/result', collection: @question.results %>
   </div>
-  <%else%>
+  <% else %>
   <!-- This is the div that will hold the abcd answer buttons -->
   <div class="panel-body hidden" id="results"></div>
-  <%end%>
+  <% end %>
 </div>
-<% else %>
-
-<!-- ANSWER BUTTONS -->
-<%= render partial: 'results/result_form', locals: {result: @result, game: @game}%>
 <% end %>
