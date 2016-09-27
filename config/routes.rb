@@ -24,10 +24,6 @@ Rails.application.routes.draw do
   resources :answers
   resources :users, only: [:show, :edit]
 
-  # get 'graph/index'
-  # get 'graph/data', defaults: { format: 'json' }
-  # get 'graph/user_results' , defaults: { format: 'json' }
-
   root to: 'games#index'
 
 end
