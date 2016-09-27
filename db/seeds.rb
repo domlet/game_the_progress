@@ -17,6 +17,7 @@ Question.delete_all
 Answer.delete_all
 Result.delete_all
 
+
 # One student user id = 1
 User.create!(
     first_name:"Shenesha",
