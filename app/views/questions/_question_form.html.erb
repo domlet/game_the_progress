@@ -2,8 +2,7 @@
 <p><%=@questions%></p>
 
 <% @questions.each do |question| %>
-  <p><%= question %></p>
-  <p><%= question_path(question) %></p>
+  <p><%= question %> <%= question_path(question) %></p>
   <% if current_user.is_admin %>
   <!-- 'NEXT' BUTTON -->
   <!-- Form for NEXT button hits the controller route -->
@@ -19,6 +18,7 @@
     <% end %>
 
   <% else %>
+  <!-- END NEXT BUTTON -->
 
     <!-- @question comes from games#show which gets from games#controller -->
     <!-- ANSWER BUTTONS - 'result' is a post route -->

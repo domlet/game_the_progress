@@ -411,14 +411,16 @@ th {
 }
 
 .next-button {
-  display: none;
+  display: inline;
 }
+
 #button-2 {
   display: inline;
 }
 .results-buttons {
-  display: none;
+  display: inline;
 }
+
 #results-1 {
   display: inline;
 }
