@@ -1,6 +1,5 @@
 <!-- 'NEXT' BUTTON AND 'SUBMIT' BUTTONS -->
 <% @questions.each do |question| %>
-
   <% if current_user.is_admin %>
   <!-- 'NEXT' BUTTON -->
   <!-- Form for NEXT button hits the controller route -->
@@ -25,6 +24,7 @@
     <% end %>
 
   <% else %>
+  <!-- END NEXT BUTTON -->
 
     <!-- @question comes from games#show which gets from games#controller -->
   <div id="student-device-landscape">

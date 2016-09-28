@@ -1,0 +1,43 @@
+<% Game.all.each do |game| %>
+console.log(App)
+  // Creates a thing that is listening to this channel:
+  App['game' + <%= game.id %>] = App.cable.subscriptions.create({channel: "QuestionsChannel", game: <%= game.id %>} , {
+    // 'data' is anything broadcast by the server (see 'questions_controller')
+    received: function(data) {
+      var gameId = $("[data-game]").data().game
+      this.setGameId(gameId);
+      console.log('received' + this.gameId);
+      console.log('question' + data.question_id);
+      // $("div[data-game='" + this.gameId + "']").css('background-color', 'red') // for debugging "next" targeting
+      // The controller has sent these objects (the NEXT stuff), so now we can work with them:
+      $("#questions").removeClass('hidden'); // Unknown
+      $("#questions").html(this.renderQuestion(data)); // Renders the new question
+      $("#answers").html(this.renderAnswers(data)); // Renders the new answers
+      // Hide and show "Next" button
+      $(".next-button").css("display", "none");
+      $("#button-" + (data.question_id + 1)).css("display", "inline");
+      // Hide and show "Results" buttons
+      $(".results-buttons").css("display", "none");
+      $("#results-" + (data.question_id)).css("display", "inline");
+    },
+
+    setGameId: function(gameId) {
+      this.gameId = gameId;
+    },
+
+    renderQuestion: function(data) {
+      console.log('question rendered');
+      return "<p>" + data.question_id + ". " + data.question_text + "</p>";
+    },
+
+    renderAnswers: function(data) {
+      console.log('answer rendered');
+      return ("<p>A. " + data.answer_options[0].text + "</p>" +
+              "<p>B. " + data.answer_options[1].text + "</p>" +
+              "<p>C. " + data.answer_options[2].text + "</p>" +
+              "<p>D. " + data.answer_options[3].text + "</p>")
+    }
+
+  });
+
+<% end %>
