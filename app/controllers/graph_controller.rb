@@ -20,50 +20,42 @@ class GraphController < ApplicationController
     @data = data.to_json
 
      ################ PRACTICE CODE ##################################
- # @users = User.all
- #    if params[:id] != "index"
- #      @user = User.find(params[:id])
- #      true_count = 0
- #      false_count = 0
- #      @user.results.each do |result|
- #        if result.is_correct == true
- #          true_count += 1
- #        else
- #          false_count += 1
+
+     # Method to get results on each individual question
+ # @game = Game.find(1)
+
+ #    @game.questions.each do |question|
+ #          a_answers = 0
+ #          b_answers = 0
+ #          c_answers = 0
+ #          d_answers = 0
+ #      question.results.each do |result|
+ #        if result.student_answer_id == question.answers[0].id
+ #          a_answers += 1
+ #        elsif result.student_answer_id == question.answers[1].id
+ #          b_answers += 1
+ #        elsif result.student_answer_id == question.answers[2].id
+ #          c_answers += 1
+ #        elsif result.student_answer_id == question.answers[3].id
+ #          d_answers += 1
  #        end
  #      end
+ #    p "*" * 20
+ #    p a_answers
+ #    p b_answers
+ #    p c_answers
+ #    p d_answers
+ #    end
 
- #     end
- #      data = {
- #          clickable: false,
- #          data: [
- #                  {label: "Correct", value: true_count},
- #                  {label: "Incorrect", value: false_count}
- #                ]
- #              }
- #     @data = data.to_json
-     ################ START FRESH CODE ##################################
-    # @users = User.all
-    # if params[:id] != "index"
-    #   @user = User.find(params[:id])
-    #   true_count = 0
-    #   false_count = 0
-    #   @users.results.each do |result|
-    #     if result.is_correct == true_count
-    #       true_count += 1
-    #     else
-    #       false_count += 1
-    #     end
 
-    #   data = {
-    #     clickable: false,
-    #     data: [
-    #             { label: user.first_name, value: true_count, id: user.id }
-    #     ]
-    #   }
-     # @data = data.to_json
-    # end
-    # end
+
+
+
+
+################ START FRESH CODE ##################################
+
+
+
 
 
 ####### HARDCODED FOR GRAPH ##############
@@ -81,10 +73,12 @@ class GraphController < ApplicationController
     #       p data
     # @data = data.to_json
 ####### END HARDCODED FOR GRAPH ##############
+end
 
-  end
+
 
   # Method to show individual student results
+   # route: /graph/student/:id
   def show
     @users = User.all
     if params[:id] != "index"
