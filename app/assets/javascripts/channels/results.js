@@ -10,7 +10,7 @@ App.results = App.cable.subscriptions.create('ResultsChannel', {
 
   renderResult: function(data) {
     console.log('result rendered');
-    return "<span> <b>" + data.user + ": </b>" + data.answer + "</span>";
+    return "<span> <b>" + data.user + " answered: </b>" + data.answer + " for Question " + data.question + "</span><br/>";
   },
 
   // TODO: ajax this

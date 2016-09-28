@@ -476,7 +476,7 @@ th {
   text-align: left;
 }
 
-// GAME INDEX PAGE
+/* GAME INDEX PAGE */
 
 #games-index p {
   background-color: white;
@@ -580,39 +580,39 @@ th {
   text-align: left;
 }
 
-// GAME INDEX PAGE
-
-#games-index p {
-  background-color: white;
-  font-size: 3em;
-}
-
-#games-index span {
-  background-color: red;
-  color: white;
-}
-
-.next-button {
-  display: none;
-}
-#button-2 {
-  display: inline;
-}
-.results-buttons {
-  display: none;
-}
-#results-1 {
-  display: inline;
-}
 #games-index a {
   text-decoration: none;
 }
-
-
-
-
-
-
-
-
-
+#games-index p {
+  background-color: white;
+}
+#games-index span.subject {
+  background-color: red;
+  color: white;
+}
+#games-index span.game-id {
+  background-color: lime;
+  color: white;
+}
+/* NEXT BUTTONS HIDDEN BY DEFAULT */
+.next-button {
+  display: none;
+}
+/* SHOW 'NEXT' BUTTON ON Q1 PAGE */
+#button-2 {
+  display: inline;
+}
+#button-12 {
+  display: inline;
+}
+/* RESULTS BUTTONS HIDDEN BY DEFAULT */
+.results-buttons {
+  display: none;
+}
+/* SHOW 'ANSWERS' BUTTONS FOR Q1 */
+#results-1 {
+  display: inline;
+}
+#results-11 {
+  display: inline;
+}

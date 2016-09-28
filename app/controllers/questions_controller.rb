@@ -11,7 +11,7 @@ class QuestionsController < ApplicationController
 
     # This is publisher (sends stuff out)
     # Triggered when 'next' button is clicked
-    ActionCable.server.broadcast 'questions',
+    ActionCable.server.broadcast "game-#{@question.game_id}:questions",
         answer_options: @question.answers,
         question_text: @question.text,
         question_id: @question.id
