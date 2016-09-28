@@ -15,6 +15,7 @@
  */
 
  body {
+
   background: #cccc99;
   font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
 }
@@ -573,4 +574,45 @@ th {
   }
 
 }
+
+
+th {
+  text-align: left;
+}
+
+// GAME INDEX PAGE
+
+#games-index p {
+  background-color: white;
+  font-size: 3em;
+}
+
+#games-index span {
+  background-color: red;
+  color: white;
+}
+
+.next-button {
+  display: none;
+}
+#button-2 {
+  display: inline;
+}
+.results-buttons {
+  display: none;
+}
+#results-1 {
+  display: inline;
+}
+#games-index a {
+  text-decoration: none;
+}
+
+
+
+
+
+
+
+
 
