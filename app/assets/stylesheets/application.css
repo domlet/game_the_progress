@@ -502,6 +502,17 @@ th {
 .results-buttons {
   display: none;
 }
+
+.show-results-buttons {
+  margin-left:auto;
+  margin-right:auto;
+  display: none;
+}
+
+#show-result-button-1 {
+  display: inline;
+}
+
 #results-1 {
   display: inline;
 }

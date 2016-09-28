@@ -18,8 +18,6 @@
 
     <div class="center">
       <div class="next-button" id="button-<%= question.id %>"><input type="submit" value="next" class="go"></div>
-
-
     </div>
 
     <% end %>
@@ -34,7 +32,10 @@
     </div>
 
     <!-- The clickable button triggers the Action Cable 'Broadcast' -->
-    <div class="show-results-button" id="show-result-button-<%= question.id %>"><input type="submit" value="Show Results"></div>
+    <div class="center">
+      <div class="show-results-buttons" id="show-result-button-<%= question.id %>"><input type="submit" value="show results" class="go"></div>
+    </div>
+
     <% end %>
 
   <% else %>

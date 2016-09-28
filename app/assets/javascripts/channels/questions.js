@@ -21,6 +21,10 @@ App.questions = App.cable.subscriptions.create('QuestionsChannel', {
     // Hide and show 'Results' buttons
     $('.results-buttons').css("display", "none");
     $("#results-" + (data.question_id)).css("display", "inline");
+
+    $('.show-results-buttons').css("display", "none");
+    $("#show-result-button-" + (data.question_id)).css("display", "inline");
+
     $("#progress-bar").html("<progress value='" + data.question_id + "' max='10'></progress>");
     // $("#progress-bar").html(data.question_id);
 
