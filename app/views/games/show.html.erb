@@ -29,9 +29,12 @@
 <%= render partial: 'questions/question_form', locals: {question: @question, result: @result} %>
 
 
+<% if current_user.is_admin %>
 <!-- End of game button -->
-<div id="end-game-button"><%= link_to "Finished", results_path %></div>
-
+  <div id="end-game-button"><%= link_to "Finished", results_path %></div>
+<% else %>
+  <div id="end-game-student-results"><%= link_to "See my results", "/graph/student/#{current_user.id}" %></div>
+<% end %>
 
 
 <div id="progress-bar" class="progress-bar">

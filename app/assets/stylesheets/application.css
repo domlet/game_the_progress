@@ -553,6 +553,10 @@ th {
   display: none;
 }
 
+#end-game-student-results {
+  display: none;
+}
+
 /*#results-1 {
   display: inline;
 }
