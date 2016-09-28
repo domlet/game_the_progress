@@ -8,7 +8,11 @@
 
   <!-- QUESTION TEXT -->
   <!-- renderQuestion holder / dynamically changing -->
-  <div id='questions'><p><%= @question.id %>. <%= @question.text %></p></div>
+  <% if @question.id % 10 == 0 %>
+    <div id='questions'><p>10. <%= @question.text %></p></div>
+  <% else %>
+    <div id='questions'><p><%= @question.id % 10 %>. <%= @question.text %></p></div>
+  <% end %>
 
   <%= render partial: 'questions/question', collection: @question %>
 
