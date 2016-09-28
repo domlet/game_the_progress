@@ -442,7 +442,7 @@ h5 {
 .current-user {
   position: fixed;
   text-align: right;
-  top: 0;
+  bottom: 0;
   right: 0;
   padding-right: .4em;
 }

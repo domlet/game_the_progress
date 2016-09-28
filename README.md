@@ -72,24 +72,15 @@ To play Game the Progress as a student, follow the above Heroku link, create a n
 
 ## The Stack
 
-Ruby on Rails 5
-using Action Cable
-
-Travis CI
-
-Devise Ruby Gem 
-
-GitHub
-
-D3-Rails
-
-JavaScript
-
-JQuery
-
-CSS
-
-HTML
+- Ruby on Rails 5 with Action Cable
+- Travis CI
+- Devise Ruby Gem 
+- GitHub
+- D3-Rails
+- JavaScript
+- JQuery
+- CSS
+- HTML
 
 
 ## Copyright and Licensing Information
