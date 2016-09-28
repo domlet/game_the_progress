@@ -1,17 +1,6 @@
 function draw(data) {
     // Pulls data array out of object
     var data = data.data;
-    console.log('*********', data);
-    // data = [
-    //          {label: "name1", value: 8},
-    //          {label: "name2", value: 3},
-    //          {label: "name3", value: 2},
-    //          {label: "name4", value: 6},
-    //          {label: "name5", value: 1},
-    //          {label: "name6", value: 7}
-    //        ]
-
-
     var div = d3.select("body").append("div").attr("class", "toolTip");
 
     var axisMargin = 20,
