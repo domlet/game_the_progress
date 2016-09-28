@@ -60,7 +60,7 @@ function draw(data) {
             .attr("height", barHeight)
             .attr("width", function(d){
                 return scale(d.value);
-            });
+            })
 
     bar.append("text")
             .attr("class", "value")
@@ -101,7 +101,7 @@ function draw(data) {
     svg.insert("g",":first-child")
             .attr("class", "axisHorizontal")
             .attr("transform", "translate(" + (margin + labelWidth) + ","+ (height - axisMargin - margin)+")")
-            .call(xAxis);
+            .call(xAxis)
 
     // Adds text to each graph
     svg.insert("g")
@@ -111,21 +111,21 @@ function draw(data) {
             .attr("text-anchor", "left")
             .style("font-size", "1em")
             .style("font-family", 'Ubuntu', "Helvetica")
-            .text(chartTitle);
+            .text(chartTitle)
 
     // Animates graph upon entry
-    svg.transition()
-        .attr('height', function(d) {
-            return d
-        })
-        .attr('y', function(d) {
-            return height -d;
-        })
-        .delay(function(d,i) {
-            return i * 20
-        })
-        .duration(1000)
-        .ease('elastic')
+//     svg.transition()
+//         .attr('height', function(d) {
+//             return d
+//         })
+//         .attr('y', function(d) {
+//             return height -d;
+//         })
+//         .delay(function(d,i) {
+//             return i * 20
+//         })
+//         .duration(1000)
+//         .ease('elastic')
 }
 
 
