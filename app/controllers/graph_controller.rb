@@ -1,8 +1,9 @@
 class GraphController < ApplicationController
 
+  # Method to show results for entire class
   def students
     # @results = Result.all
-    #  p @results
+    # #  p @results
     # boolean_array = @results.map do |result|
     #   result.is_correct
     # end
@@ -32,35 +33,49 @@ class GraphController < ApplicationController
 
   end
 
+  # Method to show individual student results
   def show
     @users = User.all
     # p "*" * 88
     # p params
     # p params[:id]
-    # if params[:id] != "index"
-    #   @user = User.find(params[:id])
-    #   true_count = 0
-    #   false_count = 0
-    #   @user.results.each do |result|
-    #     if result.is_correct == true
-    #       true_count += 1
-    #     else
-    #       false_count += 1
-    #     end
-    #   end
-    #    @data = [true_count, false_count]
-    #  end
+    if params[:id] != "index"
+      @user = User.find(params[:id])
+      true_count = 0
+      false_count = 0
+      @user.results.each do |result|
+        if result.is_correct == true
+          true_count += 1
+        else
+          false_count += 1
+        end
+      end
 
-        data = {
+     end
+      data = {
           clickable: false,
           data: [
-                  {label: "Good", value: 8, id: 1},
-                  {label: "Bad", value: 3, id: 1}
+                  {label: "Correct", value: true_count},
+                  {label: "Incorrect", value: false_count}
                 ]
-          }
-          p data
-    @data = data.to_json
-          p @data
+              }
+     p "*" * 20
+     p data
+     @data = data.to_json
+     p "8" * 20
+     p @data
+
+     # Hardcoding of data to make graphs work
+    #     data = {
+    #       clickable: false,
+    #       data: [
+    #               {label: "Good", value: 8, id: 1},
+    #               {label: "Bad", value: 3, id: 1}
+    #             ]
+    #       }
+    #       p data
+    # @data = data.to_json
+    #       p @data
   end
 end
 
