@@ -13,11 +13,15 @@ App.questions = App.cable.subscriptions.create('QuestionsChannel', {
     // Hide and show 'Results' buttons
     $('.results-buttons').css("display", "none");
     $("#results-" + (data.question_id)).css("display", "inline");
+    $("#progress-bar").html("<progress value='" + data.question_id + "' max='10'></progress>");
+    // $("#progress-bar").html(data.question_id);
+
   },
 
   renderQuestion: function(data) {
     console.log('question rendered');
     return "<p>" + data.question_id + ". " + data.question_text + "</p>";
+
   },
 
   renderAnswers: function(data) {
@@ -28,5 +32,7 @@ App.questions = App.cable.subscriptions.create('QuestionsChannel', {
             "<p>D. " + data.answer_options[3].text + "</p>")
   }
 
+  
+  
 });
 
