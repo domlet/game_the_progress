@@ -6,7 +6,10 @@ App.questions = App.cable.subscriptions.create('QuestionsChannel', {
     // The controller has sent these objects (the NEXT stuff), so now we can work with them:
     $("#questions").removeClass('hidden'); // Unknown
     $('#questions').html(this.renderQuestion(data)); // Renders the new question
-    $('#answers').html(this.renderAnswers(data)); // Renders the new answers
+    $('#a').html(data.answer_options[0].text);
+    $('#b').html(data.answer_options[1].text);
+    $('#c').html(data.answer_options[2].text);
+    $('#d').html(data.answer_options[3].text); // Renders the new answers
     // Hide and show 'Next' button
     $('.next-button').css("display", "none");
     $("#button-" + (data.question_id + 1)).css("display", "inline");
@@ -22,17 +25,19 @@ App.questions = App.cable.subscriptions.create('QuestionsChannel', {
     console.log('question rendered');
     return "<p>" + data.question_id + ". " + data.question_text + "</p>";
 
-  },
 
-  renderAnswers: function(data) {
-    console.log('answer rendered');
-    return ("<p>A. " + data.answer_options[0].text + "</p>" +
-            "<p>B. " + data.answer_options[1].text + "</p>" +
-            "<p>C. " + data.answer_options[2].text + "</p>" +
-            "<p>D. " + data.answer_options[3].text + "</p>")
   }
 
-  
-  
+  // renderAnswers: function(data) {
+  //   console.log('answer rendered');
+  //   return ("<p>A. " + data.answer_options[0].text + "</p>" +
+  //           "<p>B. " + data.answer_options[1].text + "</p>" +
+  //           "<p>C. " + data.answer_options[2].text + "</p>" +
+  //           "<p>D. " + data.answer_options[3].text + "</p>")
+
+  // }
+
+
+
 });
 

@@ -17,5 +17,9 @@ App.results = App.cable.subscriptions.create('ResultsChannel', {
   renderNotice: function(data) {
     console.log('notice rendered');
     return "<span>" + data.notice + "</span>";
+  },
+
+  renderStudentResults: function(data) {
+
   }
 });

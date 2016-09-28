@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   # Show graph for entire class
   get 'graph/students', to: 'graph#students'
 
+  # Show student answer frequencies for each question
+
 
   # match 'graph/show' => 'graph#show', :via => :get
   # match 'graph/index' => 'graph#index', :via => :get
