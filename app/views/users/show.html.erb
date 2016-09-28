@@ -23,12 +23,12 @@
 <p>
 <%= link_to "Logout", destroy_user_session_path, method: :delete %>
 </p>
-<h5>Games</h5>
+<!-- <h5>Games</h5> -->
   <% if current_user %>
     <ul>
     <% @games[0..1].each do |game| %>
     <!-- <link_to "Profile", game_path(@game)> -->
-    <li><a href=""><%= game.title %></a></li>
+    <!-- <li><a href="">< %= game.title %></a></li> -->
     <% end %>
     </ul>
   <% end %>
