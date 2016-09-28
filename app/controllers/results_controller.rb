@@ -8,15 +8,17 @@ class ResultsController < ApplicationController
   end
 
   def create
-    p params
-    # TODO: Add Flash notice
-    # if Result.where("question_id = ? AND user_id = ?", params[:result][:question_id], params[:result][:user_id])
-    #   flash[:notice] = "You have already submitted one answer." # TODO: ajax this
-    #   p "been there, done that"
-    #   return
-    # end
-    p "*" * 50
-    # This will look incomplete until add'l params added
+    this_question = params[:result][:question_id].to_i
+    this_user = params[:result][:user_id].to_i
+    Result.all.each do |result|
+      if result.question_id == this_question && result.user_id == this_user
+      # flash[:notice] = "You have already submitted one answer." # TODO: ajax this
+        return
+      else
+        p "yeah! new result"
+      end
+    end
+
     p result = Result.new(result_params) # Doing this early to prevent errors
 
     # Submit the player's answer to the database
@@ -43,18 +45,17 @@ class ResultsController < ApplicationController
       p "*" * 50
       # test seed data
       ActionCable.server.broadcast 'results',
-        question: result.question_id,
-        answer: result.student_answer_id,
-        user: current_user.username
+      question: result.question_id,
+      answer: result.student_answer_id,
+      user: current_user.username
       head :ok
     else
       redirect_to games_path
     end
   end
 
-
   private
-    def result_params
-      params.require(:result).permit(:user_id, :question_id)
-    end
+  def result_params
+    params.require(:result).permit(:user_id, :question_id)
+  end
 end
