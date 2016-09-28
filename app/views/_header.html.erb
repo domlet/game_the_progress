@@ -3,7 +3,7 @@
   <%= link_to 'Games', games_url(@games) %>
     <% if current_user %>
       <% if current_user.is_admin == true %>
-      <b>Game Host:</b>
+       | <b>Game Host:</b>
       <% elsif current_user.is_admin != true %>
        | <b>Player:</b>
       <%end%>
