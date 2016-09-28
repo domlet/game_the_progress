@@ -55,7 +55,7 @@ input[type=submit].next-button {
 }
 
 #questions p {
-  font-family: 'Bungee', Helvetica, Arial, sans-serif;
+  font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
   font-size: 1.8em;
   font-weight: 800;
   text-align: center;
@@ -119,13 +119,14 @@ input[type=submit].next-button {
 
 /* STUDENT GAME VIEW */
 #student-device-landscape {
-    margin-left: 20%;
+
+  margin-left: 15%;
 }
 
 .answer-button-a input {
   background-color: #00cc00;
   text-align: center;
-  width: 33%;
+  width: 40%;
   height: 150px;
   border: 0px solid black;
   border-collapse: collapse;
@@ -143,7 +144,7 @@ input[type=submit].next-button {
   background-color: #cccc00;
   clear: right;
   text-align: center;
-  width: 33%;
+  width: 40%;
   height: 150px;
   border: 0px solid black;
   border-collapse: collapse;
@@ -160,7 +161,7 @@ input[type=submit].next-button {
 .answer-button-c input {
   background-color: #00cccc;
   text-align: center;
-  width: 33%;
+  width: 40%;
   height: 150px;
   border: 0px solid black;
   border-collapse: collapse;
@@ -175,9 +176,9 @@ input[type=submit].next-button {
 }
 
 .answer-button-d input {
-  background-color: #cc0000;
+  background-color: #ff66cc;
   text-align: center;
-  width: 33%;
+  width: 40%;
   height: 150px;
   border: 0px solid black;
   border-collapse: collapse;
@@ -223,7 +224,7 @@ input[type=submit].next-button {
 }
 
 #answers p:nth-child(4) {
-  background-color: #cc0000;
+  background-color: #ff66cc;
 }
 /* END OF PROJECTOR VIEW */
 
@@ -400,7 +401,7 @@ input[type=submit].go {
 }
 
 h1 {
-  font-family: 'Bungee', Helvetica, Arial, sans-serif;
+  font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
   font-size: 3em;
   text-align: center;
 }
@@ -416,7 +417,7 @@ h3 {
 }
 
 h4 {
-  font-family: 'Bungee', Helvetica, Arial, sans-serif;
+  font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
   font-size: 1.5em;
   text-align: center;
 }
@@ -427,7 +428,7 @@ h5 {
 }
 
 .game-the-progress {
-  font-family: 'Bungee', Helvetica, Arial, sans-serif;
+  font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
   font-size: 1.5em;
   position: fixed;
   text-align: left;
@@ -469,7 +470,7 @@ h5 {
 }
 
 .student-button-4 {
-  background: #cc0000;
+  background: #ff66cc;
 }
 
 .infobutton {
@@ -558,72 +559,95 @@ th {
 
 
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-device-width: 422px) {
 
-  body {
-    background: #999966;
+  #student-device-landscape {
+    margin-left: 1px;
   }
 
-  .form {
+  .answer-button-a input {
+    background-color: #00cc00;
     text-align: center;
-  }
-
-  .formfield {
-    /* for padding for the text fields */
-    padding: .5em;
-  }
-
-  .spacer {
-    min-height: 5em;
-  }
-
-  input[type=email] {
-    /* for text fields for student devise views */
-    padding:.2em;
-    border:.2em solid #ccc;
-    -webkit-border-radius: 1em;
-    border-radius: .2em;
-    font-size: 1.8em;
-  }
-
-  input[type=text] {
-    /* for text fields for student devise views */
-    padding:.2em;
-    border:.2em solid #ccc;
-    -webkit-border-radius: 1em;
-    border-radius: .2em;
-    font-size: 1.8em;
-  }
-
-  input[type=password] {
-    /* for password fields for student */
-    padding:.2em;
-    border:.2em solid #ccc;
-    -webkit-border-radius: 1em;
-    border-radius: .2em;
-    font-size: 1.8em;
-  }
-
-  input[type=submit] {
-    border-radius: .2em;
-    padding: .3em;
-    font-size: 4em;
-    font-weight: 800;
-  }
-
-  h1 {
-    font-size: 3.3em;
+    width: 49%;
+    height: 400px;
+    border: 0px solid black;
+    border-collapse: collapse;
+    font-size: 3em;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: .4em;
+    margin: .1em;
+    padding: .1em;
 
   }
 
-  .gobutton {
-    background: #00cc66;
+  .answer-button-b input {
+    background-color: #cccc00;
+    clear: right;
+    text-align: center;
+    width: 49%;
+    height: 400px;
+    border: 0px solid black;
+    border-collapse: collapse;
+    font-size: 3em;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: .4em;
+    margin: .1em;
+    padding: .1em;
+
   }
 
-  .infobutton {
-    background: #66ffff;
+  .answer-button-c input {
+    background-color: #00cccc;
+    text-align: center;
+    width: 49%;
+    height: 400px;
+    border: 0px solid black;
+    border-collapse: collapse;
+    font-size: 3em;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: .4em;
+    margin: .1em;
+    padding: .1em;
+
   }
 
+  .answer-button-d input {
+    background-color: #ff66cc;
+    text-align: center;
+    width: 49%;
+    height: 400px;
+    border: 0px solid black;
+    border-collapse: collapse;
+    font-size: 3em;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: .4em;
+    margin: .1em;
+    padding: .1em;
+  }
+  
+  h4 {
+    font-size: 2.8em;
+  }
+
+  #questions p {
+  max-width: 90%;
+  font-size: 3.8em;
+  height: 200px;
+  }
+
+  .current-user {
+    bottom: 10;
+    right: 10;
+    font-size: 3em;
+  }
 }
 
 
