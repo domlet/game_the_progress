@@ -95,5 +95,12 @@ function draw(data) {
             .attr("class", "axisHorizontal")
             .attr("transform", "translate(" + (margin + labelWidth) + ","+ (height - axisMargin - margin)+")")
             .call(xAxis);
+
+    svg.insert("g")
+    .append("text")
+    .attr("x", 75)
+    .attr("y", 25)
+    .attr("text-anchor", "middle")
+    .text("Question 1");
 }
 
