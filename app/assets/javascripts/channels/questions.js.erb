@@ -1,5 +1,4 @@
 <% Game.all.each do |game| %>
-console.log(App)
   // Creates a thing that is listening to this channel:
   App['game' + <%= game.id %>] = App.cable.subscriptions.create({channel: "QuestionsChannel", game: <%= game.id %>} , {
     // 'data' is anything broadcast by the server (see 'questions_controller')
@@ -12,7 +11,12 @@ console.log(App)
       // The controller has sent these objects (the NEXT stuff), so now we can work with them:
       $("#questions").removeClass('hidden'); // Unknown
       $("#questions").html(this.renderQuestion(data)); // Renders the new question
-      $("#answers").html(this.renderAnswers(data)); // Renders the new answers
+
+      $('#a').html(this.renderA(data));
+      $('#b').html(this.renderB(data));
+      $('#c').html(this.renderC(data));
+      $('#d').html(this.renderD(data));
+
       // Hide and show "Next" button
       $(".next-button").css("display", "none");
       $("#button-" + (data.question_id + 1)).css("display", "inline");
@@ -21,6 +25,9 @@ console.log(App)
       $("#results-" + (data.question_id)).css("display", "inline");
       // Progress bar
       $("#progress-bar").html("<progress value='" + data.question_id + "' max='10'></progress>");
+
+      $('.show-results-buttons').css("display", "none");
+      $("#show-result-button-" + (data.question_id)).css("display", "inline");
 
     },
 
@@ -33,13 +40,26 @@ console.log(App)
       return "<p>" + data.question_id + ". " + data.question_text + "</p>";
     },
 
-    renderAnswers: function(data) {
-      console.log('answer rendered');
-      return ("<p>A. " + data.answer_options[0].text + "</p>" +
-              "<p>B. " + data.answer_options[1].text + "</p>" +
-              "<p>C. " + data.answer_options[2].text + "</p>" +
-              "<p>D. " + data.answer_options[3].text + "</p>")
+    renderA: function(data) {
+      return data.answer_options[0].text + "<br> <span class='percent-  results' id='percent-a'>" + "</span>";
+    },
+    renderB: function(data) {
+      return data.answer_options[1].text + "<br> <span class='percent-  results' id='percent-b'>" + "</span>";
+    },
+    renderC: function(data) {
+      return data.answer_options[2].text + "<br> <span class='percent-  results' id='percent-c'>" + "</span>";
+    },
+    renderD: function(data) {
+      return data.answer_options[3].text + "<br> <span class='percent-  results' id='percent-d'>" + "</span>";
     }
+
+    // renderAnswers: function(data) {
+    //   console.log('answer rendered');
+    //   return ("<p>A. " + data.answer_options[0].text + "</p>" +
+    //           "<p>B. " + data.answer_options[1].text + "</p>" +
+    //           "<p>C. " + data.answer_options[2].text + "</p>" +
+    //           "<p>D. " + data.answer_options[3].text + "</p>")
+    // }
 
   });
 

@@ -16,7 +16,7 @@
 
  body {
 
-  background: #cccc99;
+  background: #dcdcd5;
   font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
 }
 
@@ -111,6 +111,10 @@ input[type=submit].next-button {
 
 #answers {
   text-align: center;
+}
+
+.percent-results {
+  font-size: 1.9em;
 }
 
 /* STUDENT GAME VIEW */
@@ -476,9 +480,45 @@ th {
   text-align: left;
 }
 
+#games-index a {
+  text-decoration: none;
+}
+#games-index p {
+  background-color: white;
+}
+#games-index span.subject {
+  background-color: red;
+  color: white;
+}
+#games-index span.game-id {
+  background-color: lime;
+  color: white;
+}
+/* NEXT BUTTONS HIDDEN BY DEFAULT */
+.next-button {
+  display: none;
+}
+/* SHOW 'NEXT' BUTTON ON Q1 PAGE */
+#button-2 {
+  display: inline;
+}
+#button-12 {
+  display: inline;
+}
+/* RESULTS BUTTONS HIDDEN BY DEFAULT */
+.results-buttons {
+  display: none;
+}
+/* SHOW 'ANSWERS' BUTTONS FOR Q1 */
+#results-1 {
+  display: inline;
+}
+#results-11 {
+  display: inline;
+}
 /* GAME INDEX PAGE */
 
-#games-index p {
+/*#games-index p {
   background-color: white;
   font-size: 3em;
 }
@@ -498,12 +538,23 @@ th {
 .results-buttons {
   display: none;
 }
+
+.show-results-buttons {
+  margin-left:auto;
+  margin-right:auto;
+  display: none;
+}
+
+#show-result-button-1 {
+  display: inline;
+}
+
 #results-1 {
   display: inline;
 }
 #games-index a {
   text-decoration: none;
-}
+}*/
 
 
 
@@ -576,43 +627,3 @@ th {
 }
 
 
-th {
-  text-align: left;
-}
-
-#games-index a {
-  text-decoration: none;
-}
-#games-index p {
-  background-color: white;
-}
-#games-index span.subject {
-  background-color: red;
-  color: white;
-}
-#games-index span.game-id {
-  background-color: lime;
-  color: white;
-}
-/* NEXT BUTTONS HIDDEN BY DEFAULT */
-.next-button {
-  display: none;
-}
-/* SHOW 'NEXT' BUTTON ON Q1 PAGE */
-#button-2 {
-  display: inline;
-}
-#button-12 {
-  display: inline;
-}
-/* RESULTS BUTTONS HIDDEN BY DEFAULT */
-.results-buttons {
-  display: none;
-}
-/* SHOW 'ANSWERS' BUTTONS FOR Q1 */
-#results-1 {
-  display: inline;
-}
-#results-11 {
-  display: inline;
-}

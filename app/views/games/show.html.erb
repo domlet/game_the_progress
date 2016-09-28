@@ -12,32 +12,74 @@
 
   <%= render partial: 'questions/question', collection: @question %>
 
-  <% if current_user.is_admin %>
-  <!-- ANSWERS TEXT holder / dynamically changing -->
+<!-- <<<<<<< HEAD
+  < % if current_user.is_admin %>
+  <! ANSWERS TEXT holder / dynamically changing
   <div id="answers">
-    <p>A. <%= @question.answers[0].text%></p>
-    <p>B. <%= @question.answers[1].text%></p>
-    <p>C. <%= @question.answers[2].text%></p>
-    <p>D. <%= @question.answers[3].text%></p>
+    <p>A. < %= @question.answers[0].text%></p>
+    <p>B. < %= @question.answers[1].text%></p>
+    <p>C. < %= @question.answers[2].text%></p>
+    <p>D. < %= @question.answers[3].text%></p>
   </div>
-  <% end %>
+  < % end %>
 
-  <!-- NEXT BUTTON & ANSWER BUTTONS -->
-  <%= render partial: 'questions/question_form', locals: {question: @question, result: @result} %>
+   NEXT BUTTON & ANSWER BUTTONS
+  < %= render partial: 'questions/question_form', locals: {question: @question, result: @result} %>
 
-  <% if current_user.is_admin %>
-  <!-- RESULTS (IF ANY) -->
+  < % if current_user.is_admin %>
+  <!- RESULTS (IF ANY)
   <div>
-    <% if @question.results.any? %>
-    <div class="panel-body" id="results">
-      <%= render partial: 'results/result', collection: @question.results %>
+    < % if @question.results.any? %>
+    <div class="panelbody" id="results">
+      < %= render partial: 'results/result', collection: @question.results %>
     </div>
-    <% else %>
-    <!-- This is the div that will hold the abcd answer buttons -->
+    < % else %>
+    This is the div that will hold the abcd answer buttons
     <div class="panel-body hidden" id="results"></div>
-    <% end %>
+    < % end %>
   </div>
+ -->
+<%= render partial: 'questions/question', collection: @question %>
+
+
+
+<% if current_user.is_admin %>
+<!-- ANSWERS TEXT holder / dynamically changing -->
+
+<!-- <hr>ANSWERS: -->
+<!--   <div id="answers">
+    <p>A. < %= @question.answers[0].text%></p>
+    <p>B. < %= @question.answers[1].text%></p>
+    <p>C. < %= @question.answers[2].text%></p>
+    <p>D. < %= @question.answers[3].text%></p>
+  </div> -->
+
+<div id="answers">
+  <p id="a">A. <%= @question.answers[0].text %> <br> <span class="percent-results" id="percent-a"> </span> </p>
+  <p id="b">B. <%= @question.answers[1].text %> <br> <span class="percent-results" id="percent-b"> </span> </p>
+  <p id="c">C. <%= @question.answers[2].text %> <br> <span class="percent-results" id="percent-c"> </span> </p>
+  <p id="d">D. <%= @question.answers[3].text %> <br> <span class="percent-results" id="percent-d"> </span> </p>
+</div>
+
+<% end %>
+
+<!-- NEXT BUTTON & ANSWER BUTTONS -->
+<%= render partial: 'questions/question_form', locals: {question: @question, result: @result} %>
+
+<% if current_user.is_admin %>
+<!-- RESULTS (IF ANY) -->
+<!-- <hr>STUDENT RESPONSES: -->
+<div>
+  <% if @question.results.any? %>
+<!--   <div class="panel-body" id="results">
+ -->    <!-- %= render partial: 'results/result', collection: @question.results % -->
+<!--   </div>
+ -->  <% else %>
+  <!-- This is the div that will hold the abcd answer buttons -->
+  <!-- <div class="panel-body hidden" id="results"></div> -->
+<!-- >>>>>>> class-results-display-merge -->
   <% end %>
+<% end %>
 </div>
 
 <div id="progress-bar" class="progress-bar">
