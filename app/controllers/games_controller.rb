@@ -8,6 +8,9 @@ class GamesController < ApplicationController
     end
   end
 
+
+  # The show page accesses the Questions controller and Answers controller...
+  # ...and those controllers use the games.js listener (for Action Cable)
   def show
     if current_user
       p "in games controller"
