@@ -19,6 +19,9 @@ console.log(App)
       // Hide and show "Results" buttons
       $(".results-buttons").css("display", "none");
       $("#results-" + (data.question_id)).css("display", "inline");
+      // Progress bar
+      $("#progress-bar").html("<progress value='" + data.question_id + "' max='10'></progress>");
+
     },
 
     setGameId: function(gameId) {

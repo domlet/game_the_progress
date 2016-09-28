@@ -1,7 +1,6 @@
 <h1>Games</h1>
 
 <div class="games-index">
-
   <% @games[0..1].each do |game| %>
     <p>
     <span class="game-id">#<%= game.id %></span>
@@ -9,5 +8,4 @@
     <span class="subject"><%= game.subject %></span>
     </p>
   <% end %>
-
 </div>
