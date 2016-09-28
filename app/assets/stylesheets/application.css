@@ -48,7 +48,7 @@ input[type=submit].next-button {
     width: 220px;
 }
 
-.game-list {
+.games-list {
     display: block;
     margin: auto;
     width: 90%;
@@ -580,17 +580,16 @@ th {
   text-align: left;
 }
 
+/* GAMES INDEX */
+
 #games-index a {
   text-decoration: none;
 }
-#games-index p {
-  background-color: white;
-}
-#games-index span.subject {
+span.subject {
   background-color: red;
   color: white;
 }
-#games-index span.game-id {
+span.game-id {
   background-color: lime;
   color: white;
 }
