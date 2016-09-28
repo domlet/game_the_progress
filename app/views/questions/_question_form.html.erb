@@ -11,13 +11,23 @@
     </div>
 
     <!-- The clickable button triggers the Action Cable 'Broadcast' -->
-    <div class="next-button" id="button-<%= question.id %>"><input type="submit" value="next"></div>
+
+ <!--    <div class="next-button" id="button-<%= question.id %>"><input type="submit" value="next"></div> -->
+    
+
+    <div class="center">
+      <div class="next-button" id="button-<%= question.id %>"><input type="submit" value="next" class="go"></div>
+
+
+    </div>
+
     <% end %>
 
   <% else %>
   <!-- END NEXT BUTTON -->
 
     <!-- @question comes from games#show which gets from games#controller -->
+  <div id="student-device-landscape">
     <!-- ANSWER BUTTONS - 'result' is a post route -->
     <div class="results-buttons" id="results-<%= question.id %>">
     <%=form_for result, remote: true, authenticity_token: true do |f|%>
@@ -31,6 +41,7 @@
     <%=f.hidden_field :question_id, value: question.id %>
     <% end %>
     </div>
+  </div>
 
   <% end %>
 <% end %>

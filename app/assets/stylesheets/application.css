@@ -15,9 +15,50 @@
  */
 
  body {
-  display: inline;
+
   background: #cccc99;
   font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+}
+
+input[type=submit].next-button {
+  border-radius: .2em;
+  background: #009933;
+  padding: .3em;
+  font-size: 1.2em;
+  font-weight: 800;
+}
+
+.progress-bar {
+  position: absolute;
+  bottom: 0;
+  padding-bottom: .5em;
+  padding-left: .5em;
+  /*position: fixed;
+  text-align: right;
+  vertical-align: bottom;
+  top: 0;
+  right: 0; */
+  padding-right: .4em;
+}
+
+/* log in/sign up/sign out forms */
+.form-screen {
+    display: block;
+    margin: auto;
+    width: 220px;
+}
+
+.game-list {
+    display: block;
+    margin: auto;
+    width: 90%;
+}
+
+#questions p {
+  font-family: 'Bungee', Helvetica, Arial, sans-serif;
+  font-size: 1.8em;
+  font-weight: 800;
+  text-align: center;
 }
 
 .game-view-h1 {
@@ -72,7 +113,117 @@
   text-align: center;
 }
 
-#answers p, .results-buttons input {
+/* STUDENT GAME VIEW */
+#student-device-landscape {
+    margin-left: 20%;
+}
+
+.answer-button-a input {
+  background-color: #00cc00;
+  text-align: center;
+  width: 33%;
+  height: 150px;
+  border: 0px solid black;
+  border-collapse: collapse;
+  font-size: 3em;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: .4em;
+  margin: .1em;
+  padding: .1em;
+
+}
+
+.answer-button-b input {
+  background-color: #cccc00;
+  clear: right;
+  text-align: center;
+  width: 33%;
+  height: 150px;
+  border: 0px solid black;
+  border-collapse: collapse;
+  font-size: 3em;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: .4em;
+  margin: .1em;
+  padding: .1em;
+
+}
+
+.answer-button-c input {
+  background-color: #00cccc;
+  text-align: center;
+  width: 33%;
+  height: 150px;
+  border: 0px solid black;
+  border-collapse: collapse;
+  font-size: 3em;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: .4em;
+  margin: .1em;
+  padding: .1em;
+
+}
+
+.answer-button-d input {
+  background-color: #cc0000;
+  text-align: center;
+  width: 33%;
+  height: 150px;
+  border: 0px solid black;
+  border-collapse: collapse;
+  font-size: 3em;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: .4em;
+  margin: .1em;
+  padding: .1em;
+
+}
+/* END OF STUDENT GAME VIEW */
+
+/* PROJECTOR VIEW */
+#answers p {
+  text-align: center;
+  width: 33%;
+  height: 150px;
+  border: 0px solid black;
+  border-collapse: collapse;
+  font-size: 1.3em;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: .4em;
+  margin: .3em;
+  padding: .7em;
+}
+
+#answers p:nth-child(1) {
+  background-color: #00cc00;
+
+}
+
+#answers p:nth-child(2) {
+  background-color: #cccc00;
+  clear: right;
+}
+
+#answers p:nth-child(3) {
+  background-color: #00cccc;
+}
+
+#answers p:nth-child(4) {
+  background-color: #cc0000;
+}
+/* END OF PROJECTOR VIEW */
+
+/*#answers p, .results-buttons input {
   text-align: center;
   width: 33%;
   height: 150px;
@@ -103,7 +254,7 @@
 
 #answers p:nth-child(4), .answer-button-d input {
   background-color: #cc0000;
-}
+}*/
 
 .student-quiz-display {
   text-align: center;
@@ -112,7 +263,6 @@
   border: 1px solid black;
   border-collapse: collapse;
   font-size: 3em;
-  text-align: center;
 }
 
 #timer1 {
@@ -149,8 +299,6 @@
   width: 1em;
   height: 1em;
 }
-
-
 
 input[type=email] {
   /* for text fields for student devise views */
@@ -239,8 +387,9 @@ input[type=submit].next {
   border: 1px solid #5ea617;
 }
 
-input[type=submit] {
+input[type=submit].go {
   border-radius: .2em;
+  background: #009933;
   padding: .3em;
   font-size: 1.2em;
   font-weight: 800;
@@ -253,7 +402,7 @@ h1 {
 }
 
 h2 {
-  font-size: 2.5em;
+  font-size: 2.2em;
   text-align: center;
 }
 
@@ -294,7 +443,7 @@ h5 {
 .current-user {
   position: fixed;
   text-align: right;
-  top: 0;
+  bottom: 0;
   right: 0;
   padding-right: .4em;
 }
@@ -323,6 +472,38 @@ h5 {
   background: #66ffff;
 }
 
+th {
+  text-align: left;
+}
+
+/*// GAME INDEX PAGE*/
+
+#games-index p {
+  background-color: white;
+  font-size: 3em;
+}
+
+#games-index span {
+  background-color: red;
+  color: white;
+}
+
+.next-button {
+  display: none;
+}
+
+#button-2 {
+  display: inline;
+}
+.results-buttons {
+  display: none;
+}
+#results-1 {
+  display: inline;
+}
+#games-index a {
+  text-decoration: none;
+}
 
 
 
@@ -394,6 +575,7 @@ h5 {
 
 }
 
+
 th {
   text-align: left;
 }
@@ -434,4 +616,3 @@ th {
 #results-11 {
   display: inline;
 }
-
