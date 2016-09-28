@@ -1,13 +1,16 @@
-<div id="games-index">
 
-<h1>Games Index</h1>
+
+  <h1>Games</h1>
 
 <!-- Link for developers only: < %= link_to "Game 1 (only click if logged in)", game_path(@games[0]) %> -->
+<div class="game-list">
 
-  <% @games.each do |game| %>
-  <a href="games/<%= game.id %>">
-  <p><span>#<%= game.id %></span> <%= game.title %> - <%= game.subject %></p>
-  </a>
-  <% end %>
+  <div id="games-index">
+    <% @games.each do |game| %>
+    <a href="games/<%= game.id %>">
+    <p><span>#<%= game.id %></span> <%= game.title %> - <%= game.subject %></p>
+    </a>
+    <% end %>
+  </div>
 
 </div>
