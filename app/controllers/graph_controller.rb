@@ -1,6 +1,7 @@
 class GraphController < ApplicationController
 
-  # Method to show results for all students on teacher view
+  # Method to show average score for all students on a game for teacher view
+  # ADD average
   # route: /graph/students
   def students
     @results = Result.all
@@ -9,20 +10,13 @@ class GraphController < ApplicationController
     end
     true_array = boolean_array.select {|boolean| boolean == true}
     true_count = (true_array.length * 100)/5
-    false_array = boolean_array.select {|boolean| boolean == false}
-    false_count = false_array.length
-    p "*" * 20
-    p true_count
+
      data = {
           clickable: false,
           data: [
-                  {label: "Correct", value: true_count, id: 1},
-                  {label: "Incorrect", value: false_count, id: 1},
-
+                  {label: "", value: true_count, id: 1},
                 ]
           }
-          # p "*" * 20
-          # p data
     @data = data.to_json
 
      ################ PRACTICE CODE ##################################
