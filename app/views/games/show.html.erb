@@ -20,18 +20,18 @@
 
 <!-- <hr>ANSWERS: -->
 <!--   <div id="answers">
-    <p>A. <%= @question.answers[0].text%></p>
-    <p>B. <%= @question.answers[1].text%></p>
-    <p>C. <%= @question.answers[2].text%></p>
-    <p>D. <%= @question.answers[3].text%></p>
+    <p>A. < %= @question.answers[0].text%></p>
+    <p>B. < %= @question.answers[1].text%></p>
+    <p>C. < %= @question.answers[2].text%></p>
+    <p>D. < %= @question.answers[3].text%></p>
   </div> -->
 
 <hr>ANSWERS:
 <div id="answers">
-  <p id="a">A. <%= @question.answers[0].text %> <span id="percent-a"> </span> </p>
-  <p id="b">B. <%= @question.answers[1].text %> <span id="percent-b"> </span> </p>
-  <p id="c">C. <%= @question.answers[2].text %> <span id="percent-c"> </span> </p>
-  <p id="d">D. <%= @question.answers[3].text %> <span id="percent-d"> </span> </p>
+  <p id="a">A. <%= @question.answers[0].text %> <br> <span class="percent-results" id="percent-a"> </span> </p>
+  <p id="b">B. <%= @question.answers[1].text %> <br> <span class="percent-results" id="percent-b"> </span> </p>
+  <p id="c">C. <%= @question.answers[2].text %> <br> <span class="percent-results" id="percent-c"> </span> </p>
+  <p id="d">D. <%= @question.answers[3].text %> <br> <span class="percent-results" id="percent-d"> </span> </p>
 </div>
 
 <% end %>

@@ -113,6 +113,10 @@ input[type=submit].next-button {
   text-align: center;
 }
 
+.percent-results {
+  font-size: 1.9em;
+}
+
 /* STUDENT GAME VIEW */
 #student-device-landscape {
     margin-left: 20%;

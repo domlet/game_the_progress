@@ -2,10 +2,10 @@
 App.questions = App.cable.subscriptions.create('ClassResultsChannel', {
   // 'data' is anything broadcast by the server (see 'questions_controller')
   received: function(data) {
-    $('#percent-a').html(data.percent_a);
-    $('#percent-b').html(data.percent_b);
-    $('#percent-c').html(data.percent_c);
-    $('#percent-d').html(data.percent_d);
+    $('#percent-a').html(Math.round(data.percent_a) + "%");
+    $('#percent-b').html(Math.round(data.percent_b) + "%");
+    $('#percent-c').html(Math.round(data.percent_c) + "%");
+    $('#percent-d').html(Math.round(data.percent_d) + "%");
   }
 
 });

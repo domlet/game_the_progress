@@ -14,7 +14,7 @@
     <!-- The clickable button triggers the Action Cable 'Broadcast' -->
 
  <!--    <div class="next-button" id="button-<%= question.id %>"><input type="submit" value="next"></div> -->
-    
+
 
     <div class="center">
       <div class="next-button" id="button-<%= question.id %>"><input type="submit" value="next" class="go"></div>
@@ -23,6 +23,7 @@
     </div>
 
     <% end %>
+
 
     <!-- Students results display button -->
     <%=form_for result, url: result_path(question), html: {method: "patch"}, remote: true, authenticity_token: true do |f|%>

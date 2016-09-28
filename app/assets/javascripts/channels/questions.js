@@ -6,10 +6,15 @@ App.questions = App.cable.subscriptions.create('QuestionsChannel', {
     // The controller has sent these objects (the NEXT stuff), so now we can work with them:
     $("#questions").removeClass('hidden'); // Unknown
     $('#questions').html(this.renderQuestion(data)); // Renders the new question
-    $('#a').html(data.answer_options[0].text);
-    $('#b').html(data.answer_options[1].text);
-    $('#c').html(data.answer_options[2].text);
-    $('#d').html(data.answer_options[3].text); // Renders the new answers
+    $('#a').html(this.renderA(data));
+    $('#b').html(this.renderB(data));
+    $('#c').html(this.renderC(data));
+    $('#d').html(this.renderD(data));
+
+    // $('#a').html(data.answer_options[0].text);
+    // $('#b').html(data.answer_options[1].text);
+    // $('#c').html(data.answer_options[2].text);
+    // $('#d').html(data.answer_options[3].text); // Renders the new answers
     // Hide and show 'Next' button
     $('.next-button').css("display", "none");
     $("#button-" + (data.question_id + 1)).css("display", "inline");
@@ -26,6 +31,19 @@ App.questions = App.cable.subscriptions.create('QuestionsChannel', {
     return "<p>" + data.question_id + ". " + data.question_text + "</p>";
 
 
+  },
+
+  renderA: function(data) {
+    return data.answer_options[0].text + "<br> <span class='percent-results' id='percent-a'>" + "</span>";
+  },
+  renderB: function(data) {
+    return data.answer_options[1].text + "<br> <span class='percent-results' id='percent-b'>" + "</span>";
+  },
+  renderC: function(data) {
+    return data.answer_options[2].text + "<br> <span class='percent-results' id='percent-c'>" + "</span>";
+  },
+  renderD: function(data) {
+    return data.answer_options[3].text + "<br> <span class='percent-results' id='percent-d'>" + "</span>";
   }
 
   // renderAnswers: function(data) {
