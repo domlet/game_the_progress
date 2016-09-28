@@ -1,6 +1,12 @@
 function draw(data) {
     // Pulls data array out of object
+
+
+    console.log('^^^^^^^^^^^^^', data)
+    var chartTitle = data.chartTitle;
+    var clickable = data.clickable;
     var data = data.data;
+
     var div = d3.select("body").append("div").attr("class", "toolTip");
 
     var axisMargin = 20,
@@ -19,7 +25,7 @@ function draw(data) {
             .attr("width", width)
             .attr("height", height);
 
-    bar = svg.selectAll("g")
+    var bar = svg.selectAll("g")
             .data(data)
             .enter()
             .append("g");
@@ -82,25 +88,59 @@ function draw(data) {
                 div.style("display", "none");
             });
 
-    bar
-            .on("click", function(d){
+    if(data.clickable){
+       bar.on("click", function(d){
               // alert('SAY WHAAAT user id:')
               console.log('User info on the row', d)
               console.log('URL', window.location.origin  )
               var url = window.location.origin + '/graph/student/' + d.id;
               window.location = url;
             });
+    }
 
     svg.insert("g",":first-child")
             .attr("class", "axisHorizontal")
             .attr("transform", "translate(" + (margin + labelWidth) + ","+ (height - axisMargin - margin)+")")
             .call(xAxis);
 
+    // Adds text to each graph
     svg.insert("g")
-    .append("text")
-    .attr("x", 75)
-    .attr("y", 25)
-    .attr("text-anchor", "middle")
-    .text("Question 1");
+            .append("text")
+            .attr("x", 50)
+            .attr("y", 25)
+            .attr("text-anchor", "left")
+            .style("font-size", "1em")
+            .style("font-family", 'Ubuntu', "Helvetica")
+            .text(chartTitle);
+
+    // Animates graph upon entry
+    svg.transition()
+        .attr('height', function(d) {
+            return d
+        })
+        .attr('y', function(d) {
+            return height -d;
+        })
+        .delay(function(d,i) {
+            return i * 20
+        })
+        .duration(1000)
+        .ease('elastic')
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

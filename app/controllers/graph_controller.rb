@@ -42,54 +42,29 @@ class GraphController < ApplicationController
         end
       end
       total_answers = a_answers + b_answers + c_answers + d_answers
+
       data = {
-          clickable: false,
+          clickable: true,
+          url: '',
+          chartTitle: question.text,
           data: [
                   { label: "A", value: (a_answers * 100) / total_answers },
                   { label: "B", value: (b_answers * 100) / total_answers },
                   { label: "C", value: (c_answers * 100) / total_answers },
                   { label: "D", value: (d_answers * 100) / total_answers }
-
           ]
       }
       total_data.push(data)
     end
-    p "*" * 20
-    p @data = total_data.to_json
-end
-
-
-
-
-################ START FRESH CODE ##################################
-
-
-
-
-
-####### HARDCODED FOR GRAPH ##############
-    # data = {
-    #       clickable: false,
-    #       data: [
-    #               {label: "name1", value: 8, id: 1},
-    #               {label: "name2", value: 3, id: 1},
-    #               {label: "name3", value: 2, id: 1},
-    #               {label: "name4", value: 6, id: 1},
-    #               {label: "name5", value: 1, id: 1},
-    #               {label: "name6", value: 7, id: 1}
-    #             ]
-    #       }
-    #       p data
-    # @data = data.to_json
-####### END HARDCODED FOR GRAPH ##############
-
-
-
+    @data = total_data.to_json
+  end
 
   # Method to show individual student results
    # route: /graph/student/:id
   def show
+    @game = Game.find(1)
     @users = User.all
+    total_questions = @game.questions.length
     if params[:id] != "index"
       @user = User.find(params[:id])
       true_count = 0
@@ -106,45 +81,11 @@ end
       data = {
           clickable: false,
           data: [
-                  {label: "Correct", value: true_count},
-                  {label: "Incorrect", value: false_count}
+                  {label: "Correct", value: (true_count * 100) / total_questions },
+                  {label: "Incorrect", value: (false_count * 100) / total_questions }
                 ]
               }
      @data = data.to_json
-
+    end
   end
-end
 
-  # def
-  # def data
-  #   # These results show 2 bars for true and false in a game
-  #   @results = Result.all
-  #   boolean_array = @results.map do |result|
-  #     result.is_correct
-  #   end
-  #   true_array = boolean_array.select {|boolean| boolean == true}
-  #   true_count = true_array.length
-  #   false_array = boolean_array.select {|boolean| boolean == false}
-  #   false_count = false_array.length
-  #   p true_count
-  #   p false_count
-  #   p boolean_array
-  #   render json: [true_count, false_count]
-    # respond_to do |format|
-    #   format.json {
-    #     render :json => [1,2,3,4,5]
-    #   }
-    # end
-  # end
-
-  # def user_results
-  #   @users = User.all
-  #   @users.each do |user|
-  #     indiv_results = []
-  #     if user.is_admin == false
-  #       indiv_results.push(user)
-  #     end
-  #     p indiv_results
-  #     p user.results
-  #   end
-  # end
