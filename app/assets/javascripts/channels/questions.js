@@ -32,5 +32,7 @@ App.questions = App.cable.subscriptions.create('QuestionsChannel', {
             "<p>D. " + data.answer_options[3].text + "</p>")
   }
 
+  
+  
 });
 
