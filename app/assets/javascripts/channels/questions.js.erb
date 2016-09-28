@@ -29,6 +29,10 @@
       $('.show-results-buttons').css("display", "none");
       $("#show-result-button-" + (data.question_id)).css("display", "inline");
 
+      if(data.question_id % 10 == 0) {
+        $("#end-game-button").css("display", "inline");
+      }
+
     },
 
     setGameId: function(gameId) {
