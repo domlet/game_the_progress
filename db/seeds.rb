@@ -157,10 +157,12 @@ Result.delete_all
     4.times do |x|
       Answer.create!(
           text:answer_sample[y][x],
-          question_id: (10 * x) + (y + 1)
+          question_id: (y+1)
           )
     end
   end
+
+
 
 
 
