@@ -3,25 +3,29 @@ class GraphController < ApplicationController
   # Method to show average score for all students on a game for teacher view
   # ADD average
   # route: /graph/students
+  def students_private
+    # Hard-coded to return data just for game #1
+    @game = Game.find(1)
+
+    @results = Result.where(game_id: 1)
+    boolean_array = @results.map do |result|
+      result.is_correct
+    end
+    true_array = boolean_array.select {|boolean| boolean == true}
+    true_count = (true_array.length * 100)/5
+
+     data = {
+          clickable: false,
+          data: [
+                  {label: "", value: true_count, id: 1},
+                ]
+          }
+    @data = data.to_json
+  end
+
+
   def students
-    # @results = Result.all
-    # boolean_array = @results.map do |result|
-    #   result.is_correct
-    # end
-    # true_array = boolean_array.select {|boolean| boolean == true}
-    # true_count = (true_array.length * 100)/5
 
-    #  data = {
-    #       clickable: false,
-    #       data: [
-    #               {label: "", value: true_count, id: 1},
-    #             ]
-    #       }
-    # @data = data.to_json
-
-     ################ PRACTICE CODE ##################################
-
-     # Method to get results on each individual question
  @game = Game.find(1)
 
   total_data = []
