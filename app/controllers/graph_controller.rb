@@ -5,7 +5,7 @@ class GraphController < ApplicationController
   # route: /graph/students
   def students_private
     if current_user.is_admin != true
-      redirect_to user_url
+      redirect_to user_url(current_user)
     end
     # Hard-coded to return data just for game #1
 
@@ -23,44 +23,19 @@ class GraphController < ApplicationController
     end
 
     data = {
+      chartTitle: "",
         clickable: false,
         data: student_data
             }
      @data = data.to_json
+     p @data
   end
 
-
-
-  def students_private
-    if current_user.is_admin != true
-      redirect_to user_url(current_user)
-    end
-  end
 
   def students
     if current_user.is_admin != true
       redirect_to user_url
     end
-        # @results = Result.all
-    #  p @results
-
-    # boolean_array = @results.map do |result|
-    #   result.is_correct
-    # end
-    # true_array = boolean_array.select {|boolean| boolean == true}
-    # true_count = (true_array.length * 100)/5
-
-    #  data = {
-    #       clickable: false,
-    #       data: [
-    #               {label: student_name, value: true_count},
-    #             ]
-    #       }
-    # @data = data.to_json
-  end
-
-
-  def students
 
  @game = Game.find(1)
 
@@ -109,6 +84,8 @@ class GraphController < ApplicationController
     end
     @data = total_data.to_json
   end
+
+
 
   # Method to show individual student results
    # route: /graph/student/:id
