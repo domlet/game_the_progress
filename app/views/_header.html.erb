@@ -1,30 +1,30 @@
+<div id="header">
   <h5 class="current-user">
 
-  <%= link_to 'Games', games_url(@games) %>
     <% if current_user %>
       <% if current_user.is_admin == true %>
-       | <b><a href="javascript:void(0)" id="playsound">Airhorn</a></b>
-       | <b>Game Host:</b>
+      <b>Game Host</b>
       <% elsif current_user.is_admin != true %>
-       | <b>Player:</b>
+      <b>Player</b>
       <%end%>
-      <%= link_to "#{current_user.first_name}", user_url(current_user) %>
+      &nbsp;: &nbsp;<%= link_to "#{current_user.first_name}", user_url(current_user) %>
+      <% if current_user.is_admin == true %>
+      &nbsp;: &nbsp;<b><a href="javascript:void(0)" id="playsound">Airhorn</a></b>
+      <%end%>
     <%end%>
 
   </h5>
 
+  <audio id="sound_effect" class="audio_player" preload="auto">
+    <source src="/sounds/airhorn.mp3" type="audio/wav" />
+  </audio>
 
-
-
-<audio id="sound_effect" class="audio_player" preload="auto">
-    <source src="/Water-Drop-Low-SoundBible.com-1501529809.wav" type="audio/wav">
-</audio>
-
-<script>
-  $('#playsound').click(function (e) {
-    $('#sound_effect')[0].currentTime = 0;
-    $('#sound_effect')[0].play();
-    console.log("played it");
-    return false;
-  });
-</script>
+  <script>
+    $('#playsound').click(function (e) {
+      $('#sound_effect')[0].currentTime = 0;
+      $('#sound_effect')[0].play();
+      console.log("played it");
+      return false;
+    });
+  </script>
+</div>
