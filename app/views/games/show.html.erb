@@ -1,6 +1,11 @@
+
+  <%= render partial: './game-bar', locals: {game: @game, user: @current_user}  %>
+
 <div id="games" data-game=<%= @game.id %> >
+<div id="progress-bar" class="progress-bar">
+</div>
   <!-- GAME TITLE -->
-    <h4><%= @game.title %></h4>
+    <!-- <h4>< %= @game.title %></h4> -->
   <!-- FLASH MESSAGES -->
   <!-- TODO: make it show on S.P.A. -->
   <div class="notice"></div>
@@ -46,7 +51,7 @@
     function countdown() {
       timerDisplay();
       if (count == 0) {
-        $("#timespan").html("Time's Up")
+        $("#timespan").html(":)")
       } else {
           count--;
           t = setTimeout("countdown()", 1000);
@@ -70,6 +75,4 @@
 
 
 
-<div id="progress-bar" class="progress-bar">
-</div>
 
