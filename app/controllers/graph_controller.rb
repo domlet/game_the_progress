@@ -1,5 +1,5 @@
 class GraphController < ApplicationController
-
+  before_filter :authenticate_user!
   # Method to show average score for all students on a game for teacher view
   # ADD average
   # route: /graph/students
@@ -9,26 +9,34 @@ class GraphController < ApplicationController
     end
     # Hard-coded to return data just for game #1
 
-    student_data = {}
-
     @students = User.all
     # Ideally, we would check to filter out students from admin
     # @students = User.where(is_admin: false)
 
-    # pull students' names out of @students array
-    # pull students' results out of @students array
-    # map together students' names and results
+    student_data = []
     @students.each do |student|
+      hash = {}
       student_name = "#{student.last_name}, #{student.first_name}"
-      student_data[:label] = student_name
+      hash['label'] = student_name
+      hash['value'] = student.results.pluck(:is_correct).select{|a| a == true}.length
+      student_data << hash
     end
 
-    @students.each do |student|
-      student_correct_results = student.results.map {|result| result.is_correct}
+    data = {
+        clickable: false,
+        data: student_data
+            }
+     @data = data.to_json
+  end
+
+
+
+  def students
+    if current_user.is_admin != true
+      redirect_to user_url
     end
-
-    p student_data
-
+        # @results = Result.all
+    #  p @results
 
     # boolean_array = @results.map do |result|
     #   result.is_correct
@@ -99,7 +107,14 @@ class GraphController < ApplicationController
   # Method to show individual student results
    # route: /graph/student/:id
   def show
+
     @game = Game.find(1)
+
+    # Hide individual user graphs from users who shouldn't see them
+    if current_user.is_admin != true && current_user.id != params[:id].to_i
+      redirect_to user_url
+    end
+
     @users = User.all
     total_questions = @game.questions.length
     if params[:id] != "index"
