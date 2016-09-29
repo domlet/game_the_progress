@@ -75,27 +75,34 @@ class GamesController < ApplicationController
     p params[:question1]
 
     if @game.save
-      q1 = Question.new(game_id: @game.id, text: params[:question1])
+      q1 = Question.new(game_id: @game.id, text: params[:question1], category_id: 1)
       q1.save
-      a1 = Answer.new(question_id: q1.id, text: params[:answer1])
+      a1 = Answer.new(question_id: q1.id, text: params[:answer4])
       a1.save
       a2 = Answer.new(question_id: q1.id, text: params[:answer2])
       a2.save
       a3 = Answer.new(question_id: q1.id, text: params[:answer3])
       a3.save
-      a4 = Answer.new(question_id: q1.id, text: params[:answer4])
+      a4 = Answer.new(question_id: q1.id, text: params[:answer1])
       a4.save
+      q1.write_attribute(:correct_answer_id, a4.id)
+      q1.save
+      # q1.update_attribute(update_q1)
+      # q1.correct_answer_id = a4.id
+      # q1.update
 
-      q2 = Question.new(game_id: @game.id, text: params[:question2])
+      q2 = Question.new(game_id: @game.id, text: params[:question2], category_id: 1)
       q2.save
-      a1 = Answer.new(question_id: q2.id, text: params[:answer5])
+      a1 = Answer.new(question_id: q2.id, text: params[:answer7])
       a1.save
       a2 = Answer.new(question_id: q2.id, text: params[:answer6])
       a2.save
-      a3 = Answer.new(question_id: q2.id, text: params[:answer7])
+      a3 = Answer.new(question_id: q2.id, text: params[:answer5])
       a3.save
       a4 = Answer.new(question_id: q2.id, text: params[:answer8])
       a4.save
+      q2.write_attribute(:correct_answer_id, a3.id)
+      q2.save
 
       q3 = Question.new(game_id: @game.id, text: params[:question3])
       q3.save
@@ -103,32 +110,39 @@ class GamesController < ApplicationController
       a1.save
       a2 = Answer.new(question_id: q3.id, text: params[:answer10])
       a2.save
-      a3 = Answer.new(question_id: q3.id, text: params[:answer11])
+      a3 = Answer.new(question_id: q3.id, text: params[:answer12])
       a3.save
-      a4 = Answer.new(question_id: q3.id, text: params[:answer12])
+      a4 = Answer.new(question_id: q3.id, text: params[:answer11])
       a4.save
+      q3.write_attribute(:correct_answer_id, a1.id)
+      q3.save
 
       q4 = Question.new(game_id: @game.id, text: params[:question4])
       q4.save
-      a1 = Answer.new(question_id: q4.id, text: params[:answer13])
+      a1 = Answer.new(question_id: q4.id, text: params[:answer16])
       a1.save
       a2 = Answer.new(question_id: q4.id, text: params[:answer14])
       a2.save
-      a3 = Answer.new(question_id: q4.id, text: params[:answer15])
+      a3 = Answer.new(question_id: q4.id, text: params[:answer13])
       a3.save
-      a4 = Answer.new(question_id: q4.id, text: params[:answer16])
+      a4 = Answer.new(question_id: q4.id, text: params[:answer15])
       a4.save
+      q4.write_attribute(:correct_answer_id, a3.id)
+      q4.save
 
       q5 = Question.new(game_id: @game.id, text: params[:question5])
       q5.save
-      a1 = Answer.new(question_id: q5.id, text: params[:answer17])
+      a1 = Answer.new(question_id: q5.id, text: params[:answer20])
       a1.save
-      a2 = Answer.new(question_id: q5.id, text: params[:answer18])
+      a2 = Answer.new(question_id: q5.id, text: params[:answer19])
       a2.save
-      a3 = Answer.new(question_id: q5.id, text: params[:answer19])
+      a3 = Answer.new(question_id: q5.id, text: params[:answer18])
       a3.save
-      a4 = Answer.new(question_id: q5.id, text: params[:answer20])
+      a4 = Answer.new(question_id: q5.id, text: params[:answer17])
       a4.save
+      q5.write_attribute(:correct_answer_id, a4.id)
+      q5.save
+
 
       q6 = Question.new(game_id: @game.id, text: params[:question6])
       q6.save
@@ -136,43 +150,51 @@ class GamesController < ApplicationController
       a1.save
       a2 = Answer.new(question_id: q6.id, text: params[:answer22])
       a2.save
-      a3 = Answer.new(question_id: q6.id, text: params[:answer23])
+      a3 = Answer.new(question_id: q6.id, text: params[:answer24])
       a3.save
-      a4 = Answer.new(question_id: q6.id, text: params[:answer24])
+      a4 = Answer.new(question_id: q6.id, text: params[:answer23])
       a4.save
+      q6.write_attribute(:correct_answer_id, a1.id)
+      q6.save
 
       q7 = Question.new(game_id: @game.id, text: params[:question7])
       q7.save
-      a1 = Answer.new(question_id: q7.id, text: params[:answer25])
+      a1 = Answer.new(question_id: q7.id, text: params[:answer26])
       a1.save
-      a2 = Answer.new(question_id: q7.id, text: params[:answer26])
+      a2 = Answer.new(question_id: q7.id, text: params[:answer25])
       a2.save
-      a3 = Answer.new(question_id: q7.id, text: params[:answer27])
+      a3 = Answer.new(question_id: q7.id, text: params[:answer28])
       a3.save
-      a4 = Answer.new(question_id: q7.id, text: params[:answer28])
+      a4 = Answer.new(question_id: q7.id, text: params[:answer27])
       a4.save
+      q7.write_attribute(:correct_answer_id, a2.id)
+      q7.save
 
       q8 = Question.new(game_id: @game.id, text: params[:question8])
       q8.save
-      a1 = Answer.new(question_id: q8.id, text: params[:answer29])
+      a1 = Answer.new(question_id: q8.id, text: params[:answer30])
       a1.save
-      a2 = Answer.new(question_id: q8.id, text: params[:answer30])
+      a2 = Answer.new(question_id: q8.id, text: params[:answer29])
       a2.save
       a3 = Answer.new(question_id: q8.id, text: params[:answer31])
       a3.save
       a4 = Answer.new(question_id: q8.id, text: params[:answer32])
       a4.save
+      q8.write_attribute(:correct_answer_id, a2.id)
+      q8.save
 
       q9 = Question.new(game_id: @game.id, text: params[:question9])
       q9.save
-      a1 = Answer.new(question_id: q9.id, text: params[:answer33])
+      a1 = Answer.new(question_id: q9.id, text: params[:answer36])
       a1.save
       a2 = Answer.new(question_id: q9.id, text: params[:answer34])
       a2.save
       a3 = Answer.new(question_id: q9.id, text: params[:answer35])
       a3.save
-      a4 = Answer.new(question_id: q9.id, text: params[:answer36])
+      a4 = Answer.new(question_id: q9.id, text: params[:answer33])
       a4.save
+      q9.write_attribute(:correct_answer_id, a4.id)
+      q9.save
 
       q10 = Question.new(game_id: @game.id, text: params[:question10])
       q10.save
@@ -184,6 +206,8 @@ class GamesController < ApplicationController
       a3.save
       a4 = Answer.new(question_id: q10.id, text: params[:answer40])
       a4.save
+      q10.write_attribute(:correct_answer_id, a1.id)
+      q10.save
 
     end 
     redirect_to games_path
@@ -288,5 +312,8 @@ class GamesController < ApplicationController
     params.require(:game).permit(:title, :subject)
   end
 
+  def update_q1
+    params.require(:question).permit(:text, :game_id, :correct_answer_id)
+  end
 
 end
