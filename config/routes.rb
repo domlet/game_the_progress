@@ -10,7 +10,10 @@ Rails.application.routes.draw do
   get 'graph/student/:id', to: 'graph#show'
 
   # Show graph for entire class
-  get 'graph/students', to: 'graph#students'  
+  get 'graph/students', to: 'graph#students'
+  get 'graph/students_private', to: 'graph#students_private'
+
+  # Show graph for private method
   get 'graph/students_private', to: 'graph#students_private'
 
   # Show student answer frequencies for each question

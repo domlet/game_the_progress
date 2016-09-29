@@ -1,113 +1,126 @@
 class GraphController < ApplicationController
   before_filter :authenticate_user!
-
+  # Method to show average score for all students on a game for teacher view
+  # ADD average
+  # route: /graph/students
   def students_private
     if current_user.is_admin != true
       redirect_to user_url(current_user)
     end
+    # Hard-coded to return data just for game #1
+
+    @students = User.all
+    # Ideally, we would check to filter out students from admin
+    # @students = User.where(is_admin: false)
+
+    student_data = []
+    @students.each do |student|
+      hash = {}
+      student_name = "#{student.last_name}, #{student.first_name}"
+      hash['label'] = student_name
+      hash['value'] = student.results.pluck(:is_correct).select{|a| a == true}.length
+      student_data << hash
+    end
+
+    data = {
+      chartTitle: "",
+        clickable: false,
+        data: student_data
+            }
+     @data = data.to_json
+     p @data
   end
+
 
   def students
     if current_user.is_admin != true
       redirect_to user_url
     end
-        # @results = Result.all
-    #  p @results
-    # boolean_array = @results.map do |result|
-    #   result.is_correct
-    # end
-    # true_array = boolean_array.select {|boolean| boolean == true}
-    # true_count = true_array.length
-    # false_array = boolean_array.select {|boolean| boolean == false}
-    # false_count = false_array.length
-    # p true_count
-    # p false_count
-    # p boolean_array
 
-    data = {
-          clickable: false,
-          data: [
-                  {label: "name1", value: 8, id: 1},
-                  {label: "name2", value: 3, id: 1},
-                  {label: "name3", value: 2, id: 1},
-                  {label: "name4", value: 6, id: 1},
-                  {label: "name5", value: 1, id: 1},
-                  {label: "name6", value: 7, id: 1}
-                ]
-          }
-          p data
-    @data = data.to_json
-          p @data
-  # Return JSON object of whole class student
+ @game = Game.find(1)
 
+  total_data = []
+    @game.questions.each do |question|
+          a_answers = 0
+          b_answers = 0
+          c_answers = 0
+          d_answers = 0
+      question.results.each do |result|
+        if result.student_answer_id == question.answers[0].id
+          a_answers += 1
+        elsif result.student_answer_id == question.answers[1].id
+          b_answers += 1
+        elsif result.student_answer_id == question.answers[2].id
+          c_answers += 1
+        elsif result.student_answer_id == question.answers[3].id
+          d_answers += 1
+        end
+      end
+      total_answers = a_answers + b_answers + c_answers + d_answers
+      # If no students submit any answers for a given question, then
+      # this conditional prevents a divide by zero error
+      if total_answers == 0
+        data = [
+          { label: "A", value: 0 },
+          { label: "B", value: 0 },
+          { label: "C", value: 0 },
+          { label: "D", value: 0 }
+            ]
+      else
+        data = [
+                { label: "A", value: (a_answers * 100) / total_answers },
+                { label: "B", value: (b_answers * 100) / total_answers },
+                { label: "C", value: (c_answers * 100) / total_answers },
+                { label: "D", value: (d_answers * 100) / total_answers }
+        ]
+      end
+        data = {
+            clickable: true,
+            url: '',
+            chartTitle: question.text,
+            data: data
+        }
+      total_data.push(data)
+    end
+    @data = total_data.to_json
   end
 
+
+
+  # Method to show individual student results
+   # route: /graph/student/:id
   def show
+
+    @game = Game.find(1)
+
     # Hide individual user graphs from users who shouldn't see them
     if current_user.is_admin != true && current_user.id != params[:id].to_i
       redirect_to user_url
     end
-    @users = User.all
-    # p "*" * 88
-    # p params
-    # p params[:id]
-    # if params[:id] != "index"
-    #   @user = User.find(params[:id])
-    #   true_count = 0
-    #   false_count = 0
-    #   @user.results.each do |result|
-    #     if result.is_correct == true
-    #       true_count += 1
-    #     else
-    #       false_count += 1
-    #     end
-    #   end
-    #    @data = [true_count, false_count]
-    #  end
 
-        data = {
+    @users = User.all
+    total_questions = @game.questions.length
+    if params[:id] != "index"
+      @user = User.find(params[:id])
+      true_count = 0
+      false_count = 0
+      @user.results.each do |result|
+        if result.is_correct == true
+          true_count += 1
+        else
+          false_count += 1
+        end
+      end
+
+     end
+      data = {
           clickable: false,
           data: [
-                  {label: "Good", value: 8, id: 1},
-                  {label: "Bad", value: 3, id: 1}
+                  {label: "Correct", value: (true_count * 100) / total_questions },
+                  {label: "Incorrect", value: (false_count * 100) / total_questions }
                 ]
-          }
-          p data
-    @data = data.to_json
-          p @data
+              }
+     @data = data.to_json
+    end
   end
-end
 
-  # def
-  # def data
-  #   # These results show 2 bars for true and false in a game
-  #   @results = Result.all
-  #   boolean_array = @results.map do |result|
-  #     result.is_correct
-  #   end
-  #   true_array = boolean_array.select {|boolean| boolean == true}
-  #   true_count = true_array.length
-  #   false_array = boolean_array.select {|boolean| boolean == false}
-  #   false_count = false_array.length
-  #   p true_count
-  #   p false_count
-  #   p boolean_array
-  #   render json: [true_count, false_count]
-    # respond_to do |format|
-    #   format.json {
-    #     render :json => [1,2,3,4,5]
-    #   }
-    # end
-  # end
-
-  # def user_results
-  #   @users = User.all
-  #   @users.each do |user|
-  #     indiv_results = []
-  #     if user.is_admin == false
-  #       indiv_results.push(user)
-  #     end
-  #     p indiv_results
-  #     p user.results
-  #   end
-  # end
