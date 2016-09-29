@@ -17,6 +17,8 @@
 
 <% unless current_user.is_admin %>
   <div id="end-game-student-results"><%= link_to " | See my results", "/graph/student/#{current_user.id}" %></div>
+<% else %>
+  <div id="end-game-button"><%= link_to "Finished", results_path %></div>
 <% end %>
 
   </h5>
