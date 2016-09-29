@@ -11,6 +11,10 @@ Rails.application.routes.draw do
 
   # Show graph for entire class
   get 'graph/students', to: 'graph#students'
+  get 'graph/students_private', to: 'graph#students_private'
+
+  # Show graph for private method
+  get 'graph/students_private', to: 'graph#students_private'
 
   # Show student answer frequencies for each question
 
@@ -30,6 +34,6 @@ Rails.application.routes.draw do
   # get 'graph/index'
   # get 'graph/data', defaults: { format: 'json' }
 
-  root to: 'games#index'
+  root to: 'users#show'
 
 end

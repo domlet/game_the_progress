@@ -1,3 +1,4 @@
+
 <style>
 
     body {
@@ -53,18 +54,11 @@
     }
 
 </style>
-<h3>Results for Game</h3>
-<!-- draw() method creates a graph for one question -->
+<h3>Classwide Student Results:</h3>
+
+
 <script type="text/javascript">
   var data = <%= raw @data %>
-  draw(data[0]);
-  draw(data[1]);
-  draw(data[2]);
-  draw(data[3]);
-  draw(data[4]);
-  draw(data[5]);
-  draw(data[6]);
-  draw(data[7]);
-  draw(data[8]);
-  draw(data[9]);
+  draw(data);
 </script>
+

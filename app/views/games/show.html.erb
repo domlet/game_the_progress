@@ -7,7 +7,11 @@
 
   <!-- QUESTION TEXT -->
   <!-- renderQuestion holder / dynamically changing -->
-  <div id='questions'><p><%= @question.id %>. <%= @question.text %></p></div>
+  <% if @question.id % 10 == 0 %>
+    <div id='questions'><p>10. <%= @question.text %></p></div>
+  <% else %>
+    <div id='questions'><p><%= @question.id % 10 %>. <%= @question.text %></p></div>
+  <% end %>
 
   <%= render partial: 'questions/question', collection: @question %>
 
@@ -29,7 +33,37 @@
 
 
 <% if current_user.is_admin %>
-<!-- End of game button -->
+
+<!-- TIMER -->
+  <script type="text/javascript">
+    var start = 10
+    var t, count;
+
+    function timerDisplay() {
+      document.getElementById('timespan').innerHTML = count;
+    };
+
+    function countdown() {
+      timerDisplay();
+      if (count == 0) {
+        $("#timespan").html("Time's Up")
+      } else {
+          count--;
+          t = setTimeout("countdown()", 1000);
+      }
+    };
+
+    function timerReset() {
+      count = start;
+      timerDisplay();
+    };
+
+  </script>
+  <span id="timespan">10</span>
+  <input type="button" value="Start" onclick="countdown()">
+  <input type="button" value="Reset" onclick="timerReset()">
+
+<!-- End of game button  -->
   <div id="end-game-button"><%= link_to "Finished", results_path %></div>
 <% else %>
   <div id="end-game-student-results"><%= link_to "See my results", "/graph/student/#{current_user.id}" %></div>
