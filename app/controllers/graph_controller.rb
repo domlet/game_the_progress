@@ -4,23 +4,45 @@ class GraphController < ApplicationController
   # ADD average
   # route: /graph/students
   def students_private
-    # Hard-coded to return data just for game #1
-    @game = Game.find(1)
-
-    @results = Result.where(game_id: 1)
-    boolean_array = @results.map do |result|
-      result.is_correct
+    if current_user.is_admin != true
+      redirect_to user_url
     end
-    true_array = boolean_array.select {|boolean| boolean == true}
-    true_count = (true_array.length * 100)/5
+    # Hard-coded to return data just for game #1
 
-     data = {
-          clickable: false,
-          data: [
-                  {label: "", value: true_count, id: 1},
-                ]
-          }
-    @data = data.to_json
+    student_data = {}
+
+    @students = User.all
+    # Ideally, we would check to filter out students from admin
+    # @students = User.where(is_admin: false)
+
+    # pull students' names out of @students array
+    # pull students' results out of @students array
+    # map together students' names and results
+    @students.each do |student|
+      student_name = "#{student.last_name}, #{student.first_name}"
+      student_data[:label] = student_name
+    end
+
+    @students.each do |student|
+      student_correct_results = student.results.map {|result| result.is_correct}
+    end
+
+    p student_data
+
+
+    # boolean_array = @results.map do |result|
+    #   result.is_correct
+    # end
+    # true_array = boolean_array.select {|boolean| boolean == true}
+    # true_count = (true_array.length * 100)/5
+
+    #  data = {
+    #       clickable: false,
+    #       data: [
+    #               {label: student_name, value: true_count},
+    #             ]
+    #       }
+    # @data = data.to_json
   end
 
 
