@@ -550,12 +550,35 @@ h5 {
   padding-left: .4em;
 }
 
+.current-user a {
+  color: #000;
+  border-radius: 0.5em;
+  background-color: #3fb54a;
+  padding: 0.4em 0.6em; 
+  margin: 0 0.2em;
+  text-decoration: none;
+}
+
+.current-user a:nth-child(1) {
+  background-color: #e36fab;
+}
+
+/* ON-CLICK */
+.current-user a:active {
+  background-color: #cbcc2c;
+}
+
 .current-user {
   position: fixed;
   text-align: right;
   bottom: 0;
   right: 0;
-  padding-right: 1.3em;
+  padding: 1em 1.3em 1em 0;
+  background-color: #1a1a1a;
+  width: 100%;
+  margin: 0;
+  vertical-align: middle;
+  color: gray;
 }
 
 .gobutton {
@@ -771,9 +794,6 @@ th {
   }
 }
 
-#header {
-  margin-right: 2em;
-}
 
 hr {
   border-top: 2px dotted silver;
@@ -782,5 +802,8 @@ hr {
 
 .sound-icon {
   display: inline;
-  width: 2.5em;
+  width: 0.9em;
+  position: relative;
+  top: 6px;
 }
+
