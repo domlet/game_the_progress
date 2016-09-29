@@ -8,6 +8,14 @@ class GamesController < ApplicationController
     end
   end
 
+  def create
+
+  end
+
+  def new
+    @categories = Category.all
+
+  end
 
   # The show page accesses the Questions controller and Answers controller...
   # ...and those controllers use the games.js listener (for Action Cable)

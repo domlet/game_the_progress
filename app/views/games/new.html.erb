@@ -1,0 +1,10 @@
+
+
+<!-- drop down for category -->
+<%= form_for :category do |f| %>
+<%= f.collection_select(:category_id, @categories, :id, :name) %>
+<% end %>
+
+<%= form_for :game do |f| %>
+Question 1: < %= f.text_field :question1 %><br />
+ -->
