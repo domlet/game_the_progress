@@ -637,6 +637,8 @@ th {
 #results-11 {
   display: inline;
 }
+
+
 /* GAME INDEX PAGE */
 
 /*#games-index p {
@@ -798,4 +800,18 @@ hr {
 .sound-icon {
   display: inline;
   width: 2.5em;
+}
+
+
+
+
+
+
+
+
+
+
+
+.initial {
+  display: inline;
 }
