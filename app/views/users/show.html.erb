@@ -26,9 +26,10 @@
   <hr>
 
   <h3>Your Games</h3>
+
   <% if current_user %>
   <div>
-    <% @games[0..1].each do |game| %>
+    <% @games[0..100].each do |game| %>
     <p>
       <span class="game-id">#<%= game.id %></span>
       <%= link_to game.title[0..25] << '...', game_url(game) %><br>
@@ -39,6 +40,7 @@
     </p>
     <% end %>
   </div>
+  <%= link_to "New Game", new_game_path %>
   <% end %>
 
 
