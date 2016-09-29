@@ -42,18 +42,29 @@ class GraphController < ApplicationController
         end
       end
       total_answers = a_answers + b_answers + c_answers + d_answers
-
-      data = {
-          clickable: true,
-          url: '',
-          chartTitle: question.text,
-          data: [
-                  { label: "A", value: (a_answers * 100) / total_answers },
-                  { label: "B", value: (b_answers * 100) / total_answers },
-                  { label: "C", value: (c_answers * 100) / total_answers },
-                  { label: "D", value: (d_answers * 100) / total_answers }
-          ]
-      }
+      # If no students submit any answers for a given question, then
+      # this conditional prevents a divide by zero error
+      if total_answers == 0
+        data = [
+          { label: "A", value: 0 },
+          { label: "B", value: 0 },
+          { label: "C", value: 0 },
+          { label: "D", value: 0 }
+            ]
+      else
+        data = [
+                { label: "A", value: (a_answers * 100) / total_answers },
+                { label: "B", value: (b_answers * 100) / total_answers },
+                { label: "C", value: (c_answers * 100) / total_answers },
+                { label: "D", value: (d_answers * 100) / total_answers }
+        ]
+      end
+        data = {
+            clickable: true,
+            url: '',
+            chartTitle: question.text,
+            data: data
+        }
       total_data.push(data)
     end
     @data = total_data.to_json
