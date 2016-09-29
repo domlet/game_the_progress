@@ -10,4 +10,8 @@ class UsersController < ApplicationController
   def show
     @games = Game.all
   end
+
+  def index
+    redirect_to user_url(current_user)
+  end
 end

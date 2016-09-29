@@ -20,10 +20,10 @@
       </td>
     </tr>
   </table>
-  <p>
-    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-  </p>
-  <h5>Games</h5>
+  <hr>
+    <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "button" %>
+  <hr>
+  <h4>Games</h4>
   <% if current_user %>
   <div>
     <% @games[0..1].each do |game| %>

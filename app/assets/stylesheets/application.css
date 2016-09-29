@@ -41,11 +41,50 @@ input[type=submit].next-button {
   padding-right: .4em;
 }
 
-/* log in/sign up/sign out forms */
+/* Devise log in/sign up/sign out forms */
 .form-screen {
     display: block;
     margin: auto;
-    width: 220px;
+    width: 350px;
+    padding: 1em;
+    background-color: #fff;
+    border-radius: 1em; 
+}
+.form-screen table th, .form-screen table td {
+  padding: 0.3em 0.5em;
+}
+
+.form-screen h2 {
+  margin: 0.2em 0 0.6em 0;
+}
+
+.form-screen table th {
+  font-weight: bold;
+}
+
+.form-screen input {
+  margin: 0.2em 0 0.4em 0;
+  width: 96%;
+}
+
+/**
+ * Create the slider bar
+ */
+.checkboxOne {
+  width: 40px;
+  height: 10px;
+  background: #555;
+  margin: 20px 80px;
+  position: relative;
+  border-radius: 3px;
+}
+
+.form-screen a.button {
+  text-align: center;
+  background-color: green;
+  padding: 0.5em;
+  color: #fff;
+  text-decoration: none;
 }
 
 .game-list {
@@ -660,4 +699,9 @@ th {
 
 #header {
   margin-right: 2em;
+}
+
+hr {
+  border-top: 2px dotted silver;
+  margin: 1em 0;
 }
