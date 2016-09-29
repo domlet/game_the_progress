@@ -86,14 +86,107 @@ class GamesController < ApplicationController
       a4 = Answer.new(question_id: q1.id, text: params[:answer4])
       a4.save
 
+      q2 = Question.new(game_id: @game.id, text: params[:question2])
+      q2.save
+      a1 = Answer.new(question_id: q2.id, text: params[:answer5])
+      a1.save
+      a2 = Answer.new(question_id: q2.id, text: params[:answer6])
+      a2.save
+      a3 = Answer.new(question_id: q2.id, text: params[:answer7])
+      a3.save
+      a4 = Answer.new(question_id: q2.id, text: params[:answer8])
+      a4.save
 
+      q3 = Question.new(game_id: @game.id, text: params[:question3])
+      q3.save
+      a1 = Answer.new(question_id: q3.id, text: params[:answer9])
+      a1.save
+      a2 = Answer.new(question_id: q3.id, text: params[:answer10])
+      a2.save
+      a3 = Answer.new(question_id: q3.id, text: params[:answer11])
+      a3.save
+      a4 = Answer.new(question_id: q3.id, text: params[:answer12])
+      a4.save
 
+      q4 = Question.new(game_id: @game.id, text: params[:question4])
+      q4.save
+      a1 = Answer.new(question_id: q4.id, text: params[:answer13])
+      a1.save
+      a2 = Answer.new(question_id: q4.id, text: params[:answer14])
+      a2.save
+      a3 = Answer.new(question_id: q4.id, text: params[:answer15])
+      a3.save
+      a4 = Answer.new(question_id: q4.id, text: params[:answer16])
+      a4.save
 
-      p "this is question 1 and answer 1 text =========================="
-      p @game.questions[0].answers[0].text
-      p @game.questions[0].answers[0].text
+      q5 = Question.new(game_id: @game.id, text: params[:question5])
+      q5.save
+      a1 = Answer.new(question_id: q5.id, text: params[:answer17])
+      a1.save
+      a2 = Answer.new(question_id: q5.id, text: params[:answer18])
+      a2.save
+      a3 = Answer.new(question_id: q5.id, text: params[:answer19])
+      a3.save
+      a4 = Answer.new(question_id: q5.id, text: params[:answer20])
+      a4.save
+
+      q6 = Question.new(game_id: @game.id, text: params[:question6])
+      q6.save
+      a1 = Answer.new(question_id: q6.id, text: params[:answer21])
+      a1.save
+      a2 = Answer.new(question_id: q6.id, text: params[:answer22])
+      a2.save
+      a3 = Answer.new(question_id: q6.id, text: params[:answer23])
+      a3.save
+      a4 = Answer.new(question_id: q6.id, text: params[:answer24])
+      a4.save
+
+      q7 = Question.new(game_id: @game.id, text: params[:question7])
+      q7.save
+      a1 = Answer.new(question_id: q7.id, text: params[:answer25])
+      a1.save
+      a2 = Answer.new(question_id: q7.id, text: params[:answer26])
+      a2.save
+      a3 = Answer.new(question_id: q7.id, text: params[:answer27])
+      a3.save
+      a4 = Answer.new(question_id: q7.id, text: params[:answer28])
+      a4.save
+
+      q8 = Question.new(game_id: @game.id, text: params[:question8])
+      q8.save
+      a1 = Answer.new(question_id: q8.id, text: params[:answer29])
+      a1.save
+      a2 = Answer.new(question_id: q8.id, text: params[:answer30])
+      a2.save
+      a3 = Answer.new(question_id: q8.id, text: params[:answer31])
+      a3.save
+      a4 = Answer.new(question_id: q8.id, text: params[:answer32])
+      a4.save
+
+      q9 = Question.new(game_id: @game.id, text: params[:question9])
+      q9.save
+      a1 = Answer.new(question_id: q9.id, text: params[:answer33])
+      a1.save
+      a2 = Answer.new(question_id: q9.id, text: params[:answer34])
+      a2.save
+      a3 = Answer.new(question_id: q9.id, text: params[:answer35])
+      a3.save
+      a4 = Answer.new(question_id: q9.id, text: params[:answer36])
+      a4.save
+
+      q10 = Question.new(game_id: @game.id, text: params[:question10])
+      q10.save
+      a1 = Answer.new(question_id: q10.id, text: params[:answer37])
+      a1.save
+      a2 = Answer.new(question_id: q10.id, text: params[:answer38])
+      a2.save
+      a3 = Answer.new(question_id: q10.id, text: params[:answer39])
+      a3.save
+      a4 = Answer.new(question_id: q10.id, text: params[:answer40])
+      a4.save
+
     end 
-
+    redirect_to games_path
 
     # if @game.save
     #   10.times do 
@@ -170,7 +263,6 @@ class GamesController < ApplicationController
     #   @game.questions[9].answers[2].text = params[:answer39]
     #   @game.questions[9].answers[3].text = params[:answer40]
     
-    redirect_to games_path
   end
 
 
