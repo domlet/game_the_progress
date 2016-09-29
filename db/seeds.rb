@@ -61,6 +61,9 @@ end
           question_id: (10 * x) + (y + 1)
         )
     end
+    temp_question_variable = Question.find(y+1)
+    temp_question_variable.correct_answer_id = (y*4) + 1
+    temp_question_variable.save
   end
 end
 
@@ -89,28 +92,6 @@ Result.create!(
     student_answer_id:x + 1,
   )
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ###################### SEEDS FOR DEMO ############################################
@@ -183,22 +164,4 @@ end
   #         )
   #   end
   # end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

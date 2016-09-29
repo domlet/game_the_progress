@@ -1,6 +1,11 @@
+
+  <%= render partial: './game-bar', locals: {game: @game, user: @current_user}  %>
+
 <div id="games" data-game=<%= @game.id %> >
+<div id="progress-bar" class="progress-bar">
+</div>
   <!-- GAME TITLE -->
-    <h4><%= @game.title %></h4>
+    <!-- <h4>< %= @game.title %></h4> -->
   <!-- FLASH MESSAGES -->
   <!-- TODO: make it show on S.P.A. -->
   <div class="notice"></div>
@@ -36,7 +41,7 @@
 
 <!-- TIMER -->
   <script type="text/javascript">
-    var start = 10
+    var start = 5
     var t, count;
 
     function timerDisplay() {
@@ -46,7 +51,7 @@
     function countdown() {
       timerDisplay();
       if (count == 0) {
-        $("#timespan").html("Time's Up")
+        $("#timespan").html(":)")
       } else {
           count--;
           t = setTimeout("countdown()", 1000);
@@ -59,17 +64,15 @@
     };
 
   </script>
-  <span id="timespan">10</span>
-  <input type="button" value="Start" onclick="countdown()">
-  <input type="button" value="Reset" onclick="timerReset()">
+  <div id=timer-container>
+  <div id="timespan">5</div>
+  <input class="timer-button" type="button" value="Start" onclick="countdown()">
+  <input class="timer-button" type="button" value="Reset" onclick="timerReset()">
+  </div>
 
 <!-- End of game button  -->
-  <div id="end-game-button"><%= link_to "Finished", results_path %></div>
-<% else %>
-  <div id="end-game-student-results"><%= link_to "See my results", "/graph/student/#{current_user.id}" %></div>
 <% end %>
 
 
-<div id="progress-bar" class="progress-bar">
-</div>
+
 
