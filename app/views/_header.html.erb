@@ -15,6 +15,10 @@
       <%end%>
     <%end%>
 
+<% unless current_user.is_admin %>
+  <div id="end-game-student-results"><%= link_to " | See my results", "/graph/student/#{current_user.id}" %></div>
+<% end %>
+
   </h5>
 
   <audio id="sound_effect" class="audio_player" preload="auto">
