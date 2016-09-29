@@ -1,3 +1,5 @@
+
+
 <div class="form-screen">
 <h2>Sign up</h2>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -36,12 +38,22 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
-  <div class="field">
-    <%= f.label :is_admin, "Game Host" %>
-    <%= f.check_box :is_admin, {}, true, false %>
+<section>
+  <div class="checkboxThree">
+    <!-- < %= f.label :is_admin, "" %> -->
+    <!-- < %= f.check_box :is_admin, {}, true, false %> -->
+    <input type="checkbox" value="true" name="user[is_admin]" id="user_is_admin" for="checkboxThreeInput">
+    <label for="user_is_admin"></label>
   </div>
+</section>
 
-
+<!-- <section> -->
+  <!-- Checkbox Three -->
+    <!-- <div class="checkboxThree"> -->
+      <!-- <input type="checkbox" value="1" id="checkboxThreeInput" name="" /> -->
+      <!-- <label for="checkboxThreeInput"></label> -->
+    <!-- </div> -->
+<!-- </section> -->
 
   <div class="actions">
     <%= f.submit "Sign up", :class => 'go' %>
