@@ -1,5 +1,6 @@
 
 <div class="form-screen">
+<%= render partial: './logo' %>
 
 
 <h2>Sign up</h2>
@@ -27,6 +28,15 @@
   </div>
 
   <div class="field">
+    <section>
+      <div class="checkboxThree">
+        <input type="checkbox" value="true" name="user[is_admin]" id="user_is_admin" for="checkboxThreeInput">
+        <label for="user_is_admin"></label>
+      </div>
+    </section>
+  </div>
+
+  <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
@@ -39,14 +49,6 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
-  <div class="field">
-<section>
-  <div class="checkboxThree">
-    <input type="checkbox" value="true" name="user[is_admin]" id="user_is_admin" for="checkboxThreeInput">
-    <label for="user_is_admin"></label>
-  </div>
-</section>
-  </div>
 
   <div class="actions">
     <%= f.submit "Sign up", :class => 'go' %>

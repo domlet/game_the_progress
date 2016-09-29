@@ -15,7 +15,6 @@
  */
 
  body {
-
   background: #dcdcd5;
   font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
 }
@@ -26,6 +25,24 @@ input[type=submit].next-button {
   padding: .3em;
   font-size: 1.2em;
   font-weight: 800;
+}
+
+#logo img {
+  width: 300px;
+  position: relative;
+  top: -1em;
+  left: -0.5em;
+  margin-bottom: -3em;
+}
+
+#logo {
+}
+
+#betty-white {
+  z-index: -1;
+  position:absolute; 
+  bottom: 0;
+  right: 0;
 }
 
 .progress-bar {
@@ -46,10 +63,12 @@ input[type=submit].next-button {
     display: block;
     margin: auto;
     width: 350px;
-    padding: 1em;
     background-color: #fff;
     border-radius: 1em; 
+    padding: 1em;
+    margin-top: 1em;
 }
+
 .form-screen table th, .form-screen table td {
   padding: 0.3em 0.5em;
 }
@@ -550,7 +569,7 @@ h5 {
   padding-left: .4em;
 }
 
-.current-user a {
+.current-user a, .game-bar a {
   color: #000;
   border-radius: 0.5em;
   background-color: #3fb54a;
@@ -619,10 +638,32 @@ th {
   background-color: red;
   color: white;
 }
-#games-index span.game-id {
-  background-color: lime;
-  color: white;
+
+.clear-fix {
+  clear: both;  
 }
+
+#game-row {
+  text-align: justify;
+}
+
+.game-id {
+  background-color: #e26eaa;
+  color: white;
+  padding: 0.1em 0.3em;
+  border-radius: 0.2em;
+  margin: 0 0.3em 0 0 ;
+}
+
+.subject {
+  background-color: #34c0c4;
+  color: white;
+  padding: 0.1em 0.3em;
+  border-radius: 0.2em;
+  margin: 0  0 0 0.3em;
+  float: right;
+}
+
 /* NEXT BUTTONS HIDDEN BY DEFAULT */
 .next-button {
   display: none;
@@ -692,7 +733,6 @@ th {
 #games-index a {
   text-decoration: none;
 }*/
-
 
 
 @media only screen and (max-device-width: 422px) {
@@ -792,6 +832,7 @@ th {
     background-color: none;
     margin-top: 1em;
   }
+
 }
 
 

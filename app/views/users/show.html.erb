@@ -1,7 +1,9 @@
 <div class="form-screen">
+<%= render partial: './logo' %>
+
   <% if current_user %>
 
-  <h2><%= current_user.first_name %><br/><%= current_user.last_name %></h2>
+  <h2><%= current_user.first_name %> <%= current_user.last_name %></h2>
 
   <table>
     <tr>
@@ -29,10 +31,10 @@
   <% if current_user %>
   <div>
     <% @games[0..1].each do |game| %>
-    <p>
+    <p id="game-row" class="clear-fix">
       <span class="game-id">#<%= game.id %></span>
-      <%= link_to game.title[0..25] << '...', game_url(game) %>
-      <span class="subject"><%= game.subject %></span>
+      <%= link_to game.title[0..27] << '...', game_url(game) %>
+      <span class="subject"><%= game.subject[0..12] %></span>
     </p>
     <% end %>
   </div>
