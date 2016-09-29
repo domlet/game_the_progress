@@ -42,7 +42,12 @@
 
     renderQuestion: function(data) {
       console.log('question rendered');
-      return "<p>" + data.question_id + ". " + data.question_text + "</p>";
+      if(data.question_id % 10 == 0) {
+        return "<p>" + (10) + ". " + data.question_text + "</p>";
+      }
+      else {
+        return "<p>" + (data.question_id % 10) + ". " + data.question_text + "</p>";
+      }
     },
 
     renderA: function(data) {
