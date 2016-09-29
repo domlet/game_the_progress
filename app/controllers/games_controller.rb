@@ -68,6 +68,10 @@ class GamesController < ApplicationController
 
   def create
     @game = Game.new(result_params)
+    p "---------- params ============================= "
+    p params
+    p "---------- params answer 1 ============================= "
+    p params[:answer1]
 
     if @game.save
       10.times do 
@@ -75,37 +79,65 @@ class GamesController < ApplicationController
       end
       @game.questions.each do |question|
         Answer.create(question_id: question.id)
+        Answer.create(question_id: question.id)
+        Answer.create(question_id: question.id)
+        Answer.create(question_id: question.id)
       end
-    end
+    
     @game.questions[0].text = params[:question1]
-      @game.questions[0].answers[0] = params[:answer1]
-      @game.questions[0].answers[1] = params[:answer2]
-      @game.questions[0].answers[2] = params[:answer3]
-      @game.questions[0].answers[3] = params[:answer4]
+      @game.questions[0].answers[0].text = params[:answer1]
+      
+      p @game.questions[0].answers[1].text
+
+      @game.questions[0].answers[1].text = params[:answer2]
+      @game.questions[0].answers[2].text = params[:answer3]
+      @game.questions[0].answers[3].text = params[:answer4]
     @game.questions[1].text = params[:question2]
-      @game.questions[1].answers[4] = params[:answer5]
-      @game.questions[1].answers[5] = params[:answer6]
-      @game.questions[1].answers[6] = params[:answer7]
-      @game.questions[1].answers[7] = params[:answer8]
+      @game.questions[1].answers[0].text = params[:answer5]
+      @game.questions[1].answers[1].text = params[:answer6]
+      @game.questions[1].answers[2].text = params[:answer7]
+      @game.questions[1].answers[3].text = params[:answer8]
     @game.questions[2].text = params[:question3]
-      @game.questions[2].answers[8] = params[:answer9]
-      @game.questions[2].answers[9] = params[:answer10]
-      @game.questions[2].answers[10] = params[:answer11]
-      @game.questions[2].answers[11] = params[:answer12]
+      @game.questions[2].answers[0].text = params[:answer9]
+      @game.questions[2].answers[1].text = params[:answer10]
+      @game.questions[2].answers[2].text = params[:answer11]
+      @game.questions[2].answers[3].text = params[:answer12]
     @game.questions[3].text = params[:question4]
-      @game.questions[0].answers[0] = params[:answer1]
-      @game.questions[0].answers[1] = params[:answer2]
-      @game.questions[0].answers[2] = params[:answer3]
-      @game.questions[0].answers[3] = params[:answer4]
+      @game.questions[3].answers[0].text = params[:answer13]
+      @game.questions[3].answers[1].text = params[:answer14]
+      @game.questions[3].answers[2].text = params[:answer15]
+      @game.questions[3].answers[3].text = params[:answer16]
     @game.questions[4].text = params[:question5]
+      @game.questions[4].answers[0].text = params[:answer17]
+      @game.questions[4].answers[1].text = params[:answer18]
+      @game.questions[4].answers[2].text = params[:answer19]
+      @game.questions[4].answers[3].text = params[:answer20]  
     @game.questions[5].text = params[:question6]
+      @game.questions[5].answers[0].text = params[:answer21]
+      @game.questions[5].answers[1].text = params[:answer22]
+      @game.questions[5].answers[2].text = params[:answer23]
+      @game.questions[5].answers[3].text = params[:answer24]
     @game.questions[6].text = params[:question7]
+      @game.questions[6].answers[0].text = params[:answer25]
+      @game.questions[6].answers[1].text = params[:answer26]
+      @game.questions[6].answers[2].text = params[:answer27]
+      @game.questions[6].answers[3].text = params[:answer28]
     @game.questions[7].text = params[:question8]
+      @game.questions[7].answers[0].text = params[:answer29]
+      @game.questions[7].answers[1].text = params[:answer30]
+      @game.questions[7].answers[2].text = params[:answer31]
+      @game.questions[7].answers[3].text = params[:answer32]
     @game.questions[8].text = params[:question9]
+      @game.questions[8].answers[0].text = params[:answer33]
+      @game.questions[8].answers[1].text = params[:answer34]
+      @game.questions[8].answers[2].text = params[:answer35]
+      @game.questions[8].answers[3].text = params[:answer36]
     @game.questions[9].text = params[:question10]
-
-
-
+      @game.questions[9].answers[0].text = params[:answer37]
+      @game.questions[9].answers[1].text = params[:answer38]
+      @game.questions[9].answers[2].text = params[:answer39]
+      @game.questions[9].answers[3].text = params[:answer40]
+    end
   end
 
 
