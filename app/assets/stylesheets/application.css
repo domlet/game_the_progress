@@ -31,8 +31,8 @@ input[type=submit].next-button {
 .progress-bar {
   position: absolute;
   bottom: 0;
-  padding-bottom: .5em;
-  padding-left: .5em;
+  padding-bottom: 1.5em;
+  padding-left: 1em;
   /*position: fixed;
   text-align: right;
   vertical-align: bottom;
@@ -782,5 +782,5 @@ hr {
 
 .sound-icon {
   display: inline;
-  width: 2em;
+  width: 2.5em;
 }
