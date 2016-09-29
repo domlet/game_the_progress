@@ -33,6 +33,22 @@
 
 
 <% if current_user.is_admin %>
+
+<!-- TIMER -->
+  <script type="text/javascript">
+      var seconds_left = 10;
+      var interval = setInterval(function() {
+        document.getElementById('timer_div').innerHTML = --seconds_left;
+
+        if (seconds_left <= 0)
+        {
+        document.getElementById('timer_div').innerHTML = 'Time\'s Up';
+        clearInterval(interval);
+        }
+      }, 1000);
+  </script>
+  <span id="timer_div">10</span>
+
 <!-- End of game button -->
   <div id="end-game-button"><%= link_to "Finished", results_path %></div>
 <% else %>
