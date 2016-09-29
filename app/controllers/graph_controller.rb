@@ -1,7 +1,11 @@
 class GraphController < ApplicationController
+  before_filter :authenticate_user!
 
   def students
-    # @results = Result.all
+    if current_user.is_admin != true
+      redirect_to user_url
+    end
+        # @results = Result.all
     #  p @results
     # boolean_array = @results.map do |result|
     #   result.is_correct
@@ -33,6 +37,10 @@ class GraphController < ApplicationController
   end
 
   def show
+    # Hide individual user graphs from users who shouldn't see them
+    if current_user.is_admin != true && current_user.id != params[:id].to_i
+      redirect_to user_url
+    end
     @users = User.all
     # p "*" * 88
     # p params
