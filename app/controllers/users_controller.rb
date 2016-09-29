@@ -13,5 +13,6 @@ class UsersController < ApplicationController
 
   def index
     redirect_to user_url(current_user)
+    p "redirect_to user_url"
   end
 end

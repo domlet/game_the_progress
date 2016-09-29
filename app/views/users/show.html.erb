@@ -1,9 +1,16 @@
 <div class="form-screen">
   <% if current_user %>
 
-  <h1><%= current_user.first_name %><br/><%= current_user.last_name %></h1>
+  <h2><%= current_user.first_name %><br/><%= current_user.last_name %></h2>
 
   <table>
+    <tr>
+      <th>Role:</th>
+      <td>    <% if current_user.is_admin == true%>Game Host
+        <% else %>Player
+        <% end %>
+      </td>
+    </tr>
     <tr>
       <th>Username:</th>
       <td><%= current_user.username %></td>
@@ -12,24 +19,19 @@
       <th>Email:</th>
       <td><%= current_user.email %></td>
     </tr>
-    <tr>
-      <th>Role:</th>
-      <td>    <% if current_user.is_admin == true%>Game Host
-        <% else %>Player
-        <% end %>
-      </td>
-    </tr>
   </table>
+
   <hr>
-    <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "button" %>
+    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
   <hr>
-  <h4>Games</h4>
+
+  <h3>Your Games</h3>
   <% if current_user %>
   <div>
     <% @games[0..1].each do |game| %>
     <p>
       <span class="game-id">#<%= game.id %></span>
-      <%= link_to game.title[0..30] << '...', game_url(game) %>
+      <%= link_to game.title[0..25] << '...', game_url(game) %>
       <span class="subject"><%= game.subject %></span>
     </p>
     <% end %>

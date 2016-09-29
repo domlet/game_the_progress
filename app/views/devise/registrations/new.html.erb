@@ -38,22 +38,14 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
+  <div class="field">
 <section>
   <div class="checkboxThree">
-    <!-- < %= f.label :is_admin, "" %> -->
-    <!-- < %= f.check_box :is_admin, {}, true, false %> -->
     <input type="checkbox" value="true" name="user[is_admin]" id="user_is_admin" for="checkboxThreeInput">
     <label for="user_is_admin"></label>
   </div>
 </section>
-
-<!-- <section> -->
-  <!-- Checkbox Three -->
-    <!-- <div class="checkboxThree"> -->
-      <!-- <input type="checkbox" value="1" id="checkboxThreeInput" name="" /> -->
-      <!-- <label for="checkboxThreeInput"></label> -->
-    <!-- </div> -->
-<!-- </section> -->
+  </div>
 
   <div class="actions">
     <%= f.submit "Sign up", :class => 'go' %>
