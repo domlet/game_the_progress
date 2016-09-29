@@ -52,17 +52,19 @@
         fill-opacity: .9;
     }
 
+
 </style>
 
-<h3>See Student Results</h3>
-<ul>
-<% @users.each do |user| %>
-  <% if user.is_admin %>
-  <% else %>
-    <li><a href="<%= user.id %>"><%= user.first_name %> <%= user.last_name %></a></li>
-  <% end %>
-<% end %>
-</ul>
+<!-- <h3>Individual Student Results</h3> -->
+<h3>Game 1 Results for Individual Student</h3>
+<!-- <ul>
+< % @users.each do |user| %>
+  < % if user.is_admin %>
+  < % else %>
+    <li><a href="< %= user.id %>">< %= user.first_name %> < %= user.last_name %></a></li>
+  < % end %>
+< % end %>
+</ul> -->
 
 <script type="text/javascript">
   var data = <%= raw @data %>
