@@ -1,6 +1,8 @@
+  <%= render partial: './game-bar', locals: {game: @game, user: @current_user}  %>
+
 <div id="games" data-game=<%= @game.id %> >
   <!-- GAME TITLE -->
-    <h4><%= @game.title %></h4>
+    <!-- <h4>< %= @game.title %></h4> -->
   <!-- FLASH MESSAGES -->
   <!-- TODO: make it show on S.P.A. -->
   <div class="notice"></div>

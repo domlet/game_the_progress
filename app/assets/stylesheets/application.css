@@ -75,6 +75,7 @@ input[type=submit].next-button {
 
 .form-screen h2 {
   margin: 0.2em 0 0.6em 0;
+  background-color: #fff;
 }
 
 .form-screen h3 {
@@ -578,6 +579,10 @@ h5 {
   text-decoration: none;
 }
 
+.game-bar a:nth-child(1) {
+  background-color: #e36fab;
+}
+
 .current-user a:nth-child(1) {
   background-color: #e36fab;
 }
@@ -585,6 +590,29 @@ h5 {
 /* ON-CLICK */
 .current-user a:active {
   background-color: #cbcc2c;
+}
+
+.game-bar a:active  {
+  background-color: #cbcc2c;
+}
+
+.game-bar span {
+  color: gray;
+  margin-left: 0.5em;
+}
+
+.game-bar {
+  background-color: #1a1a1a;
+  padding: 1em 0 1em 0;
+  width: 100%;
+  margin: 0;
+  vertical-align: middle;
+  color: gray;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #fff;
+  white-space: nowrap;
 }
 
 .current-user {
@@ -626,6 +654,11 @@ h5 {
 
 th {
   text-align: left;
+}
+
+#games {
+  position: relative;
+  top: 5em;
 }
 
 #games-index a {
