@@ -44,7 +44,6 @@ input[type=submit].next-button {
 /* Devise log in/sign up/sign out forms */
 .form-screen {
     display: block;
-    text-align: center;
     margin: auto;
     width: 350px;
     padding: 1em;
@@ -779,4 +778,9 @@ th {
 hr {
   border-top: 2px dotted silver;
   margin: 1em 0;
+}
+
+.sound-icon {
+  display: inline;
+  width: 2em;
 }
