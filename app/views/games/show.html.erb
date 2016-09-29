@@ -36,20 +36,34 @@
 
 <!-- TIMER -->
   <script type="text/javascript">
-      var seconds_left = 10;
-      var interval = setInterval(function() {
-        document.getElementById('timer_div').innerHTML = --seconds_left;
+    var start = 10
+    var t, count;
 
-        if (seconds_left <= 0)
-        {
-        document.getElementById('timer_div').innerHTML = 'Time\'s Up';
-        clearInterval(interval);
-        }
-      }, 1000);
+    function timerDisplay() {
+      document.getElementById('timespan').innerHTML = count;
+    };
+
+    function countdown() {
+      timerDisplay();
+      if (count == 0) {
+        $("#timespan").html("Time's Up")
+      } else {
+          count--;
+          t = setTimeout("countdown()", 1000);
+      }
+    };
+
+    function timerReset() {
+      count = start;
+      timerDisplay();
+    };
+
   </script>
-  <span id="timer_div">10</span>
+  <span id="timespan">10</span>
+  <input type="button" value="Start" onclick="countdown()">
+  <input type="button" value="Reset" onclick="timerReset()">
 
-<!-- End of game button -->
+<!-- End of game button  -->
   <div id="end-game-button"><%= link_to "Finished", results_path %></div>
 <% else %>
   <div id="end-game-student-results"><%= link_to "See my results", "/graph/student/#{current_user.id}" %></div>
