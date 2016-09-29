@@ -37,6 +37,11 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
+  <div class="field">
+    <%= f.label :is_admin, "Game Host" %>
+    <%= f.check_box :is_admin, {}, true, false %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
