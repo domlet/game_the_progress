@@ -18,6 +18,8 @@ class QuestionsController < ApplicationController
     head :ok
   end
 
+
+
 end
 
 

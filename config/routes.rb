@@ -20,7 +20,8 @@ Rails.application.routes.draw do
   # Custom Example
   # get '/patients/:id', to: 'patients#show'
 
-  resources :games, only: [:index, :show, :create, :new]
+  resources :games
+  # , only: [:index, :show, :create, :new]
   resources :results
   resources :questions
   resources :answers
