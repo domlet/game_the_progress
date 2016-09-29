@@ -450,7 +450,7 @@ h5 {
   text-align: right;
   bottom: 0;
   right: 0;
-  padding-right: .4em;
+  padding-right: 1.3em;
 }
 
 .gobutton {
@@ -658,4 +658,6 @@ th {
   }
 }
 
-
+#header {
+  margin-right: 2em;
+}
