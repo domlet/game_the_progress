@@ -31,6 +31,12 @@ class GraphController < ApplicationController
 
 
 
+  def students_private
+    if current_user.is_admin != true
+      redirect_to user_url(current_user)
+    end
+  end
+
   def students
     if current_user.is_admin != true
       redirect_to user_url
