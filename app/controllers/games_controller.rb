@@ -210,7 +210,7 @@ class GamesController < ApplicationController
       q10.save
 
     end 
-    redirect_to games_path
+    redirect_to user_path(current_user)
 
     # if @game.save
     #   10.times do 
