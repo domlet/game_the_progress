@@ -41,11 +41,116 @@ input[type=submit].next-button {
   padding-right: .4em;
 }
 
-/* log in/sign up/sign out forms */
+/* Devise log in/sign up/sign out forms */
 .form-screen {
     display: block;
     margin: auto;
-    width: 220px;
+    width: 350px;
+    padding: 1em;
+    background-color: #fff;
+    border-radius: 1em; 
+}
+.form-screen table th, .form-screen table td {
+  padding: 0.3em 0.5em;
+}
+
+.form-screen h2 {
+  margin: 0.2em 0 0.6em 0;
+}
+
+.form-screen h3 {
+  font-size: 150%;
+}
+
+.form-screen table th {
+  font-weight: bold;
+}
+
+.form-screen input {
+  margin: 0.2em 0 0.4em 0;
+  width: 96%;
+}
+
+.form-screen p {
+  text-align: left;
+}
+
+/**
+ * Start by hiding the checkboxes
+ */
+.checkboxThree input[type=checkbox] {
+  visibility: hidden;
+}
+
+/**
+ * Checkbox Three
+ */
+.checkboxThree {
+  width: 250px;
+  height: 40px;
+  background: #333;
+  margin: auto auto 1em auto;
+  border-radius: 50px;
+  position: relative;
+}
+/**
+ * Create the text for the On position
+ */
+.checkboxThree:before {
+  content: 'Host';
+  position: absolute;
+  top: 12px;
+  left: 13px;
+  height: 2px;
+  color: #fff;
+  font-size: 16px;
+}
+
+/**
+ * Create the label for the off position
+ */
+.checkboxThree:after {
+  content: 'Player';
+  position: absolute;
+  top: 12px;
+  left: 180px;
+  height: 2px;
+  color: #26ca28;
+  font-size: 16px;
+}
+
+/**
+ * Create the pill to click
+ */
+.checkboxThree label {
+  display: block;
+  width: 80px;
+  height: 22px;
+  border-radius: 50px;
+
+  transition: all .5s ease;
+  cursor: pointer;
+  position: absolute;
+  top: 9px;
+  z-index: 1;
+  left: 12px;
+  background: #26ca28;
+}
+
+/**
+ * Create the checkbox event for the label
+ */
+.checkboxThree input[type=checkbox]:checked + label {
+  left: 160px;
+  background: #ddd;
+}
+
+.form-screen a.button {
+  text-align: center;
+  background-color: green;
+  padding: 0.5em;
+  color: #fff;
+  text-decoration: none;
 }
 
 .game-list {
@@ -656,8 +761,26 @@ th {
     right: 10;
     font-size: 3em;
   }
+
+  /* DEVISE LOGINS */
+  .form-screen {
+    width: 80%;
+    font-size: 300%;
+    background-color: none;
+    margin-top: 1em;
+  }
 }
 
 #header {
   margin-right: 2em;
+}
+
+hr {
+  border-top: 2px dotted silver;
+  margin: 1em 0;
+}
+
+.sound-icon {
+  display: inline;
+  width: 2em;
 }
