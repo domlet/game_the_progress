@@ -36,7 +36,7 @@
 
 <!-- TIMER -->
   <script type="text/javascript">
-    var start = 10
+    var start = 5
     var t, count;
 
     function timerDisplay() {
@@ -59,15 +59,15 @@
     };
 
   </script>
-  <span id="timespan">10</span>
-  <input type="button" value="Start" onclick="countdown()">
-  <input type="button" value="Reset" onclick="timerReset()">
+  <div id=timer-container>
+  <div id="timespan">5</div>
+  <input class="timer-button" type="button" value="Start" onclick="countdown()">
+  <input class="timer-button" type="button" value="Reset" onclick="timerReset()">
+  </div>
 
 <!-- End of game button  -->
-  <div id="end-game-button"><%= link_to "Finished", results_path %></div>
-<% else %>
-  <div id="end-game-student-results"><%= link_to "See my results", "/graph/student/#{current_user.id}" %></div>
 <% end %>
+
 
 
 <div id="progress-bar" class="progress-bar">

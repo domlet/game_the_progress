@@ -48,7 +48,7 @@ input[type=submit].next-button {
     width: 350px;
     padding: 1em;
     background-color: #fff;
-    border-radius: 1em; 
+    border-radius: 1em;
 }
 .form-screen table th, .form-screen table td {
   padding: 0.3em 0.5em;
@@ -410,6 +410,21 @@ input[type=submit].next-button {
   height: 1em;
 }
 
+#timer-container {
+  margin: auto;
+  width: 50%;
+}
+
+#timespan {
+  text-align: center;
+  font-size: 5em;
+}
+
+.timer-button {
+  margin: auto;
+  float: right;
+}
+
 input[type=email] {
   /* for text fields for student devise views */
   padding:.2em;
@@ -745,7 +760,7 @@ th {
     margin: 0em;
     padding: .1em;
   }
-  
+
   h4 {
     font-size: 2.8em;
   }
