@@ -695,6 +695,14 @@ th {
     right: 10;
     font-size: 3em;
   }
+
+  /* DEVISE LOGINS */
+  .form-screen {
+    width: 80%;
+    font-size: 300%;
+    background-color: none;
+    margin-top: 1em;
+  }
 }
 
 #header {
