@@ -1,10 +1,90 @@
 
 
-<!-- drop down for category -->
-<%= form_for :category do |f| %>
-<%= f.collection_select(:category_id, @categories, :id, :name) %>
-<% end %>
+<%= form_for @game do |f| %>
+  Game Title <br />
+  <%= f.text_field :title %><br />
+  Game Subject <br />
+  <%= f.text_field :subject %><br /><br />
 
-<%= form_for :game do |f| %>
-Question 1: < %= f.text_field :question1 %><br />
- -->
+<!-- QUESTION 1 -->
+  <%= form_for @question1 do |f| %>
+    Question 1: <br />
+    <%= f.text_field :text %><br /> 
+    Correct Answer:
+    <%= f.select :correct_answer_id, ["1", "2", "3", "4"] %><br /> 
+      <%= form_for @answer1 do |f| %>
+        Answer 1: <br />
+        <%= f.text_field :text %><br />
+      <% end %>
+      <%= form_for @answer2 do |f| %>
+        Answer 2: <br />
+        <%= f.text_field :text %><br />
+      <% end %>
+      <%= form_for @answer3 do |f| %>
+        Answer 3: <br />
+        <%= f.text_field :text %><br />
+      <% end %>
+      <%= form_for @answer4 do |f| %>
+        Answer 4: <br />
+        <%= f.text_field :text %><br />
+      <% end %>
+    <% end %>
+    <br /><br />
+
+<!-- QUESTION 2 -->
+  <%= form_for @question2 do |f| %>
+    Question 2: <br />
+    <%= f.text_field :text %><br />
+    Correct Answer:
+    <%= f.select :correct_answer_id, ["1", "2", "3", "4"] %><br /> 
+      <%= form_for @answer5 do |f| %>
+        Answer 1: <br />
+        <%= f.text_field :text %><br />
+      <% end %>
+      <%= form_for @answer6 do |f| %>
+        Answer 2: <br />
+        <%= f.text_field :text %><br />
+      <% end %>
+      <%= form_for @answer7 do |f| %>
+        Answer 3: <br />
+        <%= f.text_field :text %><br />
+      <% end %>
+      <%= form_for @answer8 do |f| %>
+        Answer 4: <br />
+        <%= f.text_field :text %><br />
+      <% end %>
+    <% end %>
+    <br /><br />
+
+<!-- QUESTION 3 -->
+  <%= form_for @question3 do |f| %>
+    Question 3: <br />
+    <%= f.text_field :text %><br />
+    Correct Answer:
+    <%= f.select :correct_answer_id, ["1", "2", "3", "4"] %><br /> 
+      <%= form_for @answer9 do |f| %>
+        Answer 1: <br />
+        <%= f.text_field :text %><br />
+      <% end %>
+      <%= form_for @answer10 do |f| %>
+        Answer 2: <br />
+        <%= f.text_field :text %><br />
+      <% end %>
+      <%= form_for @answer11 do |f| %>
+        Answer 3: <br />
+        <%= f.text_field :text %><br />
+      <% end %>
+      <%= form_for @answer12 do |f| %>
+        Answer 4: <br />
+        <%= f.text_field :text %><br />
+      <% end %>
+    <% end %>
+    <br /><br />
+
+
+  <br />
+  <%= f.submit class: 'go' %>      
+<% end %>
+  <br />
+  <br />
+
