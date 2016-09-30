@@ -61,32 +61,6 @@
 <% end %>
 
 
-<script type="text/javascript">
-  function lightUpA() {
-   $(".answer-button-a input").css("background-color", "black").css("color", "white");
-   $(".answer-button-b input").prop("onclick", "null").off('click');
-   $(".answer-button-c input").prop("onclick", "null").off('click');
-   $(".answer-button-d input").prop("onclick", "null").off('click');
- }
-  function lightUpB() {
-   $(".answer-button-b input").css("background-color", "black").css("color", "white");
-   $(".answer-button-a input").prop("onclick", "null").off('click');
-   $(".answer-button-c input").prop("onclick", "null").off('click');
-   $(".answer-button-d input").prop("onclick", "null").off('click');
- }
-  function lightUpC() {
-   $(".answer-button-c input").css("background-color", "black").css("color", "white");
-   $(".answer-button-b input").prop("onclick", "null").off('click');
-   $(".answer-button-a input").prop("onclick", "null").off('click');
-   $(".answer-button-d input").prop("onclick", "null").off('click');
- }
-  function lightUpD() {
-   $(".answer-button-d input").css("background-color", "black").css("color", "white");
-   $(".answer-button-b input").prop("onclick", "null").off('click');
-   $(".answer-button-c input").prop("onclick", "null").off('click');
-   $(".answer-button-a input").prop("onclick", "null").off('click');
- }
-</script>
 
 
 
@@ -137,10 +111,10 @@
   <div class="results-buttons" id="results-<%= question.id %>">
     <%=form_for result, remote: true, authenticity_token: true do |f|%>
     <!-- THESE MAY NOT HAVE LINE BREAKS -->
-    <div class="answer-button-a"><input type="submit" name="<%= question.answers[0].id %>" value="a" style="float:left;"></div>
-    <div class="answer-button-b"><input type="submit" name="<%= question.answers[1].id %>" value="b" style="float:left;"></div>
-    <div class="answer-button-c"><input type="submit" name="<%= question.answers[2].id %>" value="c" style="float:left;"></div>
-    <div class="answer-button-d"><input type="submit" name="<%= question.answers[3].id %>" value="d" style="float:left;"></div>
+    <div class="answer-button-a secondary"><input type="submit" name="<%= question.answers[0].id %>" value="a" style="float:left;"></div>
+    <div class="answer-button-b secondary"><input type="submit" name="<%= question.answers[1].id %>" value="b" style="float:left;"></div>
+    <div class="answer-button-c secondary"><input type="submit" name="<%= question.answers[2].id %>" value="c" style="float:left;"></div>
+    <div class="answer-button-d secondary"><input type="submit" name="<%= question.answers[3].id %>" value="d" style="float:left;"></div>
     <!-- HIDDEN FIELDS WITH IMPORTANT DATA -->
     <%=f.hidden_field :user_id, value: current_user.id %>
     <%=f.hidden_field :question_id, value: question.id %>
@@ -210,10 +184,10 @@
   <div class="results-buttons" id="results-<%= question.id %>">
     <%=form_for result, remote: true, authenticity_token: true do |f|%>
     <!-- THESE MAY NOT HAVE LINE BREAKS -->
-    <div class="answer-button-a"><input type="submit" name="<%= question.answers[0].id %>" value="a" style="float:left;"></div>
-    <div class="answer-button-b"><input type="submit" name="<%= question.answers[1].id %>" value="b" style="float:left;"></div>
-    <div class="answer-button-c"><input type="submit" name="<%= question.answers[2].id %>" value="c" style="float:left;"></div>
-    <div class="answer-button-d"><input type="submit" name="<%= question.answers[3].id %>" value="d" style="float:left;"></div>
+    <div class="answer-button-a rest"><input type="submit" name="<%= question.answers[0].id %>" value="a" style="float:left;"></div>
+    <div class="answer-button-b rest"><input type="submit" name="<%= question.answers[1].id %>" value="b" style="float:left;"></div>
+    <div class="answer-button-c rest"><input type="submit" name="<%= question.answers[2].id %>" value="c" style="float:left;"></div>
+    <div class="answer-button-d rest"><input type="submit" name="<%= question.answers[3].id %>" value="d" style="float:left;"></div>
     <!-- HIDDEN FIELDS WITH IMPORTANT DATA -->
     <%=f.hidden_field :user_id, value: current_user.id %>
     <%=f.hidden_field :question_id, value: question.id %>
