@@ -139,13 +139,13 @@ Result.delete_all
           ]
 
   answer_sample = [
-                  ["Ken", "Hunter", "Sarah", "Max" ],
+                  ["Ken", "Sarah", "Max", "Hunter" ],
                   [ "Whistle", "Hum", "Chew gum", "Sing" ],
-                  [ "Shambhavi", "Hunter", "Sarah", "Max" ],
-                  [ "Andrew", "Max", "Seba", "Sarah" ],
+                  [ "Shambhavi", "Hunter", "Max", "Sarah" ],
+                  [ "Max", "Andrew", "Seba", "Sarah" ],
                   [ "Algorithm", "Asynchrous", "Decoupled Architecture", "Polymorphic Association" ],
                   [ "Ken", "Walker", "Sarah", "Jenny" ],
-                  [ "Shambhavi", "Seba", "Sarah", "Max" ],
+                  [ "Shambhavi", "Seba", "Sarah", "Max"  ],
                   [ "Jenny", "Walker", "Sarah", "Max" ],
                   [ "Game the Progress", "Tie-In", "The Partner", "All of the above" ],
                   [ "DBC", "NaN", "nil", "undefined" ]
@@ -157,14 +157,24 @@ Result.delete_all
           game_id: 1,
           category_id: 1
         )
+    if y % 4 == 0
+      answer_option = 3
+    elsif y % 4 == 1
+      answer_option = 0
+    elsif y % 4 == 2
+      answer_option = 2
+    elsif y % 4 == 3
+      answer_option = 1
+    end
     4.times do |x|
       Answer.create!(
           text:answer_sample[y][x],
           question_id: (y + 1)
           )
     end
+
     temp_question_variable = Question.find(y + 1)
-    temp_question_variable.correct_answer_id = (y * 4) + 1
+    temp_question_variable.correct_answer_id = (y * 4) + (answer_option+1)
     temp_question_variable.save
   end
 
