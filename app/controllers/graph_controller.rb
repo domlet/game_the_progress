@@ -23,7 +23,7 @@ class GraphController < ApplicationController
     end
 
     data = {
-      chartTitle: "",
+        chartTitle: "",
         clickable: false,
         data: student_data
             }
