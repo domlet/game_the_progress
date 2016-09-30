@@ -3,16 +3,16 @@
 
 require 'faker'
 
-Category.delete_all
-User.delete_all
-Game.delete_all
-Question.delete_all
-Answer.delete_all
-Result.delete_all
+# Category.delete_all
+# User.delete_all
+# Game.delete_all
+# Question.delete_all
+# Answer.delete_all
+# Result.delete_all
 
-###############################
-# SEQUENCE/ORDER IS IMPORTANT #
-###############################
+# ###############################
+# # SEQUENCE/ORDER IS IMPORTANT #
+# ###############################
 
 # User.create!(
 #     first_name:"Shenesha",
@@ -44,29 +44,29 @@ Result.delete_all
 #   # 5 Games
 #   # 10 Questions in each Game
 #   # 4 Answers for each Question
-# 20.times do |x|
-#   Game.create!(
-#       title:Faker::StarWars.quote,
-#       subject:Faker::Book.genre
-#     )
-#   10.times do |y|
-#     Question.create!(
-#         text:Faker::StarWars.quote[0..-2].concat("?"),
-#         game_id: x + 1,
-#         category_id: rand(1..5)
-#       )
-#     4.times do
-#       Answer.create!(
-#           text:Faker::StarWars.quote,
-#           question_id: (10 * x) + (y + 1)
-#         )
-#     end
-#     temp_question_variable = Question.find(y+1)
-#     temp_question_variable.correct_answer_id = (y*4) + 1
-#     temp_question_variable.save
-#   end
-# end
 
+# # 20.times do |x|
+# #   Game.create!(
+# #       title:Faker::StarWars.quote,
+# #       subject:Faker::Book.genre
+# #     )
+# #   10.times do |y|
+# #     Question.create!(
+# #         text:Faker::StarWars.quote[0..-2].concat("?"),
+# #         game_id: x + 1,
+# #         category_id: rand(1..5)
+# #       )
+# #     4.times do
+# #       Answer.create!(
+# #           text:Faker::StarWars.quote,
+# #           question_id: (10 * x) + (y + 1)
+# #         )
+# #     end
+# #     temp_question_variable = Question.find(y+1)
+# #     temp_question_variable.correct_answer_id = (y*4) + 1
+# #     temp_question_variable.save
+# #   end
+# # end
 
 
 # 10.times do |x|
@@ -84,6 +84,7 @@ Result.delete_all
 #   )
 # end
 
+
 # 10.times do |x|
 # Result.create!(
 #     is_correct: [true, false].sample,
@@ -91,7 +92,6 @@ Result.delete_all
 #     question_id:x + 1,
 #     student_answer_id:x + 1,
 #   )
-# end
 
 
 ###################### SEEDS FOR DEMO ############################################
@@ -139,14 +139,15 @@ Result.delete_all
           ]
 
   answer_sample = [
-                  ["Ken", "Sarah", "Max", "Hunter" ],
+
+                  [ "Hunter", "Ken", "Sarah", "Max" ],
                   [ "Whistle", "Hum", "Chew gum", "Sing" ],
-                  [ "Shambhavi", "Hunter", "Max", "Sarah" ],
-                  [ "Max", "Andrew", "Seba", "Sarah" ],
+                  [ "Max", "Shambhavi", "Hunter", "Sarah" ],
+                  [ "Andrew", "Max", "Seba", "Sarah" ],
                   [ "Algorithm", "Asynchrous", "Decoupled Architecture", "Polymorphic Association" ],
                   [ "Ken", "Walker", "Sarah", "Jenny" ],
-                  [ "Shambhavi", "Seba", "Sarah", "Max"  ],
-                  [ "Jenny", "Walker", "Sarah", "Max" ],
+                  [ "Sarah", "Shambhavi", "Seba", "Max" ],
+                  [ "Walker", "Jenny", "Sarah", "Max" ],
                   [ "Game the Progress", "Tie-In", "The Partner", "All of the above" ],
                   [ "DBC", "NaN", "nil", "undefined" ]
                 ]
@@ -184,4 +185,5 @@ Result.delete_all
         title: "test game",
         subject: "test"
       )
+
 end
