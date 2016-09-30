@@ -16,6 +16,7 @@ class GraphController < ApplicationController
     student_data = []
     @students.each do |student|
       hash = {}
+      id = "#{student.id}"
       student_name = "#{student.last_name}, #{student.first_name}"
       hash['label'] = student_name
       hash['value'] = student.results.pluck(:is_correct).select{|a| a == true}.length
@@ -24,7 +25,8 @@ class GraphController < ApplicationController
 
     data = {
       chartTitle: "",
-        clickable: false,
+        clickable: true,
+        url: "",
         data: student_data
             }
      @data = data.to_json
@@ -114,7 +116,7 @@ class GraphController < ApplicationController
 
      end
       data = {
-          clickable: false,
+          clickable: true,
           data: [
                   {label: "Correct", value: (true_count * 100) / total_questions },
                   {label: "Incorrect", value: (false_count * 100) / total_questions }
