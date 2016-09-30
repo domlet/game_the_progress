@@ -22,7 +22,6 @@ require 'faker'
 #     password:'123456',
 #     is_admin: false
 #   )
-# User.create!( first_name:"Maria", last_name:"U", username:'maria', email:'m@m.com', password:'123456', is_admin: true )
 
 # 10.times do
 # User.create!(
@@ -45,6 +44,7 @@ require 'faker'
 #   # 5 Games
 #   # 10 Questions in each Game
 #   # 4 Answers for each Question
+
 # # 20.times do |x|
 # #   Game.create!(
 # #       title:Faker::StarWars.quote,
@@ -69,7 +69,6 @@ require 'faker'
 # # end
 
 
-
 # 10.times do |x|
 # Question.create!(
 #     text:Faker::StarWars.quote,
@@ -85,11 +84,95 @@ require 'faker'
 #   )
 # end
 
-10.times do |x|
-Result.create!(
-    is_correct: [true, false].sample,
-    user_id:x + 1,
-    question_id:x + 1,
-    student_answer_id:x + 1,
-  )
+
+# 10.times do |x|
+# Result.create!(
+#     is_correct: [true, false].sample,
+#     user_id:x + 1,
+#     question_id:x + 1,
+#     student_answer_id:x + 1,
+#   )
+
+
+###################### SEEDS FOR DEMO ############################################
+# Creates 1 Admin User, 10 Student Users, 1 Game with 10 Questions, 4 Answers each
+########### to use, comment out lines 17-65 ######################################
+  User.create!(
+      first_name:"Jim",
+      last_name:"Lengel",
+      username:'jlengel',
+      email:'jlengel@devbootcamp.com',
+      password:'123456',
+      is_admin: true
+    )
+
+  10.times do
+      User.create!(
+          first_name:Faker::GameOfThrones.character,
+          last_name:Faker::GameOfThrones.house,
+          username:Faker::Internet.user_name,
+          email:Faker::Internet.email,
+          password:Faker::Internet.password,
+          is_admin: false
+        )
+      end
+
+  Category.create!(
+      name: "Community"
+    )
+
+  Game.create!(
+        title: "DBC Trivia",
+        subject: "Coding Bootcamp"
+      )
+
+  question_sample =  ["Who is most likely to be carrying bacon?",
+          "What is something you should never do around Jenny?",
+          "Who wears shirt garters?",
+          "Who is most likely to get married at burning man?",
+          "What are programmers most likely to say to avoid explaining something?",
+          "Who is most likely to buy hand sanitizer in bulk?",
+          "Who is most likely to impersonate Buffy the Vampire Slayer?",
+          "Who is most likely to take all your money in poker?",
+          "Which final project team is most likely to find siren sounds obligatory?",
+          "Which of these has the highest value?"
+          ]
+
+  answer_sample = [
+                  [ "Hunter", "Ken", "Sarah", "Max" ],
+                  [ "Whistle", "Hum", "Chew gum", "Sing" ],
+                  [ "Max", "Shambhavi", "Hunter", "Sarah" ],
+                  [ "Andrew", "Max", "Seba", "Sarah" ],
+                  [ "Algorithm", "Asynchrous", "Decoupled Architecture", "Polymorphic Association" ],
+                  [ "Ken", "Walker", "Sarah", "Jenny" ],
+                  [ "Sarah", "Shambhavi", "Seba", "Max" ],
+                  [ "Walker", "Jenny", "Sarah", "Max" ],
+                  [ "Game the Progress", "Tie-In", "The Partner", "All of the above" ],
+                  [ "DBC", "NaN", "nil", "undefined" ]
+                ]
+
+  10.times do |y|
+      Question.create!(
+          text:question_sample[y],
+          game_id: 1,
+          category_id: 1
+        )
+    4.times do |x|
+      Answer.create!(
+          text:answer_sample[y][x],
+          question_id: (y + 1)
+          )
+    end
+    temp_question_variable = Question.find(y + 1)
+    temp_question_variable.correct_answer_id = (y * 4) + 1
+    temp_question_variable.save
+  end
+
+
+9.times do
+  Game.create!(
+        title: "test game",
+        subject: "test"
+      )
+
 end
