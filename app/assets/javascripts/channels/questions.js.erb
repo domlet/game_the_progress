@@ -17,6 +17,21 @@
       $('#c').html(this.renderC(data));
       $('#d').html(this.renderD(data));
 
+      $(".answer-button-a input").css("background-color", "#00cc00").css("color", "black");
+      $(".answer-button-b input").css("background-color", "#cccc00").css("color", "black");
+      $(".answer-button-c input").css("background-color", "#00cccc").css("color", "black");
+      $(".answer-button-d input").css("background-color", "#ff66cc").css("color", "black");
+
+      $(".answer-button-a.secondary input").css("background-color", "#00cc00").css("color", "black");
+      $(".answer-button-b.secondary input").css("background-color", "#cccc00").css("color", "black");
+      $(".answer-button-c.secondary input").css("background-color", "#00cccc").css("color", "black");
+      $(".answer-button-d.secondary input").css("background-color", "#ff66cc").css("color", "black");
+
+      $(".answer-button-a.rest input").css("background-color", "#00cc00").css("color", "black");
+      $(".answer-button-b.rest input").css("background-color", "#cccc00").css("color", "black");
+      $(".answer-button-c.rest input").css("background-color", "#00cccc").css("color", "black");
+      $(".answer-button-d.rest input").css("background-color", "#ff66cc").css("color", "black");
+
       // Hide and show "Next" button
       $(".next-button").css("display", "none");
       $("#button-" + (data.question_id + 1)).css("display", "inline");
