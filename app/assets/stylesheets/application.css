@@ -38,12 +38,13 @@ input[type=submit].next-button {
 #logo {
 }
 
+
 #betty-white {
   z-index: -1;
   position:absolute;
   bottom: 0;
   right: 0;
-}
+  }
 
 .progress-bar {
   position: relative;
@@ -68,6 +69,7 @@ input[type=submit].next-button {
     border-radius: 1em;
     padding: 1em;
     margin-top: 1em;
+    margin-bottom: 5em;
 }
 
 .form-screen table th, .form-screen table td {
@@ -863,6 +865,11 @@ th {
     padding: .1em;
   }
 
+/*  .answer-button-a input[type=submit]:active {
+    background-color: #000;
+    color: #fff;
+  }
+*/
   h4 {
     font-size: 2.8em;
   }
@@ -881,10 +888,11 @@ th {
 
   /* DEVISE LOGINS */
   .form-screen {
-    width: 80%;
+    width: 100%;
     font-size: 300%;
     background-color: none;
-    margin-top: 1em;
+    margin: 1em 0 5em 0;
+    border-radius: 0;
   }
 
 }
