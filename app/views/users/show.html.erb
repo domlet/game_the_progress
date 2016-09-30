@@ -7,19 +7,16 @@
 
   <table>
     <tr>
-      <th>Role:</th>
-      <td>    <% if current_user.is_admin == true%>Game Host
+      <th>Role: <% if current_user.is_admin == true%>Game Host
         <% else %>Player
         <% end %>
       </td>
     </tr>
     <tr>
-      <th>Username:</th>
-      <td><%= current_user.username %></td>
+      <th>Username: <%= current_user.username %></td>
     </tr>
     <tr>
-      <th>Email:</th>
-      <td><%= current_user.email %></td>
+      <th>Email: <%= current_user.email %></td>
     </tr>
   </table>
 

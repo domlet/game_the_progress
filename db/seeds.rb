@@ -139,6 +139,7 @@ require 'faker'
           ]
 
   answer_sample = [
+
                   [ "Hunter", "Ken", "Sarah", "Max" ],
                   [ "Whistle", "Hum", "Chew gum", "Sing" ],
                   [ "Max", "Shambhavi", "Hunter", "Sarah" ],
@@ -157,14 +158,24 @@ require 'faker'
           game_id: 1,
           category_id: 1
         )
+    if y % 4 == 0
+      answer_option = 3
+    elsif y % 4 == 1
+      answer_option = 0
+    elsif y % 4 == 2
+      answer_option = 2
+    elsif y % 4 == 3
+      answer_option = 1
+    end
     4.times do |x|
       Answer.create!(
           text:answer_sample[y][x],
           question_id: (y + 1)
           )
     end
+
     temp_question_variable = Question.find(y + 1)
-    temp_question_variable.correct_answer_id = (y * 4) + 1
+    temp_question_variable.correct_answer_id = (y * 4) + (answer_option+1)
     temp_question_variable.save
   end
 

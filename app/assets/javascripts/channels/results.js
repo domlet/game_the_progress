@@ -22,4 +22,7 @@ App.results = App.cable.subscriptions.create('ResultsChannel', {
   renderStudentResults: function(data) {
 
   }
+
+  
+
 });
