@@ -169,3 +169,9 @@ Result.delete_all
   end
 
 
+9.times do
+  Game.create!(
+        title: "test game",
+        subject: "test"
+      )
+end
