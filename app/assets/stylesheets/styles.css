@@ -1,7 +1,7 @@
-    body {
+    .graphs {
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         width: 960px;
-        height: 500px;
+        height: 450px;
         position: relative;
     }
 
