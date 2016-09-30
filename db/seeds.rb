@@ -158,8 +158,17 @@ Result.delete_all
           category_id: 1
         )
     4.times do |x|
+      if y % 4 == 1
+        answer_text = answer_sample[y][2]
+      elsif y % 4 == 2
+        answer_text = answer_sample[y][1]
+      elsif y % 4 == 3
+        answer_text = answer_sample[y][3]
+      elsif y % 4 == 0
+        answer_text = answer_sample[y][0]
+      end
       Answer.create!(
-          text:answer_sample[y][x],
+          text:answer_text,
           question_id: (y + 1)
           )
     end
