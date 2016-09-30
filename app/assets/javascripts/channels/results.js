@@ -5,15 +5,15 @@ App.results = App.cable.subscriptions.create('ResultsChannel', {
     $("#results").removeClass('hidden')
     console.log(data)
 
-    if(data.answer % 4 == 1) {
-      $(".answer-button-a input").css("background-color", "black").css("color", "white");
-    } else if(data.answer % 4 == 2) {
-      $(".answer-button-b input").css("background-color", "black").css("color", "white");
-    } else if(data.answer % 4 == 3) {
-      $(".answer-button-c input").css("background-color", "black").css("color", "white");
-    } else if(data.answer % 4 == 0) {
-      $(".answer-button-d input").css("background-color", "black").css("color", "white");
-    }
+    // if(data.answer % 4 == 1) {
+    //   $(".answer-button-a input").css("background-color", "black").css("color", "white");
+    // } else if(data.answer % 4 == 2) {
+    //   $(".answer-button-b input").css("background-color", "black").css("color", "white");
+    // } else if(data.answer % 4 == 3) {
+    //   $(".answer-button-c input").css("background-color", "black").css("color", "white");
+    // } else if(data.answer % 4 == 0) {
+    //   $(".answer-button-d input").css("background-color", "black").css("color", "white");
+    // }
 
     return $('#results').append(this.renderResult(data));
     // return $('.notice').append(this.renderNotice(data)); // muted
