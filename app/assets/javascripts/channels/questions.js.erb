@@ -36,7 +36,7 @@
       if(data.question_id == 2) {
         $(".initial").css("display", "none");
       }
-
+      this.restore()
     },
 
     setGameId: function(gameId) {
@@ -63,7 +63,15 @@
       return data.answer_options[2].text + "<br> <span class='percent-  results' id='percent-c'>" + "</span>";
     },
     renderD: function(data) {
+      console.log(data)
       return data.answer_options[3].text + "<br> <span class='percent-  results' id='percent-d'>" + "</span>";
+    },
+    restore: function(data) {
+      console.log(data)
+      $('.answer-button-a input').css("background-color", "#00cc00").css("color", "#000")
+      $('.answer-button-b input').css("background-color", "#cccc00").css("color", "#000")
+      $('.answer-button-c input').css("background-color", "#00cccc").css("color", "#000")
+      $('.answer-button-d input').css("background-color", "#ff66cc").css("color", "#000")
     }
 
     // renderAnswers: function(data) {
