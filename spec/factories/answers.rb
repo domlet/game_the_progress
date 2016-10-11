@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :answer do
-    text "What is the meaning of life"
+    text "42"
     # association :question
   end
 end
